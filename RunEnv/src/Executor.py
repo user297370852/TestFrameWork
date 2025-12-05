@@ -165,7 +165,7 @@ class JDKDifferentialTester:
 
                     # 添加JDK和JVM参数信息
                     result["jdk_version"] = jdk_version
-                    result["jvm_parameters"] = jvm_params
+                    result["GC_parameters"] = jvm_params  # 重命名字段
                     result["test_timestamp"] = datetime.now().isoformat()
 
                     # 对epsilonGC，仅计入执行成功的情况
@@ -189,7 +189,8 @@ class JDKDifferentialTester:
                         "exit_code": -1,
                         "duration_ms": 0,
                         "jdk_version": jdk_version,
-                        "jvm_parameters": jvm_params,
+                        "GC_parameters": jvm_params,  # 重命名字段
+                        "full_cmd": "",  # 异常情况下无完整命令
                         "test_timestamp": datetime.now().isoformat()
                     }
                     # 对epsilonGC，仅计入执行成功的情况
@@ -235,11 +236,12 @@ class JDKDifferentialTester:
         for result in results:
             test_result = {
                 "jdk_version": result["jdk_version"],
-                "jvm_parameters": result["jvm_parameters"],
+                "GC_parameters": result["GC_parameters"],
                 "success": result["success"],
                 "exit_code": result["exit_code"],
                 "duration_ms": result["duration_ms"],
                 "output": result["output"],
+                "full_cmd": result.get("full_cmd", ""),
                 "test_timestamp": result.get("test_timestamp", "")
             }
             log_data["test_results"].append(test_result)

@@ -13,6 +13,7 @@ import time
 import argparse
 import json
 from pathlib import Path
+from sys import stderr
 from typing import List, Dict, Tuple
 
 
@@ -62,9 +63,9 @@ class ClassFileRunner:
         return temp_dir
 
     def run_java_class(self, temp_dir: str, package_name: str, class_name: str, jvm_args: List[str] = None) -> Tuple[
-        bool, str, int]:
+        bool, str, int, str]:
         """
-        运行Java类文件，返回(是否成功, 输出信息, 退出码)
+        运行Java类文件，返回(是否成功, 输出信息, 退出码, 完整命令)
 
         Args:
             temp_dir: 临时目录路径
@@ -80,9 +81,12 @@ class ClassFileRunner:
 
         gcobj_dir = "/Users/yeliu/PycharmProjects/PythonProject/RunEnv"
         eclipse_dir = "/Users/yeliu/IdeaProjects/GCFuzz-main/02Benchmarks/eclipse-dacapo"
+        fop_dir = "/Users/yeliu/IdeaProjects/GCFuzz-main/02Benchmarks/fop-dacapo"
 
         if class_name == "EclipseStarter":
             class_path = f"{gcobj_dir}:{temp_dir}:{eclipse_dir}"
+        elif package_name == "org.apache.fop.cli":
+            class_path = f"{gcobj_dir}:{temp_dir}:{fop_dir}/*:{fop_dir}/lib/*"
         else:
             class_path = f"{gcobj_dir}:{temp_dir}"
 
@@ -90,9 +94,37 @@ class ClassFileRunner:
         if jvm_args is None:
             jvm_args = []
 
+        if package_name == "org.apache.fop.cli":
+            # FOP需要更多内存
+            jvm_args = [
+                           "-Xmx2g",  # 2GB堆内存
+                           "-Xms512m",  # 初始512MB
+                           "-Dfop.home=" + fop_dir,
+                           "-Djava.awt.headless=true",
+                           "-Dorg.apache.fop.allow-external-dtd=true"
+                       ] + jvm_args
+
         try:
             # 构建完整的命令：java [JVM参数] -cp class_path full_class_name
             cmd = ["java"] + jvm_args + ["-cp", class_path, full_class_name]
+
+            # 如果是FOP，使用现有的测试文件
+            if package_name == "org.apache.fop.cli":
+                fop_dir = "/Users/yeliu/IdeaProjects/GCFuzz-main/02Benchmarks/fop-dacapo"
+
+                # 检查文件是否存在
+                xml_file = os.path.join(fop_dir, "name.xml")
+                xsl_file = os.path.join(fop_dir, "name2fo.xsl")
+                pdf_file = os.path.join(fop_dir, "output.pdf")
+
+                if os.path.exists(xml_file) and os.path.exists(xsl_file):
+                    # 使用XML + XSL转换模式
+                    cmd.extend([
+                        "-xml", xml_file,  # 输入XML文件
+                        "-xsl", xsl_file,  # XSLT样式表
+                        "-pdf", pdf_file  # 输出PDF
+                    ])
+
 
             # 设置超时
             process = subprocess.Popen(
@@ -105,19 +137,22 @@ class ClassFileRunner:
             try:
                 stdout, stderr = process.communicate(timeout=self.timeout_seconds)
                 exit_code = process.returncode
+                # 构建完整命令字符串用于返回
+                full_cmd = ' '.join(cmd)
 
                 if process.returncode == 0:
-                    return True, stdout.strip(), exit_code
+                    return True, stdout.strip(), exit_code, full_cmd
                 else:
                     error_msg = stderr.strip() if stderr else stdout.strip()
-                    return False, error_msg, exit_code
+                    return False, error_msg, exit_code, full_cmd
 
             except subprocess.TimeoutExpired:
                 process.kill()
-                return False, f"Timeout after {self.timeout_seconds} seconds", -1
+                full_cmd = ' '.join(cmd)
+                return False, f"Timeout after {self.timeout_seconds} seconds", -1, full_cmd
 
         except Exception as e:
-            return False, f"Execution error: {str(e)}", -1
+            return False, f"Execution error: {str(e)}", -1, ""
 
     def test_class_file(self, class_file_path: Path, parent_directory: str,
                         jvm_args: List[str] = None, output_dir: str = None,
@@ -147,7 +182,7 @@ class ClassFileRunner:
             start_time = time.time()
 
             # 运行测试
-            success, output, exit_code = self.run_java_class(temp_dir, package_name, class_name, jvm_args)
+            success, output, exit_code, full_cmd = self.run_java_class(temp_dir, package_name, class_name, jvm_args)
 
             # 截断输出，只保留前1024个字符
             if output and len(output) > 1024:
@@ -176,7 +211,8 @@ class ClassFileRunner:
                 "success": success,
                 "output": output,
                 "exit_code": exit_code,
-                "duration_ms": duration_ms
+                "duration_ms": duration_ms,
+                "full_cmd": full_cmd
             }
 
             status = "✓ SUCCESS" if success else "✗ FAILED"
