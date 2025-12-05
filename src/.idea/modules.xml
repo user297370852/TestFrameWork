@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PythonProject.iml" filepath="$PROJECT_DIR$/PythonProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/eclipse/classHistory/classHistory.iml" filepath="$PROJECT_DIR$/input/eclipse/classHistory/classHistory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/OpenJ9/classHistory/classHistory2.iml" filepath="$PROJECT_DIR$/input/OpenJ9/classHistory/classHistory2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/HotSpot/classHistory/classHistory3.iml" filepath="$PROJECT_DIR$/input/HotSpot/classHistory/classHistory3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/fop/classHistory/classHistory4.iml" filepath="$PROJECT_DIR$/input/fop/classHistory/classHistory4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/eclipse/diffClasses/diffClasses.iml" filepath="$PROJECT_DIR$/input/eclipse/diffClasses/diffClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/fop/diffClasses/diffClasses2.iml" filepath="$PROJECT_DIR$/input/fop/diffClasses/diffClasses2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/HotSpot/diffClasses/diffClasses3.iml" filepath="$PROJECT_DIR$/input/HotSpot/diffClasses/diffClasses3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/input/OpenJ9/diffClasses/diffClasses4.iml" filepath="$PROJECT_DIR$/input/OpenJ9/diffClasses/diffClasses4.iml" />
+    </modules>
+  </component>
+</project>
