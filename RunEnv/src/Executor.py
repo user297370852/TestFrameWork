@@ -16,6 +16,7 @@ from datetime import datetime
 # 导入ClassFileRunner
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from TestRun import ClassFileRunner
+from GCLogAnalyzer import GCLogAnalyzer
 
 
 class JDKDifferentialTester:
@@ -62,9 +63,11 @@ class JDKDifferentialTester:
         ]
     }
 
-    def __init__(self, timeout_seconds=60):
+    def __init__(self, timeout_seconds=60, keep_gc_logs=False):
         self.timeout_seconds = timeout_seconds
+        self.keep_gc_logs = keep_gc_logs
         self.runner = ClassFileRunner(timeout_seconds=timeout_seconds)
+        self.gc_analyzer = GCLogAnalyzer()
 
     def switch_jdk(self, jdk_version: str) -> bool:
         """
@@ -113,9 +116,7 @@ class JDKDifferentialTester:
                 timeout=5
             )
             # 从版本输出中提取信息
-            if "1.8" in result.stderr:
-                return "1.8"
-            elif "11." in result.stderr:
+            if "11." in result.stderr:
                 return "11"
             elif "17." in result.stderr:
                 return "17"
@@ -131,7 +132,7 @@ class JDKDifferentialTester:
             print(f"获取JDK版本失败: {e}")
             return "unknown"
 
-    def test_class_with_jdk_variants(self, class_file_path: Path, parent_directory: str) -> List[Dict]:
+    def test_class_with_jdk_variants(self, class_file_path: Path, parent_directory: str, output_dir: str = None) -> List[Dict]:
         """
         在所有的JDK版本和JVM参数组合下测试单个类文件
 
@@ -155,18 +156,71 @@ class JDKDifferentialTester:
             for jvm_params in jvm_params_list:
                 print(f"  使用JVM参数: {' '.join(jvm_params)}")
 
+                # 生成GC日志文件名
+                gc_log_file = None
+                if self.keep_gc_logs and output_dir:
+                    # 根据GC参数生成简短的GC名称
+                    gc_name = "UnknownGC"
+                    if "-XX:+UseSerialGC" in jvm_params:
+                        gc_name = "SerialGC"
+                    elif "-XX:+UseParallelGC" in jvm_params:
+                        gc_name = "ParallelGC"
+                    elif "-XX:+UseParallelOldGC" in jvm_params:
+                        gc_name = "ParallelOldGC"
+                    elif "-XX:+UseG1GC" in jvm_params:
+                        gc_name = "G1GC"
+                    elif "-XX:+UseZGC" in jvm_params:
+                        gc_name = "ZGC"
+                    elif "-XX:+UseShenandoahGC" in jvm_params:
+                        if "-XX:ShenandoahGCMode=generational" in jvm_params:
+                            gc_name = "ShenandoahGC-Gen"
+                        else:
+                            gc_name = "ShenandoahGC"
+                    elif "-XX:+UseEpsilonGC" in jvm_params:
+                        gc_name = "EpsilonGC"
+                    
+                    # 创建每个测试用例专属的GC日志目录，与JSON文件在同一层
+                    class_filename_without_ext = class_file_path.stem
+                    
+                    # JSON文件的路径是：output_dir / relative_path.with_suffix('.json')
+                    # 所以GC日志目录应该与JSON文件在同一目录下
+                    relative_path = class_file_path.relative_to(class_file_path.parents[2])
+                    json_file_path = Path(output_dir) / relative_path.with_suffix('.json')
+                    gc_logs_dir = json_file_path.parent / f"{class_filename_without_ext}.gclogs"
+                    gc_logs_dir.mkdir(parents=True, exist_ok=True)
+                    gc_log_file = gc_logs_dir / f"jdk{jdk_version}-{gc_name}.log"
+
                 try:
                     # 使用ClassFileRunner测试类文件
                     result = self.runner.test_class_file(
                         class_file_path,
                         parent_directory,
-                        jvm_args=jvm_params
+                        jvm_args=jvm_params,
+                        enable_gc_logging=self.keep_gc_logs,
+                        gc_log_file=str(gc_log_file) if gc_log_file else None
                     )
 
                     # 添加JDK和JVM参数信息
                     result["jdk_version"] = jdk_version
                     result["GC_parameters"] = jvm_params  # 重命名字段
                     result["test_timestamp"] = datetime.now().isoformat()
+
+                    # 分析GC日志并添加到结果中
+                    if gc_log_file and result["success"]:
+                        try:
+                            # 分析GC日志
+                            gc_analysis = self.gc_analyzer.parse_gc_log(str(gc_log_file))
+                            result["gc_analysis"] = gc_analysis
+                            print(f"    📊 GC分析: {gc_analysis['total_gc_count']}次GC, STW {gc_analysis['gc_stw_time_ms']}ms, 最大堆 {gc_analysis['max_heap_mb']}MB")
+                        except Exception as e:
+                            print(f"    ⚠ GC日志分析失败: {e}")
+                            result["gc_analysis"] = {
+                                "total_gc_count": 0,
+                                "gc_stw_time_ms": 0.0,
+                                "max_heap_mb": 0,
+                                "gc_type_breakdown": {},
+                                "analysis_error": str(e)
+                            }
 
                     # 对epsilonGC，仅计入执行成功的情况
                     if "-XX:+UseEpsilonGC" in jvm_params and not result["success"]:
@@ -237,11 +291,12 @@ class JDKDifferentialTester:
             test_result = {
                 "jdk_version": result["jdk_version"],
                 "GC_parameters": result["GC_parameters"],
+                "full_cmd": result.get("full_cmd", ""),
                 "success": result["success"],
                 "exit_code": result["exit_code"],
                 "duration_ms": result["duration_ms"],
                 "output": result["output"],
-                "full_cmd": result.get("full_cmd", ""),
+                "gc_analysis": result.get("gc_analysis", {}),
                 "test_timestamp": result.get("test_timestamp", "")
             }
             log_data["test_results"].append(test_result)
@@ -296,7 +351,7 @@ class JDKDifferentialTester:
                 print(f"\n[{current_file}/{total_files}] ", end="")
 
                 # 在所有JDK版本和JVM参数组合下测试这个类文件
-                class_results = self.test_class_with_jdk_variants(item, parent_dir)
+                class_results = self.test_class_with_jdk_variants(item, parent_dir, output_dir)
 
                 # 计算相对于基目录的相对路径
                 relative_path = item.relative_to(base_path)
@@ -313,9 +368,34 @@ class JDKDifferentialTester:
                     f.write(log_content)
 
                 print(f"  结果已保存: {log_file_path}")
+                # 定时清理GC日志
+                if (not self.keep_gc_logs) and current_file % 10 == 0:
+                    self._cleanup_gc_logs(output_path)
 
         print(f"\n测试完成! 共测试 {total_files} 个类文件")
         print(f"结果已保存到: {output_dir}")
+        
+        # 如果不保留GC日志，清理所有GC日志文件
+        if not self.keep_gc_logs:
+            self._cleanup_gc_logs(output_path)
+    
+    def _cleanup_gc_logs(self, output_path: Path):
+        """
+        清理所有GC日志文件
+        
+        Args:
+            output_path: 输出目录路径
+        """
+        import glob
+        gc_log_files = list(output_path.rglob("*.log"))
+        if gc_log_files:
+            print(f"清理 {len(gc_log_files)} 个GC日志文件...")
+            for log_file in gc_log_files:
+                try:
+                    log_file.unlink()
+                except Exception as e:
+                    print(f"  删除 {log_file} 失败: {e}")
+            print("GC日志文件清理完成")
 
 
 def main():
@@ -329,6 +409,8 @@ def main():
     parser.add_argument('output_dir', help='保存log文件的输出目录')
     parser.add_argument('-t', '--timeout', type=int, default=60,
                         help='测试超时时间（秒），默认60秒')
+    parser.add_argument('--keep-gc-logs', action='store_true',
+                        help='保留GC日志文件到输出目录')
 
 
     args = parser.parse_args()
@@ -338,7 +420,7 @@ def main():
         sys.exit(1)
 
     # 创建测试器
-    tester = JDKDifferentialTester(timeout_seconds=args.timeout)
+    tester = JDKDifferentialTester(timeout_seconds=args.timeout, keep_gc_logs=args.keep_gc_logs)
 
     try:
         # 执行差分测试

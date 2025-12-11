@@ -175,6 +175,7 @@ python TestRun.py ./testcases ./test_logs -t 30
 | `input_dir` | - | **是** | 包含 `.class` 文件的输入目录路径 | 无 |
 | `output_dir` | - | **是** | 保存测试日志文件的输出目录路径 | 无 |
 | `--timeout` | `-t` | 否 | 单个测试用例的超时时间（秒） | 60 |
+| `--keep-gc-logs` | - | 否 | 保留GC日志文件到输出目录 | False |
 
 ## 目录结构要求
 
@@ -192,15 +193,37 @@ input_dir/
 ```
 
 ### 输出目录结构（自动生成）
+
+**不保留GC日志（默认行为）:**
 ```
 output_dir/
-├── logs/
-│   ├── com.example.TestClass1.log
-│   ├── com.example.TestClass2.log
-│   ├── com.example.subpackage.TestClass3.log
-│   └── another.TestClass4.log
-├── summary.json
-└── differential_report.html  # 如果支持HTML报告
+├── com.example.TestClass1.json
+├── com.example.TestClass2.json
+├── com.example.subpackage.TestClass3.json
+└── another.TestClass4.json
+```
+
+**保留GC日志（使用 `--keep-gc-logs` 参数）:**
+```
+output_dir/
+├── com.example.TestClass1.json
+├── com.example.TestClass1.gclogs/
+│   ├── jdk11-SerialGC.log
+│   ├── jdk11-ParallelGC.log
+│   ├── jdk11-G1GC.log
+│   ├── jdk11-ShenandoahGC.log
+│   ├── jdk11-EpsilonGC.log
+│   ├── jdk17-SerialGC.log
+│   ├── jdk17-ParallelGC.log
+│   ├── jdk17-G1GC.log
+│   ├── jdk17-ZGC.log
+│   ├── jdk17-ShenandoahGC.log
+│   ├── jdk17-EpsilonGC.log
+│   └── ... (其他JDK版本和GC组合)
+├── com.example.TestClass2.json
+├── com.example.TestClass2.gclogs/
+│   └── ... (该测试用例的所有GC日志)
+└── ...
 ```
 
 ## 详细使用示例
@@ -228,6 +251,56 @@ python TestRun.py ./compiled ./diff_test_logs -t 120
 # 查看测试结果
 ls -la ./diff_test_logs/logs/
 ```
+
+### 示例 4：保留GC日志进行性能分析
+```bash
+# 运行差分测试并保留GC日志
+python TestRun.py ./testcases ./gc_analysis --keep-gc-logs -t 120
+
+# 查看生成的目录结构
+tree -L 3 ./gc_analysis
+# 输出：
+# gc_analysis/
+# ├── TestClass1.json
+# ├── TestClass1.gclogs/
+# │   ├── jdk11-SerialGC.log
+# │   ├── jdk11-ParallelGC.log
+# │   ├── jdk11-G1GC.log
+# │   └── ... (其他JDK版本和GC组合)
+# ├── TestClass2.json
+# ├── TestClass2.gclogs/
+# │   └── ... (该测试用例的所有GC日志)
+# └── ...
+
+# 分析特定测试用例的GC性能
+cat ./gc_analysis/TestClass1.gclogs/jdk11-G1GC.log
+```
+
+## GC日志功能说明
+
+### 功能概述
+GC日志功能允许在测试过程中收集详细的垃圾回收信息，用于GC性能分析和调优。当启用GC日志功能时，每个测试用例在不同JDK版本和GC配置下的GC行为都会被详细记录。
+
+### 支持的JDK版本和GC组合
+- **JDK 11**: SerialGC, ParallelGC, ParallelOldGC, G1GC, ShenandoahGC, EpsilonGC
+- **JDK 17**: SerialGC, ParallelGC, G1GC, ZGC, ShenandoahGC, EpsilonGC  
+- **JDK 21**: SerialGC, ParallelGC, G1GC, ZGC, ShenandoahGC, EpsilonGC
+- **JDK 25**: SerialGC, ParallelGC, G1GC, ZGC, ShenandoahGC, ShenandoahGC-Generational, EpsilonGC
+- **JDK 26**: SerialGC, ParallelGC, G1GC, ZGC, EpsilonGC
+
+### GC日志内容
+每个GC日志文件包含：
+- GC暂停时间（STW时间）
+- 堆内存使用情况
+- GC类型和阶段信息
+- 对象分配和回收统计
+- 时间戳和持续时间
+
+### 使用场景
+1. **GC性能对比**：比较不同GC在相同工作负载下的表现
+2. **内存泄漏检测**：通过堆使用趋势发现潜在的内存问题
+3. **调优参考**：为GC参数调优提供数据支持
+4. **兼容性验证**：确保应用在不同GC下正常运行
 
 ## 测试过程说明
 
@@ -282,10 +355,6 @@ python LogAnalyzer.py ./test_logs -o custom_report.json
 
 ## 测试预言说明
 测试预言都注册在test_oracles.py中
-
-
-
-
 
 
 

@@ -62,7 +62,8 @@ class ClassFileRunner:
 
         return temp_dir
 
-    def run_java_class(self, temp_dir: str, package_name: str, class_name: str, jvm_args: List[str] = None) -> Tuple[
+    def run_java_class(self, temp_dir: str, package_name: str, class_name: str, jvm_args: List[str] = None, 
+                        enable_gc_logging: bool = False, gc_log_file: str = None) -> Tuple[
         bool, str, int, str]:
         """
         运行Java类文件，返回(是否成功, 输出信息, 退出码, 完整命令)
@@ -72,6 +73,8 @@ class ClassFileRunner:
             package_name: 包名
             class_name: 类名
             jvm_args: JVM参数列表，例如 ["-XX:+UseParallelGC", "-Xmx512m"]
+            enable_gc_logging: 是否启用GC日志记录
+            gc_log_file: GC日志文件路径
         """
         # 构建完整的类名
         if package_name:
@@ -93,6 +96,14 @@ class ClassFileRunner:
         # 如果 jvm_args 为 None，设置为空列表
         if jvm_args is None:
             jvm_args = []
+
+        # 添加GC日志参数
+        if enable_gc_logging and gc_log_file:
+            # 针对不同JDK版本使用不同的GC日志参数
+            # JDK 9+ 使用新的 -Xlog 参数格式，但为了兼容性也支持旧格式
+            gc_args = [f"-Xlog:gc*,safepoint:file={gc_log_file}:time,uptime,level,tags"]
+
+            jvm_args = gc_args + jvm_args
 
         if package_name == "org.apache.fop.cli":
             # FOP需要更多内存
@@ -156,7 +167,8 @@ class ClassFileRunner:
 
     def test_class_file(self, class_file_path: Path, parent_directory: str,
                         jvm_args: List[str] = None, output_dir: str = None,
-                        source_base_dir: str = None) -> Dict:
+                        source_base_dir: str = None, enable_gc_logging: bool = False, 
+                        gc_log_file: str = None) -> Dict:
         """
         测试单个类文件的可运行性，支持流式输出
 
@@ -166,6 +178,8 @@ class ClassFileRunner:
             jvm_args: JVM参数列表
             output_dir: 如果提供，成功时立即复制文件
             source_base_dir: 源基础目录，用于保持目录结构
+            enable_gc_logging: 是否启用GC日志记录
+            gc_log_file: GC日志文件路径
         """
         print(f"Testing: {class_file_path}")
 
@@ -182,7 +196,9 @@ class ClassFileRunner:
             start_time = time.time()
 
             # 运行测试
-            success, output, exit_code, full_cmd = self.run_java_class(temp_dir, package_name, class_name, jvm_args)
+            success, output, exit_code, full_cmd = self.run_java_class(
+                temp_dir, package_name, class_name, jvm_args, enable_gc_logging, gc_log_file
+            )
 
             # 截断输出，只保留前1024个字符
             if output and len(output) > 1024:
