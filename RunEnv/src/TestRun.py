@@ -101,7 +101,7 @@ class ClassFileRunner:
         if enable_gc_logging and gc_log_file:
             # 针对不同JDK版本使用不同的GC日志参数
             # JDK 9+ 使用新的 -Xlog 参数格式，但为了兼容性也支持旧格式
-            gc_args = [f"-Xlog:gc*,safepoint:file={gc_log_file}:time,uptime,level,tags"]
+            gc_args = [f"-Xlog:gc*:file={gc_log_file}:time,uptime,level,tags"]
 
             jvm_args = gc_args + jvm_args
 

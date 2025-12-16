@@ -1,0 +1,46 @@
+[2025-12-16T20:43:53.022+0800][0.002s][warning][gc] Consider setting -Xms equal to -Xmx to avoid resizing hiccups
+[2025-12-16T20:43:53.022+0800][0.002s][warning][gc] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups
+[2025-12-16T20:43:53.023+0800][0.004s][info   ][gc] Resizeable heap; starting at 256M, max: 4096M, step: 128M
+[2025-12-16T20:43:53.023+0800][0.004s][info   ][gc] Using TLAB allocation; max: 4096K
+[2025-12-16T20:43:53.023+0800][0.004s][info   ][gc] Elastic TLABs enabled; elasticity: 1.10x
+[2025-12-16T20:43:53.023+0800][0.004s][info   ][gc] Elastic TLABs decay enabled; decay time: 1000ms
+[2025-12-16T20:43:53.023+0800][0.004s][info   ][gc] Using Epsilon
+[2025-12-16T20:43:53.023+0800][0.004s][info   ][gc,heap,coops] Heap address: 0x00000006c0000000, size: 4096 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+[2025-12-16T20:43:53.134+0800][0.114s][info   ][gc           ] Heap: 4096M reserved, 256M (6.25%) committed, 205M (5.03%) used
+[2025-12-16T20:43:53.134+0800][0.114s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.225+0800][0.205s][info   ][gc           ] Heap: 4096M reserved, 512M (12.50%) committed, 413M (10.11%) used
+[2025-12-16T20:43:53.225+0800][0.205s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.318+0800][0.298s][info   ][gc           ] Heap: 4096M reserved, 640M (15.62%) committed, 621M (15.19%) used
+[2025-12-16T20:43:53.318+0800][0.298s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.407+0800][0.387s][info   ][gc           ] Heap: 4096M reserved, 896M (21.88%) committed, 829M (20.26%) used
+[2025-12-16T20:43:53.407+0800][0.387s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.496+0800][0.476s][info   ][gc           ] Heap: 4096M reserved, 1152M (28.12%) committed, 1037M (25.34%) used
+[2025-12-16T20:43:53.496+0800][0.476s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.584+0800][0.565s][info   ][gc           ] Heap: 4096M reserved, 1280M (31.25%) committed, 1245M (30.42%) used
+[2025-12-16T20:43:53.584+0800][0.565s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.674+0800][0.654s][info   ][gc           ] Heap: 4096M reserved, 1536M (37.50%) committed, 1453M (35.50%) used
+[2025-12-16T20:43:53.674+0800][0.654s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.770+0800][0.750s][info   ][gc           ] Heap: 4096M reserved, 1664M (40.62%) committed, 1661M (40.58%) used
+[2025-12-16T20:43:53.770+0800][0.750s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.865+0800][0.846s][info   ][gc           ] Heap: 4096M reserved, 1920M (46.88%) committed, 1869M (45.65%) used
+[2025-12-16T20:43:53.865+0800][0.846s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:53.962+0800][0.942s][info   ][gc           ] Heap: 4096M reserved, 2176M (53.12%) committed, 2077M (50.73%) used
+[2025-12-16T20:43:53.962+0800][0.942s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.062+0800][1.042s][info   ][gc           ] Heap: 4096M reserved, 2304M (56.25%) committed, 2285M (55.81%) used
+[2025-12-16T20:43:54.062+0800][1.042s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.156+0800][1.136s][info   ][gc           ] Heap: 4096M reserved, 2560M (62.50%) committed, 2493M (60.89%) used
+[2025-12-16T20:43:54.156+0800][1.136s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.251+0800][1.231s][info   ][gc           ] Heap: 4096M reserved, 2816M (68.75%) committed, 2701M (65.97%) used
+[2025-12-16T20:43:54.251+0800][1.231s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.345+0800][1.325s][info   ][gc           ] Heap: 4096M reserved, 2944M (71.88%) committed, 2909M (71.04%) used
+[2025-12-16T20:43:54.345+0800][1.325s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.438+0800][1.418s][info   ][gc           ] Heap: 4096M reserved, 3200M (78.12%) committed, 3117M (76.12%) used
+[2025-12-16T20:43:54.438+0800][1.418s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.533+0800][1.513s][info   ][gc           ] Heap: 4096M reserved, 3328M (81.25%) committed, 3325M (81.20%) used
+[2025-12-16T20:43:54.533+0800][1.513s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.628+0800][1.608s][info   ][gc           ] Heap: 4096M reserved, 3584M (87.50%) committed, 3533M (86.28%) used
+[2025-12-16T20:43:54.628+0800][1.608s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.722+0800][1.702s][info   ][gc           ] Heap: 4096M reserved, 3840M (93.75%) committed, 3741M (91.36%) used
+[2025-12-16T20:43:54.722+0800][1.702s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used
+[2025-12-16T20:43:54.817+0800][1.797s][info   ][gc           ] Heap: 4096M reserved, 3968M (96.88%) committed, 3949M (96.44%) used
+[2025-12-16T20:43:54.817+0800][1.797s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 4864K (0.46%) committed, 3387K (0.32%) used

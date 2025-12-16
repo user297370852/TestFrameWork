@@ -1,0 +1,106 @@
+{
+  "jdk21-SerialGC.log": {
+    "total_gc_count": 99,
+    "gc_stw_time_ms": 5.712000000000001,
+    "max_stw_time_ms": 0.582,
+    "max_heap_mb": 247,
+    "gc_type_breakdown": {
+      "Young GC": {
+        "count": 99,
+        "stw_time_ms": 5.712000000000001
+      }
+    }
+  },
+  "jdk17-ParallelGC.log": {
+    "total_gc_count": 150,
+    "gc_stw_time_ms": 18.602999999999998,
+    "max_stw_time_ms": 2.75,
+    "max_heap_mb": 290,
+    "gc_type_breakdown": {
+      "Young GC": {
+        "count": 150,
+        "stw_time_ms": 18.602999999999998
+      }
+    }
+  },
+  "jdk25-G1GC.log": {
+    "total_gc_count": 46,
+    "gc_stw_time_ms": 12.287999999999997,
+    "max_stw_time_ms": 0.573,
+    "max_heap_mb": 258,
+    "gc_type_breakdown": {
+      "Young GC (Normal)": {
+        "count": 46,
+        "stw_time_ms": 12.287999999999997
+      }
+    }
+  },
+  "jdk21-ZGC.log": {
+    "total_gc_count": 12,
+    "gc_stw_time_ms": 0.07200000000000001,
+    "max_stw_time_ms": 0.004,
+    "max_heap_mb": 782,
+    "gc_type_breakdown": {
+      "Pause Mark Start": {
+        "count": 12,
+        "stw_time_ms": 0.025
+      },
+      "Pause Mark End": {
+        "count": 12,
+        "stw_time_ms": 0.032
+      },
+      "Pause Relocate Start": {
+        "count": 12,
+        "stw_time_ms": 0.015000000000000003
+      }
+    }
+  },
+  "jdk17-EpsilonGC.log": {
+    "total_gc_count": 0,
+    "gc_stw_time_ms": 0.0,
+    "max_stw_time_ms": 0.0,
+    "max_heap_mb": 3968,
+    "gc_type_breakdown": {
+      "EpsilonGC": {
+        "count": 0,
+        "stw_time_ms": 0.0
+      }
+    }
+  },
+  "jdk21-ShenandoahGC.log": {
+    "total_gc_count": 5,
+    "gc_stw_time_ms": 0.515,
+    "max_stw_time_ms": 0.086,
+    "max_heap_mb": 1754,
+    "gc_type_breakdown": {
+      "Init Mark (unload classes)": {
+        "count": 5,
+        "stw_time_ms": 0.143
+      },
+      "Final Mark (unload classes)": {
+        "count": 5,
+        "stw_time_ms": 0.34500000000000003
+      },
+      "Final Roots": {
+        "count": 5,
+        "stw_time_ms": 0.027000000000000003
+      }
+    }
+  },
+  "jdk25-ShenandoahGC-Gen.log": {
+    "total_gc_count": 5,
+    "gc_stw_time_ms": 0.712,
+    "max_stw_time_ms": 0.214,
+    "max_heap_mb": 1996,
+    "gc_type_breakdown": {
+      "Init Mark (unload classes)": {
+        "count": 5,
+        "stw_time_ms": 0.097
+      },
+      "Final Mark (unload classes)": {
+        "count": 5,
+        "stw_time_ms": 0.615
+      }
+    }
+  }
+}

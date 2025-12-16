@@ -1,0 +1,678 @@
+[2025-12-16T20:44:38.368+0800][0.006s][info][gc,init] CardTable entry size: 512
+[2025-12-16T20:44:38.368+0800][0.006s][info][gc     ] Heuristics ergonomically sets -XX:GCTimeRatio=70
+[2025-12-16T20:44:38.368+0800][0.006s][info][gc     ] Heuristics ergonomically sets -XX:+ExplicitGCInvokesConcurrent
+[2025-12-16T20:44:38.368+0800][0.006s][info][gc     ] Heuristics ergonomically sets -XX:+ShenandoahImplicitGCInvokesConcurrent
+[2025-12-16T20:44:38.368+0800][0.006s][info][gc     ] Heuristics ergonomically sets -XX:+UseCondCardMark
+[2025-12-16T20:44:38.368+0800][0.006s][info][gc     ] Using Shenandoah
+[2025-12-16T20:44:38.368+0800][0.006s][info][gc,ref ] Clearing All SoftReferences
+[2025-12-16T20:44:38.379+0800][0.018s][info][gc,free] Free: 3890M, Max: 2048K regular, 3890M humongous, Frag: 0% external, 0% internal; Used: 0B, Mutator Free: 1945 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:38.379+0800][0.018s][info][gc,ergo] Pacer for Idle. Initial: 83886K, Alloc Tax Rate: 1.0x
+[2025-12-16T20:44:38.379+0800][0.018s][info][gc,init] Version: 25.0.1 (release)
+[2025-12-16T20:44:38.379+0800][0.018s][info][gc,init] CPUs: 10 total, 10 available
+[2025-12-16T20:44:38.379+0800][0.018s][info][gc,init] Memory: 16384M
+[2025-12-16T20:44:38.379+0800][0.018s][info][gc,init] Large Page Support: Disabled
+[2025-12-16T20:44:38.379+0800][0.018s][info][gc,init] NUMA Support: Disabled
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Compressed Oops: Enabled (Zero based)
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Heap Min Capacity: 8M
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Heap Initial Capacity: 256M
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Heap Max Capacity: 4G
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Pre-touch: Disabled
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Heap Region Count: 2048
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Heap Region Size: 2M
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] TLAB Size Max: 2M
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Young Generation Soft Size: 4G
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Young Generation Max: 4G
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Old Generation Soft Size: 0B
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Old Generation Max: 0B
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Parallel Workers: 5
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Concurrent Workers: 2
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Mode: Generational
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Heuristics: Adaptive
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Young Heuristics: Adaptive
+[2025-12-16T20:44:38.380+0800][0.018s][info][gc,init] Old Heuristics: Old
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] CDS archive(s) mapped at: [0x00000ff800000000-0x00000ff800d94000-0x00000ff800d94000), size 14237696, SharedBaseAddress: 0x00000ff800000000, ArchiveRelocationMode: 1.
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] Compressed class space mapped at: 0x00000ff801000000-0x00000ff841000000, reserved size: 1073741824
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] Narrow klass pointer bits 32, Max shift 3
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] Narrow klass base: 0x00000ff800000000, Narrow klass shift: 0
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] Encoding Range: [0x00000ff800000000 - 0x00000ff900000000), (4294967296 bytes)
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] Klass Range:    [0x00000ff800004000 - 0x00000ff841000000), (1090502656 bytes)
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] Klass ID Range:  [16384 - 1090519033) (1090502649)
+[2025-12-16T20:44:38.381+0800][0.019s][info][gc,metaspace] Protection zone: [0x00000ff800000000 - 0x00000ff800004000), (16384 bytes)
+[2025-12-16T20:44:38.849+0800][0.488s][info][gc          ] Trigger (Young): Learning 1 of 5. Free (2866M) is below initial threshold (2867M)
+[2025-12-16T20:44:38.849+0800][0.488s][info][gc,free     ] Free: 2866M, Max: 2048K regular, 2866M humongous, Frag: 0% external, 0% internal; Used: 0B, Mutator Free: 1433 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:38.849+0800][0.488s][info][gc,ergo     ] GC(0) Start GC cycle (Young)
+[2025-12-16T20:44:38.849+0800][0.488s][info][gc,start    ] GC(0) Concurrent reset (Young)
+[2025-12-16T20:44:38.849+0800][0.488s][info][gc,task     ] GC(0) Using 2 of 5 workers for Concurrent reset (Young)
+[2025-12-16T20:44:38.849+0800][0.488s][info][gc,ergo     ] GC(0) Pacer for Reset. Non-Taxable: 4096M
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc          ] GC(0) Concurrent reset (Young) 0.480ms
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,start    ] GC(0) Pause Init Mark (Young)
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,task     ] GC(0) Using 5 of 5 workers for init marking
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,ergo     ] GC(0) Pacer for Mark. Expected Live: 409M, Free: 2866M, Non-Taxable: 286M, Alloc Tax Rate: 0.2x
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc          ] GC(0) Pause Init Mark (Young) 0.020ms
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,start    ] GC(0) Concurrent remembered set scanning
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,task     ] GC(0) Using 2 of 5 workers for Concurrent remembered set scanning
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc          ] GC(0) Concurrent remembered set scanning 0.061ms
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,start    ] GC(0) Concurrent marking roots
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,task     ] GC(0) Using 2 of 5 workers for concurrent marking roots
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc          ] GC(0) Concurrent marking roots 0.076ms
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,start    ] GC(0) Concurrent marking (Young)
+[2025-12-16T20:44:38.850+0800][0.488s][info][gc,task     ] GC(0) Using 2 of 5 workers for concurrent marking
+[2025-12-16T20:44:38.851+0800][0.489s][info][gc          ] GC(0) Concurrent marking (Young) 1.019ms
+[2025-12-16T20:44:38.851+0800][0.489s][info][gc,start    ] GC(0) Pause Final Mark (Young)
+[2025-12-16T20:44:38.851+0800][0.489s][info][gc,task     ] GC(0) Using 5 of 5 workers for final marking
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,age      ] GC(0) ----------------------------------------------------------------------------
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,ergo     ] GC(0) Planning to promote in place 0 humongous regions and 0 regular regions, spanning a total of 0 used bytes
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,ergo     ] GC(0) Collectable Garbage: 1014M (99%), Immediate: 1014M (99%), 507 regions, CSet: 0B (0%), 0 regions
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,free     ] Free: 3876M, Max: 2048K regular, 2862M humongous, Frag: 0% external, 26% internal; Used: 1014M, Mutator Free: 1938 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc          ] GC(0) Pause Final Mark (Young) 0.214ms
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,start    ] GC(0) Concurrent weak references (Young)
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,task     ] GC(0) Using 2 of 5 workers for concurrent weak references
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,ref      ] GC(0) Encountered references: Soft: 1, Weak: 6, Final: 0, Phantom: 1
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,ref      ] GC(0) Discovered  references: Soft: 0, Weak: 0, Final: 0, Phantom: 1
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,ref      ] GC(0) Enqueued    references: Soft: 0, Weak: 0, Final: 0, Phantom: 0
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc          ] GC(0) Concurrent weak references (Young) 0.042ms
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,start    ] GC(0) Concurrent weak roots (Young)
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,task     ] GC(0) Using 2 of 5 workers for concurrent weak root
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc          ] GC(0) Concurrent weak roots (Young) 0.044ms
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,start    ] GC(0) Concurrent cleanup (Young)
+[2025-12-16T20:44:38.851+0800][0.490s][info][gc,task     ] GC(0) Using 2 of 5 workers for cleanup early.
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc          ] GC(0) Concurrent cleanup (Young) 1028M->14M(1284M) 0.028ms
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,free     ] Free: 3876M, Max: 2048K regular, 2862M humongous, Frag: 27% external, 0% internal; Used: 0B, Mutator Free: 1938 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,start    ] GC(0) Concurrent Final Roots (Young)
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,task     ] GC(0) Using 2 of 5 workers for Concurrent Final Roots (Young)
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc          ] GC(0) Concurrent Final Roots (Young) 0.018ms
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,ergo     ] GC(0) After Concurrent GC, successfully transferred 0 regions to none to prepare for next gc, old available: 0B, young_available: 3876M
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,start    ] GC(0) Concurrent reset after collect (Young)
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,task     ] GC(0) Using 2 of 5 workers for reset after collection.
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc          ] GC(0) Concurrent reset after collect (Young) 0.030ms
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,ergo     ] GC(0) At end of Concurrent Young GC: GCU: 0.1%, MU: 10.3% during period of 0.490s
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,ergo     ] GC(0) At end of Concurrent Young GC: Young generation used: 14336K, used regions: 14336K, humongous waste: 0B, soft capacity: 4096M, max capacity: 4096M, available: 3876M
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,ergo     ] GC(0) At end of Concurrent Young GC: Old generation used: 0B, used regions: 0B, humongous waste: 0B, soft capacity: 0B, max capacity: 0B, available: 0B
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,free     ] Free: 3876M, Max: 2048K regular, 2862M humongous, Frag: 27% external, 0% internal; Used: 0B, Mutator Free: 1938 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] All times are wall-clock times, except per-root-class counters, that are sum over
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] all workers. Dividing the <total> over the root stage time estimates parallelism.
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Reset                    484 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Reset After Collect       34 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Pause Init Mark (G)                  61 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Pause Init Mark (N)                  23 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Swap Remembered Set                 2 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Update Region States                4 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Scan Remembered Set       70 us, parallelism: 1.00x
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   RS: <total>                        71 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   RS: Scan Clusters                  71 us, workers (us):  37,  34, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Mark Roots                82 us, parallelism: 1.11x
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CMR: <total>                       91 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CMR: Thread Roots                  67 us, workers (us):  47,  20, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CMR: Code Cache Roots               9 us, workers (us):   0,   9, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CMR: VM Strong Roots                7 us, workers (us):   4,   3, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CMR: CLDG Roots                     9 us, workers (us):   9, ---, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Marking                 1027 us, parallelism: 1.89x
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CM: <total>                      1944 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CM: Parallel Mark                1944 us, workers (us): 974, 970, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Flush SATB                         24 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Pause Final Mark (G)                243 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Pause Final Mark (N)                217 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Finish Mark                       152 us, parallelism: 0.00x
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Update Region States                7 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Choose Collection Set              17 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Rebuild Free Set                   16 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Weak References           46 us, parallelism: 0.01x
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CWRF: <total>                       0 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   CWRF: Weak References               0 us, workers (us):   0,   0, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Weak Roots                49 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Roots                              20 us, parallelism: 1.03x
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]     CWR: <total>                     21 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]     CWR: VM Weak Roots               21 us, workers (us):  12,   8, ---, ---, ---, 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]   Rendezvous                          9 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Cleanup                   30 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Concurrent Final Roots               22 us
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Workers: 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Mutators: 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Young regions: Age table:
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] - age   1:     480528 bytes,     480528 total
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] Allocation pacing accrued:
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]       0 of   472 ms (  0.0%): <total>
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ]       0 of   472 ms (  0.0%): <average total>
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,stats    ] 
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,metaspace] GC(0) Metaspace: 154K(384K)->154K(384K) NonClass: 145K(256K)->145K(256K) Class: 8K(128K)->8K(128K)
+[2025-12-16T20:44:38.852+0800][0.490s][info][gc,ergo     ] GC(0) Pacer for Idle. Initial: 83886K, Alloc Tax Rate: 1.0x
+[2025-12-16T20:44:39.269+0800][0.908s][info][gc          ] Trigger (Young): Learning 2 of 5. Free (2866M) is below initial threshold (2867M)
+[2025-12-16T20:44:39.269+0800][0.908s][info][gc,free     ] Free: 2866M, Max: 2048K regular, 2862M humongous, Frag: 1% external, 0% internal; Used: 0B, Mutator Free: 1433 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.269+0800][0.908s][info][gc,ergo     ] GC(1) Start GC cycle (Young)
+[2025-12-16T20:44:39.269+0800][0.908s][info][gc,start    ] GC(1) Concurrent reset (Young)
+[2025-12-16T20:44:39.269+0800][0.908s][info][gc,task     ] GC(1) Using 2 of 5 workers for Concurrent reset (Young)
+[2025-12-16T20:44:39.269+0800][0.908s][info][gc,ergo     ] GC(1) Pacer for Reset. Non-Taxable: 4096M
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc          ] GC(1) Concurrent reset (Young) 0.443ms
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,start    ] GC(1) Pause Init Mark (Young)
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,task     ] GC(1) Using 5 of 5 workers for init marking
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,ergo     ] GC(1) Pacer for Mark. Expected Live: 469K, Free: 2864M, Non-Taxable: 286M, Alloc Tax Rate: 0.0x
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc          ] GC(1) Pause Init Mark (Young) 0.021ms
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,start    ] GC(1) Concurrent remembered set scanning
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,task     ] GC(1) Using 2 of 5 workers for Concurrent remembered set scanning
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc          ] GC(1) Concurrent remembered set scanning 0.067ms
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,start    ] GC(1) Concurrent marking roots
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,task     ] GC(1) Using 2 of 5 workers for concurrent marking roots
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc          ] GC(1) Concurrent marking roots 0.043ms
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,start    ] GC(1) Concurrent marking (Young)
+[2025-12-16T20:44:39.270+0800][0.908s][info][gc,task     ] GC(1) Using 2 of 5 workers for concurrent marking
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc          ] GC(1) Concurrent marking (Young) 0.246ms
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,start    ] GC(1) Pause Final Mark (Young)
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,task     ] GC(1) Using 5 of 5 workers for final marking
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,age      ] GC(1)  - age   1: prev    4674832 bytes, curr     477168 bytes, mortality 0.90 
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,age      ] GC(1) ----------------------------------------------------------------------------
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,ergo     ] GC(1) Planning to promote in place 0 humongous regions and 0 regular regions, spanning a total of 0 used bytes
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,ergo     ] GC(1) Collectable Garbage: 1016M (99%), Immediate: 1016M (99%), 508 regions, CSet: 0B (0%), 0 regions
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2862M humongous, Frag: 0% external, 26% internal; Used: 1017M, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc          ] GC(1) Pause Final Mark (Young) 0.086ms
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,start    ] GC(1) Concurrent weak references (Young)
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,task     ] GC(1) Using 2 of 5 workers for concurrent weak references
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,ref      ] GC(1) Encountered references: Soft: 1, Weak: 6, Final: 0, Phantom: 1
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,ref      ] GC(1) Discovered  references: Soft: 0, Weak: 1, Final: 0, Phantom: 1
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,ref      ] GC(1) Enqueued    references: Soft: 0, Weak: 0, Final: 0, Phantom: 0
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc          ] GC(1) Concurrent weak references (Young) 0.025ms
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,start    ] GC(1) Concurrent weak roots (Young)
+[2025-12-16T20:44:39.270+0800][0.909s][info][gc,task     ] GC(1) Using 2 of 5 workers for concurrent weak root
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc          ] GC(1) Concurrent weak roots (Young) 0.030ms
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,start    ] GC(1) Concurrent cleanup (Young)
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,task     ] GC(1) Using 2 of 5 workers for cleanup early.
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc          ] GC(1) Concurrent cleanup (Young) 1027M->11M(1284M) 0.021ms
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2868M humongous, Frag: 27% external, 0% internal; Used: 2040K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,start    ] GC(1) Concurrent Final Roots (Young)
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,task     ] GC(1) Using 2 of 5 workers for Concurrent Final Roots (Young)
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc          ] GC(1) Concurrent Final Roots (Young) 0.015ms
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,ergo     ] GC(1) After Concurrent GC, successfully transferred 0 regions to none to prepare for next gc, old available: 0B, young_available: 3878M
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,start    ] GC(1) Concurrent reset after collect (Young)
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,task     ] GC(1) Using 2 of 5 workers for reset after collection.
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc          ] GC(1) Concurrent reset after collect (Young) 0.021ms
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,ergo     ] GC(1) At end of Concurrent Young GC: GCU: 0.1%, MU: 9.9% during period of 0.419s
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,ergo     ] GC(1) At end of Concurrent Young GC: Young generation used: 12280K, used regions: 12288K, humongous waste: 0B, soft capacity: 4096M, max capacity: 4096M, available: 3878M
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,ergo     ] GC(1) At end of Concurrent Young GC: Old generation used: 0B, used regions: 0B, humongous waste: 0B, soft capacity: 0B, max capacity: 0B, available: 0B
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2868M humongous, Frag: 27% external, 0% internal; Used: 2040K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] All times are wall-clock times, except per-root-class counters, that are sum over
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] all workers. Dividing the <total> over the root stage time estimates parallelism.
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Reset                    447 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Reset After Collect       24 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Pause Init Mark (G)                  65 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Pause Init Mark (N)                  23 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Swap Remembered Set                 2 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Update Region States                3 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Scan Remembered Set       77 us, parallelism: 1.22x
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   RS: <total>                        94 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   RS: Scan Clusters                  94 us, workers (us):  49,  45, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Mark Roots                48 us, parallelism: 0.85x
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CMR: <total>                       41 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CMR: Thread Roots                  22 us, workers (us):   6,  16, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CMR: Code Cache Roots               6 us, workers (us):   0,   6, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CMR: VM Strong Roots                3 us, workers (us):   3,   0, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CMR: CLDG Roots                     9 us, workers (us):   9, ---, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Marking                  252 us, parallelism: 1.63x
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CM: <total>                       413 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CM: Parallel Mark                 413 us, workers (us): 209, 204, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Flush SATB                         21 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Pause Final Mark (G)                116 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Pause Final Mark (N)                 89 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Finish Mark                        27 us, parallelism: 0.01x
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Update Region States                6 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Choose Collection Set              16 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Rebuild Free Set                   15 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Weak References           33 us, parallelism: 0.02x
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CWRF: <total>                       1 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   CWRF: Weak References               1 us, workers (us):   1,   0, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Weak Roots                33 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Roots                              17 us, parallelism: 1.18x
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]     CWR: <total>                     20 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]     CWR: VM Weak Roots               20 us, workers (us):  12,   8, ---, ---, ---, 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]   Rendezvous                          7 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Cleanup                   24 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Concurrent Final Roots               18 us
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Workers: 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Mutators: 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Young regions: Age table:
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] - age   1:       3360 bytes,       3360 total
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] - age   2:     477168 bytes,     480528 total
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] Allocation pacing accrued:
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]       0 of   419 ms (  0.0%): <total>
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ]       0 of   419 ms (  0.0%): <average total>
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,stats    ] 
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,metaspace] GC(1) Metaspace: 154K(384K)->154K(384K) NonClass: 145K(256K)->145K(256K) Class: 8K(128K)->8K(128K)
+[2025-12-16T20:44:39.271+0800][0.909s][info][gc,ergo     ] GC(1) Pacer for Idle. Initial: 83886K, Alloc Tax Rate: 1.0x
+[2025-12-16T20:44:39.690+0800][1.328s][info][gc          ] Trigger (Young): Learning 3 of 5. Free (2864M) is below initial threshold (2867M)
+[2025-12-16T20:44:39.690+0800][1.328s][info][gc,free     ] Free: 2864M, Max: 2048K regular, 2864M humongous, Frag: 0% external, 0% internal; Used: 2040K, Mutator Free: 1433 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.690+0800][1.328s][info][gc,ergo     ] GC(2) Start GC cycle (Young)
+[2025-12-16T20:44:39.690+0800][1.328s][info][gc,start    ] GC(2) Concurrent reset (Young)
+[2025-12-16T20:44:39.690+0800][1.328s][info][gc,task     ] GC(2) Using 2 of 5 workers for Concurrent reset (Young)
+[2025-12-16T20:44:39.690+0800][1.328s][info][gc,ergo     ] GC(2) Pacer for Reset. Non-Taxable: 4096M
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc          ] GC(2) Concurrent reset (Young) 0.385ms
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,start    ] GC(2) Pause Init Mark (Young)
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,task     ] GC(2) Using 5 of 5 workers for init marking
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,ergo     ] GC(2) Pacer for Mark. Expected Live: 469K, Free: 2864M, Non-Taxable: 286M, Alloc Tax Rate: 0.0x
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc          ] GC(2) Pause Init Mark (Young) 0.021ms
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,start    ] GC(2) Concurrent remembered set scanning
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,task     ] GC(2) Using 2 of 5 workers for Concurrent remembered set scanning
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc          ] GC(2) Concurrent remembered set scanning 0.076ms
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,start    ] GC(2) Concurrent marking roots
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,task     ] GC(2) Using 2 of 5 workers for concurrent marking roots
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc          ] GC(2) Concurrent marking roots 0.034ms
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,start    ] GC(2) Concurrent marking (Young)
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,task     ] GC(2) Using 2 of 5 workers for concurrent marking
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc          ] GC(2) Concurrent marking (Young) 0.234ms
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,start    ] GC(2) Pause Final Mark (Young)
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,task     ] GC(2) Using 5 of 5 workers for final marking
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,age      ] GC(2)  - age   1: prev    2093104 bytes, curr          0 bytes, mortality 1.00 
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,age      ] GC(2)  - age   2: prev     477168 bytes, curr     477168 bytes, mortality 0.00 
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,age      ] GC(2) ----------------------------------------------------------------------------
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,ergo     ] GC(2) Planning to promote in place 0 humongous regions and 0 regular regions, spanning a total of 0 used bytes
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,ergo     ] GC(2) Collectable Garbage: 1016M (99%), Immediate: 1016M (99%), 508 regions, CSet: 0B (0%), 0 regions
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2862M humongous, Frag: 0% external, 26% internal; Used: 1017M, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc          ] GC(2) Pause Final Mark (Young) 0.098ms
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,start    ] GC(2) Concurrent weak references (Young)
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,task     ] GC(2) Using 2 of 5 workers for concurrent weak references
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,ref      ] GC(2) Encountered references: Soft: 1, Weak: 6, Final: 0, Phantom: 1
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,ref      ] GC(2) Discovered  references: Soft: 0, Weak: 0, Final: 0, Phantom: 1
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,ref      ] GC(2) Enqueued    references: Soft: 0, Weak: 0, Final: 0, Phantom: 0
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc          ] GC(2) Concurrent weak references (Young) 0.038ms
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,start    ] GC(2) Concurrent weak roots (Young)
+[2025-12-16T20:44:39.691+0800][1.329s][info][gc,task     ] GC(2) Using 2 of 5 workers for concurrent weak root
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc          ] GC(2) Concurrent weak roots (Young) 0.035ms
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,start    ] GC(2) Concurrent cleanup (Young)
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,task     ] GC(2) Using 2 of 5 workers for cleanup early.
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc          ] GC(2) Concurrent cleanup (Young) 1027M->11M(1284M) 0.026ms
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2862M humongous, Frag: 27% external, 0% internal; Used: 2042K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,start    ] GC(2) Concurrent Final Roots (Young)
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,task     ] GC(2) Using 2 of 5 workers for Concurrent Final Roots (Young)
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc          ] GC(2) Concurrent Final Roots (Young) 0.034ms
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,ergo     ] GC(2) After Concurrent GC, successfully transferred 0 regions to none to prepare for next gc, old available: 0B, young_available: 3878M
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,start    ] GC(2) Concurrent reset after collect (Young)
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,task     ] GC(2) Using 2 of 5 workers for reset after collection.
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc          ] GC(2) Concurrent reset after collect (Young) 0.021ms
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,ergo     ] GC(2) At end of Concurrent Young GC: GCU: 0.1%, MU: 9.9% during period of 0.421s
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,ergo     ] GC(2) At end of Concurrent Young GC: Young generation used: 12282K, used regions: 12288K, humongous waste: 0B, soft capacity: 4096M, max capacity: 4096M, available: 3878M
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,ergo     ] GC(2) At end of Concurrent Young GC: Old generation used: 0B, used regions: 0B, humongous waste: 0B, soft capacity: 0B, max capacity: 0B, available: 0B
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2862M humongous, Frag: 27% external, 0% internal; Used: 2042K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] All times are wall-clock times, except per-root-class counters, that are sum over
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] all workers. Dividing the <total> over the root stage time estimates parallelism.
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Concurrent Reset                    389 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Concurrent Reset After Collect       24 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Pause Init Mark (G)                  64 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Pause Init Mark (N)                  23 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Swap Remembered Set                 2 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Update Region States                3 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Concurrent Scan Remembered Set       83 us, parallelism: 1.19x
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   RS: <total>                        99 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   RS: Scan Clusters                  99 us, workers (us):  51,  48, ---, ---, ---, 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Concurrent Mark Roots                42 us, parallelism: 0.68x
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CMR: <total>                       28 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CMR: Thread Roots                  14 us, workers (us):   5,  10, ---, ---, ---, 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CMR: Code Cache Roots               4 us, workers (us):   0,   4, ---, ---, ---, 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CMR: VM Strong Roots                3 us, workers (us):   1,   2, ---, ---, ---, 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CMR: CLDG Roots                     7 us, workers (us):   7, ---, ---, ---, ---, 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Concurrent Marking                  240 us, parallelism: 1.61x
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CM: <total>                       385 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CM: Parallel Mark                 385 us, workers (us): 194, 191, ---, ---, ---, 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Flush SATB                         18 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Pause Final Mark (G)                128 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Pause Final Mark (N)                101 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Finish Mark                        32 us, parallelism: 0.01x
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Update Region States                9 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Choose Collection Set              16 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Rebuild Free Set                   16 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Concurrent Weak References           41 us, parallelism: 0.01x
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CWRF: <total>                       1 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   CWRF: Weak References               1 us, workers (us):   1,   0, ---, ---, ---, 
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ] Concurrent Weak Roots                42 us
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]   Roots                              19 us, parallelism: 1.06x
+[2025-12-16T20:44:39.691+0800][1.330s][info][gc,stats    ]     CWR: <total>                     20 us
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ]     CWR: VM Weak Roots               20 us, workers (us):  12,   8, ---, ---, ---, 
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ]   Rendezvous                         11 us
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] Concurrent Cleanup                   29 us
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] Concurrent Final Roots               38 us
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] Workers: 
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] Mutators: 
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] Young regions: Age table:
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] - age   3:     477168 bytes,     477168 total
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] 
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] 
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] Allocation pacing accrued:
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ]       0 of   421 ms (  0.0%): <total>
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ]       0 of   421 ms (  0.0%): <average total>
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,stats    ] 
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,metaspace] GC(2) Metaspace: 154K(384K)->154K(384K) NonClass: 145K(256K)->145K(256K) Class: 8K(128K)->8K(128K)
+[2025-12-16T20:44:39.692+0800][1.330s][info][gc,ergo     ] GC(2) Pacer for Idle. Initial: 83886K, Alloc Tax Rate: 1.0x
+[2025-12-16T20:44:40.103+0800][1.741s][info][gc          ] Trigger (Young): Learning 4 of 5. Free (2866M) is below initial threshold (2867M)
+[2025-12-16T20:44:40.103+0800][1.741s][info][gc,free     ] Free: 2866M, Max: 2048K regular, 2862M humongous, Frag: 1% external, 0% internal; Used: 4085K, Mutator Free: 1435 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.103+0800][1.741s][info][gc,ergo     ] GC(3) Start GC cycle (Young)
+[2025-12-16T20:44:40.103+0800][1.741s][info][gc,start    ] GC(3) Concurrent reset (Young)
+[2025-12-16T20:44:40.103+0800][1.741s][info][gc,task     ] GC(3) Using 2 of 5 workers for Concurrent reset (Young)
+[2025-12-16T20:44:40.103+0800][1.741s][info][gc,ergo     ] GC(3) Pacer for Reset. Non-Taxable: 4096M
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc          ] GC(3) Concurrent reset (Young) 0.601ms
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,start    ] GC(3) Pause Init Mark (Young)
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,task     ] GC(3) Using 5 of 5 workers for init marking
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,ergo     ] GC(3) Pacer for Mark. Expected Live: 469K, Free: 2866M, Non-Taxable: 286M, Alloc Tax Rate: 0.0x
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc          ] GC(3) Pause Init Mark (Young) 0.016ms
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,start    ] GC(3) Concurrent remembered set scanning
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,task     ] GC(3) Using 2 of 5 workers for Concurrent remembered set scanning
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc          ] GC(3) Concurrent remembered set scanning 0.053ms
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,start    ] GC(3) Concurrent marking roots
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,task     ] GC(3) Using 2 of 5 workers for concurrent marking roots
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc          ] GC(3) Concurrent marking roots 0.033ms
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,start    ] GC(3) Concurrent marking (Young)
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,task     ] GC(3) Using 2 of 5 workers for concurrent marking
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc          ] GC(3) Concurrent marking (Young) 0.230ms
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,start    ] GC(3) Pause Final Mark (Young)
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,task     ] GC(3) Using 5 of 5 workers for final marking
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,age      ] GC(3)  - age   1: prev    2102672 bytes, curr          0 bytes, mortality 1.00 
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,age      ] GC(3) ----------------------------------------------------------------------------
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,age      ] GC(3)  - age   3: prev     477168 bytes, curr     477168 bytes, mortality 0.00 
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,ergo     ] GC(3) Planning to promote in place 0 humongous regions and 0 regular regions, spanning a total of 0 used bytes
+[2025-12-16T20:44:40.104+0800][1.742s][info][gc,ergo     ] GC(3) Collectable Garbage: 1013M (99%), Immediate: 1013M (99%), 507 regions, CSet: 0B (0%), 0 regions
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2862M humongous, Frag: 1% external, 26% internal; Used: 1015M, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc          ] GC(3) Pause Final Mark (Young) 0.103ms
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,start    ] GC(3) Concurrent weak references (Young)
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,task     ] GC(3) Using 2 of 5 workers for concurrent weak references
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,ref      ] GC(3) Encountered references: Soft: 1, Weak: 6, Final: 0, Phantom: 1
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,ref      ] GC(3) Discovered  references: Soft: 0, Weak: 1, Final: 0, Phantom: 1
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,ref      ] GC(3) Enqueued    references: Soft: 0, Weak: 0, Final: 0, Phantom: 0
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc          ] GC(3) Concurrent weak references (Young) 0.029ms
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,start    ] GC(3) Concurrent weak roots (Young)
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,task     ] GC(3) Using 2 of 5 workers for concurrent weak root
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc          ] GC(3) Concurrent weak roots (Young) 0.031ms
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,start    ] GC(3) Concurrent cleanup (Young)
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,task     ] GC(3) Using 2 of 5 workers for cleanup early.
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc          ] GC(3) Concurrent cleanup (Young) 1025M->11M(1284M) 0.022ms
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2868M humongous, Frag: 27% external, 0% internal; Used: 2042K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,start    ] GC(3) Concurrent Final Roots (Young)
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,task     ] GC(3) Using 2 of 5 workers for Concurrent Final Roots (Young)
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc          ] GC(3) Concurrent Final Roots (Young) 0.017ms
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,ergo     ] GC(3) After Concurrent GC, successfully transferred 0 regions to none to prepare for next gc, old available: 0B, young_available: 3878M
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,start    ] GC(3) Concurrent reset after collect (Young)
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,task     ] GC(3) Using 2 of 5 workers for reset after collection.
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc          ] GC(3) Concurrent reset after collect (Young) 0.022ms
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,ergo     ] GC(3) At end of Concurrent Young GC: GCU: 0.1%, MU: 10.1% during period of 0.413s
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,ergo     ] GC(3) At end of Concurrent Young GC: Young generation used: 12282K, used regions: 12288K, humongous waste: 0B, soft capacity: 4096M, max capacity: 4096M, available: 3878M
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,ergo     ] GC(3) At end of Concurrent Young GC: Old generation used: 0B, used regions: 0B, humongous waste: 0B, soft capacity: 0B, max capacity: 0B, available: 0B
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2868M humongous, Frag: 27% external, 0% internal; Used: 2042K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,stats    ] 
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,stats    ] All times are wall-clock times, except per-root-class counters, that are sum over
+[2025-12-16T20:44:40.104+0800][1.743s][info][gc,stats    ] all workers. Dividing the <total> over the root stage time estimates parallelism.
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Reset                    605 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Reset After Collect       24 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Pause Init Mark (G)                  52 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Pause Init Mark (N)                  18 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Swap Remembered Set                 1 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Update Region States                3 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Scan Remembered Set       61 us, parallelism: 1.11x
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   RS: <total>                        68 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   RS: Scan Clusters                  68 us, workers (us):  35,  33, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Mark Roots                39 us, parallelism: 0.77x
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CMR: <total>                       30 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CMR: Thread Roots                  15 us, workers (us):   6,  10, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CMR: Code Cache Roots               5 us, workers (us):   0,   5, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CMR: VM Strong Roots                2 us, workers (us):   2,   0, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CMR: CLDG Roots                     7 us, workers (us):   7, ---, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Marking                  235 us, parallelism: 1.63x
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CM: <total>                       383 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CM: Parallel Mark                 383 us, workers (us): 194, 190, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Flush SATB                         20 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Pause Final Mark (G)                140 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Pause Final Mark (N)                113 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Finish Mark                        42 us, parallelism: 0.01x
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Update Region States                7 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Choose Collection Set              16 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Rebuild Free Set                   17 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Weak References           33 us, parallelism: 0.01x
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CWRF: <total>                       0 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   CWRF: Weak References               0 us, workers (us):   0,   0, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Weak Roots                35 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Roots                              17 us, parallelism: 1.17x
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]     CWR: <total>                     20 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]     CWR: VM Weak Roots               20 us, workers (us):  12,   8, ---, ---, ---, 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]   Rendezvous                          8 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Cleanup                   25 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Concurrent Final Roots               21 us
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Workers: 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Mutators: 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Young regions: Age table:
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] - age   4:     477168 bytes,     477168 total
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] Allocation pacing accrued:
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]       0 of   413 ms (  0.0%): <total>
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ]       0 of   413 ms (  0.0%): <average total>
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,stats    ] 
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,metaspace] GC(3) Metaspace: 154K(384K)->154K(384K) NonClass: 145K(256K)->145K(256K) Class: 8K(128K)->8K(128K)
+[2025-12-16T20:44:40.105+0800][1.743s][info][gc,ergo     ] GC(3) Pacer for Idle. Initial: 83886K, Alloc Tax Rate: 1.0x
+[2025-12-16T20:44:40.512+0800][2.151s][info][gc          ] Trigger (Young): Learning 5 of 5. Free (2866M) is below initial threshold (2867M)
+[2025-12-16T20:44:40.512+0800][2.151s][info][gc,free     ] Free: 2866M, Max: 2048K regular, 2866M humongous, Frag: 0% external, 0% internal; Used: 2042K, Mutator Free: 1434 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.512+0800][2.151s][info][gc,ergo     ] GC(4) Start GC cycle (Young)
+[2025-12-16T20:44:40.512+0800][2.151s][info][gc,start    ] GC(4) Concurrent reset (Young)
+[2025-12-16T20:44:40.512+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for Concurrent reset (Young)
+[2025-12-16T20:44:40.512+0800][2.151s][info][gc,ergo     ] GC(4) Pacer for Reset. Non-Taxable: 4096M
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent reset (Young) 0.148ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Pause Init Mark (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 5 of 5 workers for init marking
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ergo     ] GC(4) Pacer for Mark. Expected Live: 469K, Free: 2866M, Non-Taxable: 286M, Alloc Tax Rate: 0.0x
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Pause Init Mark (Young) 0.019ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent remembered set scanning
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for Concurrent remembered set scanning
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent remembered set scanning 0.060ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent marking roots
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for concurrent marking roots
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent marking roots 0.032ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent marking (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for concurrent marking
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent marking (Young) 0.227ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Pause Final Mark (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 5 of 5 workers for final marking
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,age      ] GC(4)  - age   1: prev    2100416 bytes, curr          0 bytes, mortality 1.00 
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,age      ] GC(4) ----------------------------------------------------------------------------
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,age      ] GC(4)  - age   4: prev     477168 bytes, curr     477168 bytes, mortality 0.00 
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ergo     ] GC(4) Planning to promote in place 0 humongous regions and 0 regular regions, spanning a total of 0 used bytes
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ergo     ] GC(4) Collectable Garbage: 1014M (99%), Immediate: 1014M (99%), 507 regions, CSet: 0B (0%), 0 regions
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2864M humongous, Frag: 0% external, 26% internal; Used: 1015M, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Pause Final Mark (Young) 0.114ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent weak references (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for concurrent weak references
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ref      ] GC(4) Encountered references: Soft: 1, Weak: 6, Final: 0, Phantom: 1
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ref      ] GC(4) Discovered  references: Soft: 0, Weak: 1, Final: 0, Phantom: 1
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ref      ] GC(4) Enqueued    references: Soft: 0, Weak: 0, Final: 0, Phantom: 0
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent weak references (Young) 0.025ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent weak roots (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for concurrent weak root
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent weak roots (Young) 0.032ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent cleanup (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for cleanup early.
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent cleanup (Young) 1025M->11M(1284M) 0.022ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2864M humongous, Frag: 27% external, 0% internal; Used: 2042K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent Final Roots (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for Concurrent Final Roots (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent Final Roots (Young) 0.017ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ergo     ] GC(4) After Concurrent GC, successfully transferred 0 regions to none to prepare for next gc, old available: 0B, young_available: 3878M
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,start    ] GC(4) Concurrent reset after collect (Young)
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,task     ] GC(4) Using 2 of 5 workers for reset after collection.
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc          ] GC(4) Concurrent reset after collect (Young) 0.019ms
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ergo     ] GC(4) At end of Concurrent Young GC: GCU: 0.1%, MU: 10.0% during period of 0.409s
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ergo     ] GC(4) At end of Concurrent Young GC: Young generation used: 12282K, used regions: 12288K, humongous waste: 0B, soft capacity: 4096M, max capacity: 4096M, available: 3878M
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,ergo     ] GC(4) At end of Concurrent Young GC: Old generation used: 0B, used regions: 0B, humongous waste: 0B, soft capacity: 0B, max capacity: 0B, available: 0B
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,free     ] Free: 3878M, Max: 2048K regular, 2864M humongous, Frag: 27% external, 0% internal; Used: 2042K, Mutator Free: 1940 Collector Reserve: 206M, Max: 2048K; Used: 0B Old Collector Reserve: 0B, Max: 0B; Used: 0B
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] 
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] All times are wall-clock times, except per-root-class counters, that are sum over
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] all workers. Dividing the <total> over the root stage time estimates parallelism.
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] 
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] Concurrent Reset                    151 us
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] Concurrent Reset After Collect       21 us
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] Pause Init Mark (G)                  58 us
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ] Pause Init Mark (N)                  22 us
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ]   Swap Remembered Set                 2 us
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ]   Update Region States                3 us
+[2025-12-16T20:44:40.513+0800][2.151s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Concurrent Scan Remembered Set       69 us, parallelism: 1.12x
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   RS: <total>                        77 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   RS: Scan Clusters                  77 us, workers (us):  40,  37, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Concurrent Mark Roots                38 us, parallelism: 0.72x
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CMR: <total>                       27 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CMR: Thread Roots                  14 us, workers (us):   5,   9, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CMR: Code Cache Roots               4 us, workers (us):   0,   4, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CMR: VM Strong Roots                2 us, workers (us):   1,   0, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CMR: CLDG Roots                     8 us, workers (us):   8, ---, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Concurrent Marking                  231 us, parallelism: 1.66x
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CM: <total>                       383 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CM: Parallel Mark                 383 us, workers (us): 194, 189, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Flush SATB                         17 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Pause Final Mark (G)                145 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Pause Final Mark (N)                117 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Finish Mark                        40 us, parallelism: 0.01x
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Propagate GC State                  0 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Update Region States                7 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Choose Collection Set              17 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Rebuild Free Set                   25 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Concurrent Weak References           28 us, parallelism: 0.03x
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CWRF: <total>                       1 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   CWRF: Weak References               1 us, workers (us):   1,   0, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Concurrent Weak Roots                36 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Roots                              17 us, parallelism: 1.14x
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]     CWR: <total>                     20 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]     CWR: VM Weak Roots               20 us, workers (us):  12,   8, ---, ---, ---, 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]   Rendezvous                          9 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Concurrent Cleanup                   25 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Concurrent Final Roots               21 us
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Workers: 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Mutators: 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Young regions: Age table:
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] - age   5:     477168 bytes,     477168 total
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] Allocation pacing accrued:
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]       0 of   409 ms (  0.0%): <total>
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ]       0 of   409 ms (  0.0%): <average total>
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,stats    ] 
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,metaspace] GC(4) Metaspace: 154K(384K)->154K(384K) NonClass: 145K(256K)->145K(256K) Class: 8K(128K)->8K(128K)
+[2025-12-16T20:44:40.513+0800][2.152s][info][gc,ergo     ] GC(4) Pacer for Idle. Initial: 83886K, Alloc Tax Rate: 1.0x
+[2025-12-16T20:44:41.238+0800][2.876s][info][gc,thread   ] Cancelling GC: Stopping VM
+[2025-12-16T20:44:41.238+0800][2.877s][info][gc,exit     ] Heap
+[2025-12-16T20:44:41.238+0800][2.877s][info][gc,exit     ]  Shenandoah Heap
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]   4096M max, 4096M soft max, 1996M committed, 1740M used
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]   2048 x 2048 K regions
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]  Status: cancelled
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]  Reserved region:
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]   - [0x00000003c0000000, 0x00000004c0000000) 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]  Collection set:
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]   - map (vanilla): 0x00000001025e9e00
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]   - map (biased):  0x00000001025e8000
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]  Metaspace       used 155K, committed 384K, reserved 1114112K
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,exit     ]   class space    used 9K, committed 128K, reserved 1048576K
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] GC STATISTICS:
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   "(G)" (gross) pauses include VM time: time to notify and block threads, do the pre-
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]         and post-safepoint housekeeping. Use -Xlog:safepoint+stats to dissect.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   "(N)" (net) pauses are the times spent in the actual GC code.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   "a" is average time for each phase, look at levels to see if average makes sense.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   "lvls" are quantiles: 0% (minimum), 25%, 50% (median), 75%, 100% (maximum).
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   All times are wall-clock times, except per-root-class counters, that are sum over
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   all workers. Dividing the <total> over the root stage time estimates parallelism.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Pacing delays are measured from entering the pacing code till exiting it. Therefore,
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   observed pacing delays may be higher than the threshold when paced thread spent more
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   time in the pacing code. It usually happens when thread is de-scheduled while paced,
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   OS takes longer to unblock the thread, or JVM experiences an STW pause.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Higher delay would prevent application outpacing the GC, but it will hide the GC latencies
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   from the STW pause times. Pacing affects the individual threads, and so it would also be
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   invisible to the usual profiling tools, but would add up to end-to-end application latency.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Raise max pacing delay with care.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Reset               =    0.002 s (a =      415 us) (n =     5) (lvls, us =      150,      150,      389,      445,      605)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Reset After Collect =    0.000 s (a =       25 us) (n =     5) (lvls, us =       21,       21,       23,       24,       34)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Pause Init Mark (G)            =    0.000 s (a =       60 us) (n =     5) (lvls, us =       52,       52,       58,       61,       65)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Pause Init Mark (N)            =    0.000 s (a =       22 us) (n =     5) (lvls, us =       18,       18,       21,       23,       23)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Swap Remembered Set          =    0.000 s (a =        2 us) (n =     5) (lvls, us =        1,        1,        2,        2,        2)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Update Region States         =    0.000 s (a =        3 us) (n =     5) (lvls, us =        3,        3,        3,        3,        4)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Propagate GC State           =    0.000 s (a =        0 us) (n =     5) (lvls, us =        0,        0,        0,        0,        0)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Scan Remembered Set =    0.000 s (a =       72 us) (n =     5) (lvls, us =       61,       61,       69,       70,       83)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   RS: <total>                  =    0.000 s (a =       82 us) (n =     5) (lvls, us =       68,       68,       70,       77,       99)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   RS: Scan Clusters            =    0.000 s (a =       82 us) (n =     5) (lvls, us =       68,       68,       70,       77,       99)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Mark Roots          =    0.000 s (a =       50 us) (n =     5) (lvls, us =       38,       38,       38,       41,       82)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CMR: <total>                 =    0.000 s (a =       44 us) (n =     5) (lvls, us =       27,       27,       28,       30,       91)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CMR: Thread Roots            =    0.000 s (a =       27 us) (n =     5) (lvls, us =       14,       14,       14,       15,       67)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CMR: Code Cache Roots        =    0.000 s (a =        6 us) (n =     5) (lvls, us =        4,        4,        4,        5,        9)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CMR: VM Strong Roots         =    0.000 s (a =        3 us) (n =     5) (lvls, us =        2,        2,        2,        3,        7)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CMR: CLDG Roots              =    0.000 s (a =        8 us) (n =     5) (lvls, us =        7,        7,        7,        8,        9)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Marking             =    0.002 s (a =      397 us) (n =     5) (lvls, us =      230,      230,      234,      238,     1027)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CM: <total>                  =    0.004 s (a =      702 us) (n =     5) (lvls, us =      383,      383,      383,      385,     1944)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CM: Parallel Mark            =    0.004 s (a =      702 us) (n =     5) (lvls, us =      383,      383,      383,      385,     1944)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Flush SATB                   =    0.000 s (a =       20 us) (n =     5) (lvls, us =       16,       16,       18,       20,       24)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Pause Final Mark (G)           =    0.001 s (a =      154 us) (n =     5) (lvls, us =      115,      115,      127,      139,      243)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Pause Final Mark (N)           =    0.001 s (a =      128 us) (n =     5) (lvls, us =       88,       88,      100,      111,      217)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Finish Mark                  =    0.000 s (a =       58 us) (n =     5) (lvls, us =       27,       27,       32,       39,      152)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Propagate GC State           =    0.000 s (a =        0 us) (n =     5) (lvls, us =        0,        0,        0,        0,        0)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Update Region States         =    0.000 s (a =        7 us) (n =     5) (lvls, us =        6,        6,        6,        7,        9)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Choose Collection Set        =    0.000 s (a =       16 us) (n =     5) (lvls, us =       16,       16,       16,       16,       17)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Rebuild Free Set             =    0.000 s (a =       18 us) (n =     5) (lvls, us =       15,       15,       16,       16,       25)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Weak References     =    0.000 s (a =       36 us) (n =     5) (lvls, us =       28,       28,       32,       33,       46)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CWRF: <total>                =    0.000 s (a =        1 us) (n =     5) (lvls, us =        0,        0,        0,        1,        1)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   CWRF: Weak References        =    0.000 s (a =        1 us) (n =     5) (lvls, us =        0,        0,        0,        1,        1)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Weak Roots          =    0.000 s (a =       39 us) (n =     5) (lvls, us =       33,       33,       35,       36,       49)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Roots                        =    0.000 s (a =       18 us) (n =     5) (lvls, us =       17,       17,       17,       17,       20)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]     CWR: <total>               =    0.000 s (a =       20 us) (n =     5) (lvls, us =       20,       20,       20,       20,       21)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]     CWR: VM Weak Roots         =    0.000 s (a =       20 us) (n =     5) (lvls, us =       20,       20,       20,       20,       21)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]   Rendezvous                   =    0.000 s (a =        9 us) (n =     5) (lvls, us =        7,        7,        8,        9,       11)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Cleanup             =    0.000 s (a =       27 us) (n =     5) (lvls, us =       24,       24,       24,       25,       30)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Concurrent Final Roots         =    0.000 s (a =       24 us) (n =     5) (lvls, us =       18,       18,       21,       21,       38)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Under allocation pressure, concurrent cycles may cancel, and either continue cycle
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] under stop-the-world pause or result in stop-the-world Full GC. Increase heap size,
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] tune GC heuristics, set more aggressive pacing delay, or lower allocation rate
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] to avoid Degenerated and Full GC cycles. Abbreviated cycles are those which found
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] enough regions with no live objects to skip evacuation.
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]     5 Completed GCs
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       5 caused by Concurrent GC (100.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]     5 Successful Concurrent GCs (100.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 invoked explicitly (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 invoked implicitly (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       5 abbreviated (100.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]     0 Completed Old GCs (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 mixed
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 interruptions
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]     0 Degenerated GCs (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 upgraded to Full GC (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 caused by allocation failure (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 abbreviated (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]     0 Full GCs (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 caused by allocation failure (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ]       0 upgraded from Degenerated GC (0.00%)
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Workers: 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Mutators: 
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] Young regions: Age table:
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] - age   5:     477168 bytes,     477168 total
+[2025-12-16T20:44:41.239+0800][2.877s][info][gc,stats    ] 

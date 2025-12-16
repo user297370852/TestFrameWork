@@ -7,41 +7,42 @@ import re
 import os
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+try:
+    from GCLogParser import (
+        BaseGCParser,
+        SerialGCParser,
+        ParallelGCParser,
+        G1GCParser,
+        ZGCParser,
+        ShenandoahGCParser,
+        EpsilonGCParser
+    )
+except ImportError:
+    # 如果作为模块导入失败，尝试相对导入
+    from .GCLogParser import (
+        BaseGCParser,
+        SerialGCParser,
+        ParallelGCParser,
+        G1GCParser,
+        ZGCParser,
+        ShenandoahGCParser,
+        EpsilonGCParser
+    )
 
 
 class GCLogAnalyzer:
     def __init__(self):
-        self.gc_patterns = {
-            # G1 GC pattern
-            'g1_pause': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc\s*\] GC\(\d+\) Pause (.+?) (\d+\.\d+)ms'),
-            'g1_heap': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\] GC\(\d+\) (.+?) (\d+)M->(\d+)M\((\d+)M\)'),
-            
-            # Parallel GC pattern
-            'parallel_pause': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc\s*\] (.+GC): (\d+\.\d+)ms'),
-            'parallel_heap': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\] (.+): (\d+)K->(\d+)K\((\d+)K\),'),
-            
-            # Serial GC pattern
-            'serial_pause': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc\s*\] (.+GC): (\d+\.\d+)ms'),
-            'serial_heap': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\] (.+): (\d+)K->(\d+)K\((\d+)K\),'),
-            
-            # ZGC pattern
-            'zgc_pause': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc\s*\] GC\(\d+\) (.+): (\d+\.\d+)ms'),
-            'zgc_heap': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\] GC\(\d+\) (.+): (\d+)M->(\d+)M\((\d+)M\)'),
-            
-            # Shenandoah GC pattern
-            'shenandoah_pause': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc\s*\] Pause (.+?) (\d+\.\d+)ms'),
-            'shenandoah_heap': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\] (.+): (\d+)M->(\d+)M\((\d+)M\)'),
-            
-            # Epsilon GC pattern (should have minimal GC)
-            'epsilon_pause': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc\s*\] (.+GC): (\d+\.\d+)ms'),
-            'epsilon_heap': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\] (.+): (\d+)K->(\d+)K\((\d+)K\),'),
-            
-            # General heap size pattern
-            'heap_size': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\].*?(\d+)M->(\d+)M\((\d+)M\)|'
-                                     r'\[(\d+\.\d+)s\]\[info\s*\]\[gc,\s*heap\s*\].*?(\d+)K->(\d+)K\((\d+)K\)'),
-            
-            # Safepoint pattern (to identify non-GC pauses)
-            'safepoint': re.compile(r'\[(\d+\.\d+)s\]\[info\s*\]\[safepoint\s*\]'),
+        """
+        初始化各种实现好的针对某一GC类型的GC日志的解析器
+        """
+        self.gc_parsers = {
+            'serialgc': SerialGCParser(),
+            'parallelgc': ParallelGCParser(),
+            'paralleloldgc': ParallelGCParser(),  # ParallelOldGC使用ParallelGC的解析器
+            'g1gc': G1GCParser(),
+            'zgc': ZGCParser(),
+            'shenandoahgc': ShenandoahGCParser(),
+            'epsilongc': EpsilonGCParser(),
         }
     
     def parse_gc_log(self, gc_log_file: str) -> Dict[str, any]:
@@ -52,79 +53,57 @@ class GCLogAnalyzer:
             gc_log_file: GC日志文件路径
             
         Returns:
-            Dict: 包含GC分析结果的字典
+            Dict: 包含GC分析结果的字典, 格式如下:
+            {
+                "total_gc_count": int, #总GC次数
+                "gc_stw_time_ms": float, #总GC暂停时长
+                "max_stw_time_ms": float, #最大GC暂停时长
+                "max_heap_mb": int, #最大堆使用大小
+                "gc_type_breakdown": Dict[str, Dict[str, any]] #GC类型细分次数
+            }
         """
-        # TODO: 实现完整的GC日志解析逻辑
-        # 目前返回硬编码的固定值用于验证流程
+        # 检查文件是否存在
+        if not os.path.exists(gc_log_file):
+            raise FileNotFoundError(f"GC日志文件不存在: {gc_log_file}")
         
-        # 基于文件名判断GC类型，返回不同的测试数据
+        # 基于文件名判断GC类型
         gc_log_filename = Path(gc_log_file).name.lower()
         
-        if 'serialgc' in gc_log_filename:
-            return {
-                "total_gc_count": 3,
-                "gc_stw_time_ms": 45.2,
-                "max_heap_mb": 256,
-                "gc_type_breakdown": {
-                    "SerialGC": {"count": 3, "stw_time_ms": 45.2}
+        # 检测GC类型
+        gc_type = None
+        for type_key in self.gc_parsers.keys():
+            if type_key in gc_log_filename:
+                gc_type = type_key
+                break
+        
+        if gc_type is None:
+            raise ValueError(f"无法从文件名 '{gc_log_filename}' 中识别GC类型")
+        
+        # 获取对应的解析器
+        parser = self.gc_parsers[gc_type]
+        
+        # 重置解析器状态
+        parser.reset()
+        
+        # 读取并解析日志文件
+        try:
+            with open(gc_log_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    parser.parse_log_line(line)
+        except Exception as e:
+            raise RuntimeError(f"读取GC日志文件时发生错误: {e}")
+        
+        # 返回解析结果
+        result = parser.get_result()
+        
+        # 确保结果符合预期格式
+        if "gc_type_breakdown" not in result or not result["gc_type_breakdown"]:
+            result["gc_type_breakdown"] = {
+                parser.get_gc_type(): {
+                    "count": result["total_gc_count"],
+                    "stw_time_ms": result["gc_stw_time_ms"]
                 }
             }
-        elif 'parallelgc' in gc_log_filename:
-            return {
-                "total_gc_count": 2,
-                "gc_stw_time_ms": 28.7,
-                "max_heap_mb": 512,
-                "gc_type_breakdown": {
-                    "ParallelGC": {"count": 2, "stw_time_ms": 28.7}
-                }
-            }
-        elif 'g1gc' in gc_log_filename:
-            return {
-                "total_gc_count": 5,
-                "gc_stw_time_ms": 67.8,
-                "max_heap_mb": 1024,
-                "gc_type_breakdown": {
-                    "G1GC": {"count": 5, "stw_time_ms": 67.8}
-                }
-            }
-        elif 'zgc' in gc_log_filename:
-            return {
-                "total_gc_count": 1,
-                "gc_stw_time_ms": 12.3,
-                "max_heap_mb": 2048,
-                "gc_type_breakdown": {
-                    "ZGC": {"count": 1, "stw_time_ms": 12.3}
-                }
-            }
-        elif 'shenandoahgc' in gc_log_filename:
-            return {
-                "total_gc_count": 4,
-                "gc_stw_time_ms": 38.9,
-                "max_heap_mb": 1536,
-                "gc_type_breakdown": {
-                    "ShenandoahGC": {"count": 4, "stw_time_ms": 38.9}
-                }
-            }
-        elif 'epsilongc' in gc_log_filename:
-            return {
-                "total_gc_count": 0,  # Epsilon GC不进行GC
-                "gc_stw_time_ms": 0.0,
-                "max_heap_mb": 128,
-                "gc_type_breakdown": {
-                    "EpsilonGC": {"count": 0, "stw_time_ms": 0.0}
-                }
-            }
-        else:
-            # 默认值
-            return {
-                "total_gc_count": 1,
-                "gc_stw_time_ms": 15.0,
-                "max_heap_mb": 256,
-                "gc_type_breakdown": {
-                    "UnknownGC": {"count": 1, "stw_time_ms": 15.0}
-                }
-            }
+        
+        return result
     
-
-
-

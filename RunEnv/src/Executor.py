@@ -158,7 +158,7 @@ class JDKDifferentialTester:
 
                 # 生成GC日志文件名
                 gc_log_file = None
-                if self.keep_gc_logs and output_dir:
+                if  output_dir:
                     # 根据GC参数生成简短的GC名称
                     gc_name = "UnknownGC"
                     if "-XX:+UseSerialGC" in jvm_params:
@@ -196,7 +196,7 @@ class JDKDifferentialTester:
                         class_file_path,
                         parent_directory,
                         jvm_args=jvm_params,
-                        enable_gc_logging=self.keep_gc_logs,
+                        enable_gc_logging=True,
                         gc_log_file=str(gc_log_file) if gc_log_file else None
                     )
 
@@ -217,6 +217,7 @@ class JDKDifferentialTester:
                             result["gc_analysis"] = {
                                 "total_gc_count": 0,
                                 "gc_stw_time_ms": 0.0,
+                                "max_stw_time_ms": 0.0,
                                 "max_heap_mb": 0,
                                 "gc_type_breakdown": {},
                                 "analysis_error": str(e)
