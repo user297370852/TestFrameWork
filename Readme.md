@@ -1,4 +1,4 @@
-# Java GC 机制测试框架 (GC Fuzz)
+# Java GC 机制测试框架
 一个专门用于 Java 垃圾回收机制测试和兼容性验证的综合性测试框架。
 
 ## 📋 项目概述
@@ -316,4 +316,4 @@ ls -la ./gc_logs/*.log
 **维护者**: Liu  
 **最后更新**: 2025年12月  
 **版本**: 1.0  
-**项目主页**: [Java GC Fuzz Framework]
+**项目主页**: [https://github.com/user297370852/TestFrameWork/tree/main]
