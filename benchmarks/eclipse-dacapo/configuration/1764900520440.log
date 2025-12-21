@@ -1,0 +1,12 @@
+!SESSION 2022-08-12 15:20:08.673 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.9
+java.vendor=Homebrew
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=carbon, NL=zh_CN_#Hans
+
+!ENTRY org.eclipse.osgi 4 0 2025-12-05 10:08:40.492
+!MESSAGE Application error
+!STACK 1
+java.lang.NullPointerException: Cannot invoke "java.lang.Class.getComponentType()" because "org.eclipse.core.runtime.adaptor.EclipseStarter.class$6" is null
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)

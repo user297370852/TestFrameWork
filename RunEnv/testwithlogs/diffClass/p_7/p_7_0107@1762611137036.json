@@ -1,0 +1,719 @@
+{
+  "class_file_info": {
+    "file_path": "ExampleTests/diffClass/p_7/p_7_0107@1762611137036.class",
+    "package": "",
+    "class_name": "p_7"
+  },
+  "test_summary": {
+    "total_tests": 29,
+    "successful_tests": 29,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk11-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_5b_9w0je p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 71,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:46.811645"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk11-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_fay6h6w6 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 72,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:46.884502"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelOldGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk11-ParallelOldGC.log:time,uptime,level,tags -XX:+UseParallelOldGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_1k2a723e p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 73,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:46.958769"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk11-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_70oa1von p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 73,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 1,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.032615"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk11-ShenandoahGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_7vzzqvu9 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 77,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.110676"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk11-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_hxbrup3_ p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 73,
+      "output": "[0.002s][warning][gc] Consider setting -Xms equal to -Xmx to avoid resizing hiccups\n[0.002s][warning][gc] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups\nTesting Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.185163"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk17-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_halqrqvf p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 65,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.280943"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk17-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_vhxqhg1n p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 64,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.346483"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk17-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ibdyyz__ p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 61,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 3,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.408712"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk17-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_nqqy29zt p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 65,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 2,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.474637"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk17-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_bo45gfue p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 66,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.542243"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk17-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_3umfjdaf p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 64,
+      "output": "[0.003s][warning][gc,init] Consider setting -Xms equal to -Xmx to avoid resizing hiccups\n[0.003s][warning][gc,init] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups\nTesting Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.607403"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk21-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_gsxlxumy p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 60,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.698064"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk21-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ugtb5m11 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 64,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.763025"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk21-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_9ovaa2n0 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 62,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 3,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.826034"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk21-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_u1qmw452 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 65,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 2,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.892713"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk21-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_t2h7qbul p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 66,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:47.959651"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk21-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_w_4jokxo p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 61,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.022419"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk25-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_75pxnhus p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 58,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.110556"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk25-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_la4a9tb5 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 65,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.176808"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk25-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_tny5rvtg p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 59,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.237507"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk25-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_3sxla8ia p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 64,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 2,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.302571"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC",
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:ShenandoahGCMode=generational"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk25-ShenandoahGC-Gen.log:time,uptime,level,tags -XX:+UseShenandoahGC -XX:+UnlockExperimentalVMOptions -XX:ShenandoahGCMode=generational -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_kwk8xp57 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 75,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.378827"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk25-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run__nopk949 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 59,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.439158"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk26-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_k836qvxm p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 57,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 10,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.526340"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk26-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_fpgp2f_c p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 58,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 27,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.585535"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk26-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_xi7jyqiw p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 58,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.645333"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk26-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_41vx384s p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 59,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 2,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.705905"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/diffClass/p_7/p_7_0107@1762611137036.gclogs/jdk26-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_5lkslmn3 p_7",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 58,
+      "output": "Testing Testing \n\n3\n2\n1",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:48.764777"
+    }
+  ]
+}

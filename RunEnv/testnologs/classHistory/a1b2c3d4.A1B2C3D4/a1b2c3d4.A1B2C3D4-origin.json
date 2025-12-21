@@ -1,0 +1,719 @@
+{
+  "class_file_info": {
+    "file_path": "ExampleTests/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.class",
+    "package": "a1b2c3d4",
+    "class_name": "A1B2C3D4"
+  },
+  "test_summary": {
+    "total_tests": 29,
+    "successful_tests": 29,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk11-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_m1ufop4q a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 159,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:52.367273"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk11-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_z_rlxw5q a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 91,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:52.461563"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelOldGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk11-ParallelOldGC.log:time,uptime,level,tags -XX:+UseParallelOldGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_a7t9dz_g a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 80,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:52.543742"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk11-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ihxtkslw a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 87,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 3,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:52.631998"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk11-ShenandoahGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run__jt8x0jq a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 80,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 0,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:52.714116"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk11-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_dugbmcqm a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 82,
+      "output": "[0.002s][warning][gc] Consider setting -Xms equal to -Xmx to avoid resizing hiccups\n[0.002s][warning][gc] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups\nReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:52.797921"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk17-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ott4iwyn a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 121,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:52.949805"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk17-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_vudd0p79 a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 83,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.033806"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk17-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_6y08yh_1 a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 69,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 5,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.104333"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk17-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_3o91figg a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 98,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.203769"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk17-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ghoc8owv a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 84,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 0,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.289304"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk17-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_g_uw4avu a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 82,
+      "output": "[0.003s][warning][gc,init] Consider setting -Xms equal to -Xmx to avoid resizing hiccups\n[0.003s][warning][gc,init] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups\nReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.373105"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk21-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_eomy5t7m a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 69,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.472211"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk21-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_csglcqar a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 67,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.540823"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk21-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_2xwycju6 a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 68,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 5,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.610452"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk21-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_kjxcq8ow a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 96,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.708328"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk21-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_2zr17oa8 a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 75,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 0,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.784601"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk21-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_2bb7sspo a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 70,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.855787"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk25-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_p7_9l0al a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 106,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 68,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:53.993428"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk25-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_jb8eef4d a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 66,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 171,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.060768"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk25-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_84iwvbn8 a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 66,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.128586"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk25-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ub0ghaoy a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 84,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.213648"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC",
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:ShenandoahGCMode=generational"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk25-ShenandoahGC-Gen.log:time,uptime,level,tags -XX:+UseShenandoahGC -XX:+UnlockExperimentalVMOptions -XX:ShenandoahGCMode=generational -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_jpgppevo a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 83,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 0,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.297808"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk25-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run__am0e45o a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 65,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.364834"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk26-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_mtx3jycj a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 107,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 10,
+        "gc_type_breakdown": {
+          "SerialGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.502841"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk26-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_1nd8ww6d a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 64,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 27,
+        "gc_type_breakdown": {
+          "ParallelGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.567947"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk26-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_fyw0nxz_ a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 63,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4096,
+        "gc_type_breakdown": {
+          "G1GC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.632604"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk26-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run__qck0ey7 a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 82,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 4,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.716005"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testnologs/classHistory/a1b2c3d4.A1B2C3D4/a1b2c3d4.A1B2C3D4-origin.gclogs/jdk26-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_x6gk99t7 a1b2c3d4.A1B2C3D4",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 64,
+      "output": "ReentrantLockCondition:A1B2C3D4E5F6G7\nSynchronized:A1B2C3D4E5F6G7\nLockSupport:A1B2C3D4E5F6G7",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:29:54.781212"
+    }
+  ]
+}

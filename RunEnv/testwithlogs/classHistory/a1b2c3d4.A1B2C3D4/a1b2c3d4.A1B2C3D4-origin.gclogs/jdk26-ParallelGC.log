@@ -1,0 +1,32 @@
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] CardTable entry size: 512
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc     ] Using Parallel
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Version: 26-ea+25-2529 (release)
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] CPUs: 10 total, 10 available
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Memory: 16384M
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Large Page Support: Disabled
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] NUMA Support: Disabled
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Compressed Oops: Enabled (Zero based)
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Alignments: Space 512K, Heap 8M
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Heap Min Capacity: 8M
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Heap Initial Capacity: 40M
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Heap Max Capacity: 4G
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Pre-touch: Disabled
+[2025-12-16T22:32:28.504+0800][0.003s][info][gc,init] Parallel Workers: 9
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] CDS archive(s) mapped at: [0x0000040000000000-0x0000040000da8000-0x0000040000da8000), size 14319616, SharedBaseAddress: 0x0000040000000000, ArchiveRelocationMode: 1.
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] Compressed class space mapped at: 0x0000040001000000-0x0000040041000000, reserved size: 1073741824
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] Narrow klass pointer bits 32, Max shift 3
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] Narrow klass base: 0x0000040000000000, Narrow klass shift: 0
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] Encoding Range: [0x0000040000000000 - 0x0000040100000000), (4294967296 bytes)
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] Klass Range:    [0x0000040000000000 - 0x0000040041000000), (1090519040 bytes)
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] Klass ID Range:  [8 - 1090519033) (1090519025)
+[2025-12-16T22:32:28.506+0800][0.005s][info][gc,metaspace] Protection zone: [0x0000040000000000 - 0x0000040000004000), (16384 bytes)
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ] Heap
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]  PSYoungGen      total 11776K, used 1843K [0x000000046ab00000, 0x000000046b800000, 0x00000004c0000000)
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]   eden space 10240K, 18% used [0x000000046ae00000,0x000000046afccde8,0x000000046b800000)
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]   from space 1536K, 0% used [0x000000046ac80000,0x000000046ac80000,0x000000046ae00000)
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]   to   space 1536K, 0% used [0x000000046ab00000,0x000000046ab00000,0x000000046ac80000)
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]  ParOldGen       total 27648K, used 1163K [0x00000003c0000000, 0x00000003c1b00000, 0x000000046ab00000)
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]   object space 27648K, 4% used [0x00000003c0000000,0x00000003c0122c78,0x00000003c1b00000)
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]  Metaspace       used 239K, committed 448K, reserved 1114112K
+[2025-12-16T22:32:28.518+0800][0.017s][info][gc,exit     ]   class space    used 15K, committed 128K, reserved 1048576K

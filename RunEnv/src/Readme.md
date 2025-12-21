@@ -312,11 +312,11 @@ GC日志功能允许在测试过程中收集详细的垃圾回收信息，用于
 5. **报告生成**：生成汇总报告和统计信息
 
 
-# JSON日志分析器LogAnalyzer.py - 使用说明
+# JSON测试结果分析器ResAnalyzer.py - 使用说明
 
 ## 概述
 
-Log Analyzer（日志分析器）是一个专门用于分析差分测试生成JSON日志的工具。它基于预定义的测试预言（Test Oracles）自动检测日志中的异常模式，生成详细的异常报告。
+Res Analyzer（结果分析器）是一个专门用于分析差分测试生成JSON日志的工具。它基于预定义的测试预言（Test Oracles）自动检测日志中的异常模式，生成详细的异常报告。
 
 ## 功能特性
 
@@ -330,17 +330,17 @@ Log Analyzer（日志分析器）是一个专门用于分析差分测试生成JS
 
 ### 1. 基础命令格式
 ```bash
-python LogAnalyzer.py <input_dir> [options]
+python ResAnalyzer.py <input_dir> [options]
 ```
 
 ### 2. 最简单的使用方式
 ```bash
-python LogAnalyzer.py ./test_logs
+python ResAnalyzer.py ./test_logs
 ```
 
 ### 3. 指定输出文件
 ```bash
-python LogAnalyzer.py ./test_logs -o custom_report.json
+python ResAnalyzer.py ./test_logs -o custom_report.json
 ```
 
 ## 命令行参数详解
@@ -354,7 +354,7 @@ python LogAnalyzer.py ./test_logs -o custom_report.json
 输入文件是Executor.py的执行结果日志所在的文件夹
 
 ## 测试预言说明
-测试预言都注册在test_oracles.py中
+测试预言都注册在Test_oracles文件夹中
 
 
 

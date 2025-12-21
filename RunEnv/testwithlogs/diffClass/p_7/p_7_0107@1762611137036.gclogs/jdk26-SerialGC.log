@@ -1,0 +1,30 @@
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] CardTable entry size: 512
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc     ] Using Serial
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Version: 26-ea+25-2529 (release)
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] CPUs: 10 total, 10 available
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Memory: 16384M
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Large Page Support: Disabled
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] NUMA Support: Disabled
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Compressed Oops: Enabled (Zero based)
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Heap Min Capacity: 8M
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Heap Initial Capacity: 40M
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Heap Max Capacity: 4G
+[2025-12-16T22:32:48.517+0800][0.003s][info][gc,init] Pre-touch: Disabled
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] CDS archive(s) mapped at: [0x00000f0000000000-0x00000f0000da8000-0x00000f0000da8000), size 14319616, SharedBaseAddress: 0x00000f0000000000, ArchiveRelocationMode: 1.
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] Compressed class space mapped at: 0x00000f0001000000-0x00000f0041000000, reserved size: 1073741824
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] Narrow klass pointer bits 32, Max shift 3
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] Narrow klass base: 0x00000f0000000000, Narrow klass shift: 0
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] Encoding Range: [0x00000f0000000000 - 0x00000f0100000000), (4294967296 bytes)
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] Klass Range:    [0x00000f0000000000 - 0x00000f0041000000), (1090519040 bytes)
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] Klass ID Range:  [8 - 1090519033) (1090519025)
+[2025-12-16T22:32:48.519+0800][0.005s][info][gc,metaspace] Protection zone: [0x00000f0000000000 - 0x00000f0000004000), (16384 bytes)
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ] Heap
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]  DefNew     total 12288K, used 437K [0x0000000700000000, 0x0000000700d50000, 0x0000000755550000)
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]   eden space 10944K,   4% used [0x00000007002a0000, 0x000000070030d788, 0x0000000700d50000)
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]   from space 1344K,   0% used [0x0000000700000000, 0x0000000700000000, 0x0000000700150000)
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]   to   space 1344K,   0% used [0x0000000700150000, 0x0000000700150000, 0x00000007002a0000)
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]  Tenured    total 27328K, used 1163K [0x0000000755550000, 0x0000000757000000, 0x0000000800000000)
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]   the  space 27328K,   4% used [0x0000000755550000, 0x0000000755672c78, 0x0000000757000000)
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]  Metaspace       used 88K, committed 320K, reserved 1114112K
+[2025-12-16T22:32:48.525+0800][0.011s][info][gc,exit     ]   class space    used 4K, committed 128K, reserved 1048576K

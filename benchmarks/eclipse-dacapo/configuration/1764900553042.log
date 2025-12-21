@@ -1,0 +1,20 @@
+!SESSION 2022-08-12 15:20:08.673 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.9
+java.vendor=Homebrew
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=carbon, NL=zh_CN_#Hans
+
+!ENTRY org.eclipse.osgi 4 0 2025-12-05 10:09:13.094
+!MESSAGE Startup error
+!STACK 1
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.remove(ArrayList.java:551)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.installBundles(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.loadBasicBundles(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)

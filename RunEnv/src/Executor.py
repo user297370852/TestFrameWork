@@ -370,15 +370,13 @@ class JDKDifferentialTester:
 
                 print(f"  结果已保存: {log_file_path}")
                 # 定时清理GC日志
-                if (not self.keep_gc_logs) and current_file % 10 == 0:
-                    self._cleanup_gc_logs(output_path)
+                if (not self.keep_gc_logs):
+                    self._cleanup_gc_logs(log_file_path.parent)
 
         print(f"\n测试完成! 共测试 {total_files} 个类文件")
         print(f"结果已保存到: {output_dir}")
         
-        # 如果不保留GC日志，清理所有GC日志文件
-        if not self.keep_gc_logs:
-            self._cleanup_gc_logs(output_path)
+        
     
     def _cleanup_gc_logs(self, output_path: Path):
         """

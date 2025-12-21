@@ -1,0 +1,719 @@
+{
+  "class_file_info": {
+    "file_path": "ExampleTests/classHistory/thread.Counter/thread.Counter-origin.class",
+    "package": "thread",
+    "class_name": "Counter"
+  },
+  "test_summary": {
+    "total_tests": 29,
+    "successful_tests": 29,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk11-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ipn64z71 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 596,
+      "output": "1\n2\n3\n8\n7\n38\n47\n6\n5\n4\n52\n48\n50\n53\n51\n49\n43\n41\n39\n40\n45\n46\n44\n42\n35\n33\n36\n34\n37\n29\n30\n31\n32\n27\n28\n22\n21\n25\n24\n23\n72\n75\n79\n84\n88\n94\n90\n26\n17\n18\n20\n19\n13\n16\n14\n15\n11\n12\n10\n9\n100\n99\n98\n97\n96\n95\n93\n91\n92\n89\n87\n86\n85\n83\n82\n80\n81\n78\n77\n76\n74\n73\n71\n70\n69\n68\n67\n66\n65\n64\n63\n62\n61\n60\n59\n58\n57\n56\n55\n54\ncount=100thread=Thread-97\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 2,
+        "gc_stw_time_ms": 1.339,
+        "max_stw_time_ms": 0.742,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 2,
+            "stw_time_ms": 1.339
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:29.468201"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk11-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_89m3b3j0 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 612,
+      "output": "25\n15\n20\n19\n14\n21\n23\n22\n24\n7\n4\n5\n3\n8\n10\n18\n13\n9\n2\n38\n41\n11\n6\n16\n17\n12\n1\n51\n50\n49\n48\n47\n46\n45\n44\n43\n42\n40\n39\n37\n35\n32\n36\n33\n28\n27\n29\n30\n31\n67\n69\n73\n75\n34\n77\n26\n83\n82\n85\n86\n87\n88\n92\n94\n81\n80\n79\n78\n76\n74\n72\n71\n70\n68\n65\n66\n64\n61\n63\n60\n62\n59\n58\n57\n56\n54\n55\n53\n52\n95\n93\n91\n90\n89\n84\n98\n96\n97\n99\n100\ncount=100thread=Thread-68\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 2,
+        "gc_stw_time_ms": 1.2429999999999999,
+        "max_stw_time_ms": 0.703,
+        "max_heap_mb": 245,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 2,
+            "stw_time_ms": 1.2429999999999999
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:30.083122"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelOldGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk11-ParallelOldGC.log:time,uptime,level,tags -XX:+UseParallelOldGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_31vex2h2 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 601,
+      "output": "1\n2\n12\n11\n10\n9\n6\n5\n8\n4\n7\n3\n16\n17\n15\n13\n14\n18\n23\n35\n22\n20\n21\n19\n48\n47\n46\n45\n38\n37\n44\n39\n43\n40\n42\n41\n36\n33\n34\n24\n32\n28\n29\n30\n31\n27\n26\n25\n52\n59\n62\n51\n72\n74\n75\n77\n50\n79\n49\n84\n83\n88\n90\n82\n94\n81\n80\n78\n76\n73\n71\n70\n69\n68\n67\n66\n64\n63\n65\n61\n58\n60\n55\n57\n56\n54\n53\n97\n96\n98\n95\n93\n92\n91\n89\n87\n86\n99\n85\n100\ncount=100thread=Thread-82\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 2,
+        "gc_stw_time_ms": 1.339,
+        "max_stw_time_ms": 0.822,
+        "max_heap_mb": 245,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 2,
+            "stw_time_ms": 1.339
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:30.686558"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk11-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_3_7owulh thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 624,
+      "output": "1\n2\n11\n21\n10\n7\n6\n8\n5\n9\n4\n3\n26\n27\n25\n24\n22\n23\n19\n17\n16\n15\n14\n18\n20\n13\n12\n28\n31\n41\n56\n35\n36\n76\n78\n32\n38\n39\n37\n40\n33\n34\n29\n30\n77\n79\n80\n75\n73\n71\n74\n72\n65\n64\n69\n66\n68\n70\n63\n67\n61\n58\n57\n60\n62\n59\n55\n53\n54\n51\n52\n50\n49\n42\n47\n81\n85\n48\n46\n44\n43\n45\n89\n88\n87\n86\n84\n82\n83\n90\n96\n95\n94\n91\n93\n92\n100\n98\n97\n99\ncount=100thread=Thread-96\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 1.105,
+        "max_stw_time_ms": 1.105,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1,
+            "stw_time_ms": 1.105
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:31.314401"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk11-ShenandoahGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_vf3d0g5q thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 625,
+      "output": "1\n4\n5\n2\n3\n6\n16\n30\n15\n40\n14\n13\n12\n9\n10\n11\n8\n7\n45\n44\n43\n42\n41\n39\n38\n37\n36\n50\n53\n58\n69\n78\n33\n35\n34\n29\n32\n31\n26\n27\n28\n23\n25\n24\n22\n21\n19\n18\n17\n20\n82\n83\n80\n81\n79\n71\n75\n77\n76\n74\n72\n73\n70\n65\n68\n67\n64\n61\n66\n63\n62\n59\n60\n57\n55\n56\n54\n52\n51\n49\n47\n48\n46\n100\n99\n98\n97\n96\n95\n94\n93\n92\n91\n90\n89\n88\n87\n86\n85\n84\ncount=100thread=Thread-99\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:31.942893"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk11-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_bxy0cpkc thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 610,
+      "output": "[0.002s][warning][gc] Consider setting -Xms equal to -Xmx to avoid resizing hiccups\n[0.003s][warning][gc] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups\n17\n6\n8\n23\n10\n7\n24\n1\n26\n28\n5\n27\n20\n21\n13\n11\n52\n55\n65\n12\n19\n16\n76\n80\n14\n9\n25\n22\n41\n15\n40\n4\n39\n3\n18\n38\n37\n36\n35\n34\n33\n32\n30\n31\n2\n29\n81\n90\n91\n89\n88\n86\n82\n84\n83\n85\n87\n77\n79\n78\n75\n74\n73\n72\n69\n71\n70\n68\n67\n92\n95\n100\n66\n64\n63\n61\n56\n60\n57\n62\n58\n59\n54\n53\n50\n51\n49\n47\n46\n48\n45\n43\n44\n42\n99\n98\n97\n96\n94\n93\ncount=100thread=Thread-36\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:32.556040"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk17-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_5ycbh4j9 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 576,
+      "output": "22\n69\n77\n82\n87\n53\n94\n27\n25\n56\n7\n67\n4\n6\n34\n66\n65\n30\n26\n11\n20\n5\n14\n17\n9\n2\n52\n49\n51\n47\n50\n48\n46\n45\n44\n43\n39\n41\n40\n36\n38\n32\n42\n31\n37\n19\n21\n64\n13\n23\n3\n33\n60\n24\n100\n99\n98\n63\n29\n62\n61\n58\n15\n55\n59\n57\n12\n54\n10\n97\n16\n96\n18\n95\n93\n92\n91\n90\n89\n88\n86\n85\n83\n84\n81\n80\n79\n78\n28\n35\n1\n76\n75\n8\n74\n73\n71\n72\n70\n68\ncount=100thread=Thread-91\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 2,
+        "gc_stw_time_ms": 1.295,
+        "max_stw_time_ms": 0.793,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 2,
+            "stw_time_ms": 1.295
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:33.191522"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk17-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_3936mqx4 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 587,
+      "output": "1\n30\n59\n40\n69\n72\n77\n48\n47\n90\n25\n33\n83\n87\n32\n46\n39\n45\n31\n35\n43\n44\n42\n41\n27\n38\n37\n36\n28\n34\n29\n26\n24\n23\n22\n21\n12\n19\n2\n18\n20\n16\n17\n15\n14\n88\n85\n68\n63\n91\n89\n86\n81\n80\n100\n99\n98\n84\n82\n76\n79\n78\n73\n75\n74\n71\n70\n67\n65\n66\n64\n62\n60\n5\n61\n58\n57\n8\n56\n55\n7\n52\n11\n97\n50\n54\n9\n53\n49\n10\n51\n96\n6\n95\n13\n4\n94\n93\n92\n3\ncount=100thread=Thread-99\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 2,
+        "gc_stw_time_ms": 1.371,
+        "max_stw_time_ms": 0.733,
+        "max_heap_mb": 245,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 2,
+            "stw_time_ms": 1.371
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:33.781198"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk17-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_nrta6kt1 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 600,
+      "output": "41\n26\n4\n77\n11\n74\n38\n20\n100\n36\n99\n98\n97\n95\n96\n94\n93\n92\n90\n91\n23\n89\n88\n87\n9\n86\n85\n84\n83\n31\n30\n82\n81\n79\n27\n29\n47\n21\n7\n78\n45\n35\n28\n34\n13\n10\n32\n14\n33\n22\n16\n6\n5\n37\n8\n43\n3\n2\n17\n76\n1\n75\n18\n42\n73\n19\n72\n80\n39\n40\n24\n12\n15\n57\n70\n71\n69\n68\n67\n65\n66\n63\n58\n59\n64\n62\n60\n56\n61\n55\n54\n52\n53\n50\n51\n48\n46\n25\n49\n44\ncount=100thread=Thread-11\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.86,
+        "max_stw_time_ms": 0.86,
+        "max_heap_mb": 260,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1,
+            "stw_time_ms": 0.86
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:34.384774"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk17-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_gf1oyanf thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 591,
+      "output": "9\n78\n75\n95\n4\n15\n3\n8\n74\n71\n73\n70\n69\n66\n67\n68\n65\n64\n63\n62\n59\n61\n58\n60\n55\n57\n56\n53\n52\n51\n54\n50\n49\n48\n47\n46\n39\n45\n44\n43\n42\n41\n40\n38\n37\n36\n2\n35\n34\n31\n33\n32\n30\n29\n28\n27\n17\n16\n26\n25\n24\n23\n22\n21\n19\n20\n13\n18\n11\n5\n10\n6\n7\n1\n14\n12\n100\n99\n98\n97\n96\n94\n93\n92\n91\n88\n90\n85\n89\n87\n86\n84\n83\n82\n81\n80\n79\n76\n77\n72\ncount=100thread=Thread-97\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 28,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:34.978706"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk17-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_i18cj4sx thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 613,
+      "output": "12\n2\n14\n1\n13\n6\n7\n5\n10\n8\n3\n11\n4\n9\n15\n25\n29\n17\n43\n48\n51\n52\n16\n18\n54\n53\n50\n42\n49\n47\n46\n41\n45\n44\n40\n39\n38\n37\n36\n35\n34\n33\n31\n30\n32\n28\n20\n27\n26\n24\n23\n22\n19\n21\n69\n72\n73\n85\n71\n70\n84\n93\n94\n79\n92\n91\n90\n88\n89\n78\n81\n80\n87\n86\n83\n82\n76\n77\n74\n75\n55\n64\n65\n96\n98\n100\n60\n62\n63\n56\n59\n61\n57\n58\n99\n97\n95\n68\n67\n66\ncount=100thread=Thread-99\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:35.594415"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk17-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ww8jfd7m thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 596,
+      "output": "[0.004s][warning][gc,init] Consider setting -Xms equal to -Xmx to avoid resizing hiccups\n[0.004s][warning][gc,init] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups\n20\n100\n7\n22\n99\n17\n98\n12\n13\n97\n96\n95\n94\n93\n11\n92\n91\n26\n6\n5\n24\n18\n89\n21\n14\n10\n9\n16\n8\n15\n4\n87\n86\n85\n90\n84\n88\n83\n82\n81\n78\n80\n77\n79\n76\n71\n75\n74\n70\n73\n69\n72\n68\n67\n66\n65\n64\n1\n63\n61\n62\n60\n59\n58\n57\n3\n56\n55\n54\n2\n53\n52\n51\n50\n49\n46\n48\n47\n45\n44\n43\n42\n41\n40\n39\n38\n35\n33\n36\n34\n37\n32\n31\n30\n29\n28\n27\n25\n19\n23\ncount=100thread=Thread-15\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:36.193146"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk21-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_nbheiwej thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 631,
+      "output": "1\n2\n3\n5\n4\n6\n7\n8\n11\n9\n10\n12\n13\n18\n24\n29\n30\n40\n14\n86\n88\n91\n15\n100\n59\n17\n68\n16\n74\n79\n80\n52\n19\n48\n21\n20\n22\n23\n25\n27\n26\n34\n36\n28\n35\n32\n31\n44\n37\n43\n46\n45\n38\n33\n41\n39\n42\n83\n87\n84\n85\n89\n90\n92\n94\n93\n47\ncount=100thread=Thread-99\n95\n97\n96\n98\n99\n49\n50\n51\n54\n53\n55\n56\n58\n61\n60\n64\n62\n63\n65\n66\n67\n69\n70\n71\n72\n73\n75\n76\n77\n78\n57\n82\n81\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 2,
+        "gc_stw_time_ms": 1.487,
+        "max_stw_time_ms": 1.058,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 2,
+            "stw_time_ms": 1.487
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:36.923018"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk21-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_xh38olxp thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 592,
+      "output": "1\n24\n23\n19\n25\n26\n20\n28\n29\n30\n31\n27\n32\n5\n2\n4\n17\n35\n18\n36\n9\n33\n11\n34\n3\n6\n7\n13\n21\n22\n10\n15\n16\n12\n14\n8\n37\n38\n46\n39\n95\n100\n48\n53\n65\n66\n71\n73\n74\n82\n84\n41\n85\n91\n42\n92\n40\n63\n43\n44\n45\n96\n97\n98\n99\n47\n49\n50\n52\n54\n56\n58\n60\n61\n62\n57\n59\n64\n67\n68\n69\n70\n72\n75\n77\n76\n78\n79\n80\n81\n83\n87\n88\n90\n89\n86\n94\n51\n55\n93\ncount=100thread=Thread-87\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 2,
+        "gc_stw_time_ms": 0.956,
+        "max_stw_time_ms": 0.576,
+        "max_heap_mb": 245,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 2,
+            "stw_time_ms": 0.956
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:37.517786"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk21-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_kur70xdd thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 576,
+      "output": "2\n1\n3\n12\n7\n15\n4\n5\n13\n9\n14\n17\n20\n23\n19\n21\n27\n25\n22\n24\n18\n26\n28\n29\n31\n36\n30\n34\n39\n32\n45\n49\n43\n55\n57\n64\n70\n80\n84\n90\n95\n48\n99\n76\n91\n37\n40\n46\n47\n35\n33\n11\n42\n6\n10\n16\n8\n44\n41\n38\n50\n51\n52\n53\n54\n56\n58\n59\n62\n60\n61\n66\n67\n69\n71\n65\n68\n72\n74\n75\n73\n79\n77\n78\n82\n81\n83\n85\n87\n88\n89\n92\n93\n94\n86\n96\n97\n98\n63\n100\ncount=100thread=Thread-95\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.791,
+        "max_stw_time_ms": 0.791,
+        "max_heap_mb": 258,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1,
+            "stw_time_ms": 0.791
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:38.095880"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk21-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_lri9gdm5 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 599,
+      "output": "1\n3\n5\n2\n4\n6\n7\n12\n11\n8\n10\n9\n14\n13\n15\n21\n35\n46\n53\n16\n42\n17\n19\n18\n22\n23\n20\n25\n31\n33\n34\n55\n58\n64\n67\n76\n86\n93\n30\n100\n32\n36\n24\n49\n50\n51\n52\n47\n54\n27\n28\n29\n38\n41\n37\n26\n44\n39\n43\n48\n40\n45\n56\n57\n60\n59\n61\n62\n63\n71\n70\n68\n65\n72\n74\n73\n77\n78\n75\n79\n80\ncount=100thread=Thread-99\n82\n81\n83\n85\n87\n84\n88\n89\n90\n94\n95\n91\n92\n96\n97\n98\n99\n66\n69\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 28,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:38.698268"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk21-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_pxk8fy71 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 598,
+      "output": "2\n1\n3\n7\n17\n4\n24\n45\n5\n8\n9\n11\n12\n6\n10\n13\n14\n15\n16\n19\n18\n20\n22\n21\n23\n25\n26\n27\n28\n29\n30\n31\n33\n32\n34\n35\n37\n36\n38\n49\n43\n39\n46\n47\n40\n41\n42\n44\n48\n50\n53\n51\n52\n54\n57\n58\n56\n60\n61\n59\n62\n55\n63\n64\n67\n68\n79\n82\n65\n98\n66\n69\n70\n71\n72\n73\n76\n78\n75\n77\n81\n83\n80\n74\n97\n89\n91\n90\n94\n85\n95\n96\n86\n87\n92\n84\n88\n93\n99\n100\ncount=100thread=Thread-99\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:39.299302"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk21-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_j6v7x1ly thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 601,
+      "output": "14\n16\n1\n20\n18\n17\n19\n22\n23\n24\n25\n27\n26\n28\n29\n31\n30\n33\n32\n36\n35\n34\n38\n37\n39\n41\n40\n42\n43\n44\n11\n46\n45\n13\n7\n15\n21\n5\n3\n4\n2\n10\n8\n12\n9\n6\n47\n48\n49\n51\n53\n50\n52\n54\n56\n55\n58\n57\n62\n64\n66\n63\n65\n59\n68\n60\n70\n69\n61\n71\n72\n75\n76\n77\n67\n78\n82\n81\n80\n79\n83\n84\n86\n74\n87\n88\n89\n90\n91\n92\n95\n94\n96\n93\n97\n98\n99\n73\n85\n100\ncount=100thread=Thread-99\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:39.903871"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk25-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_nhcqlxl9 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 577,
+      "output": "3\n2\n1\n5\n6\n4\n8\n12\n18\n21\n17\n7\n9\n11\n10\n19\n20\n16\n15\n25\n14\n23\n26\n27\n28\n13\n22\n24\n30\n35\n46\n52\n65\n69\n83\n93\n32\n33\n31\n34\n29\n36\n37\n39\n40\n41\n42\n38\n43\n44\n45\n50\n47\n51\n48\n53\n49\n56\n57\n54\n55\n58\n60\n59\n61\n64\n62\n63\n68\n66\n67\n70\n71\n73\n72\n74\n75\n76\n77\n79\n80\n78\n82\n81\n85\n84\n86\n87\n89\n88\n90\n91\n95\n92\n94\n96\n97\n98\n99\n100\ncount=100thread=Thread-98\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.334,
+        "max_stw_time_ms": 0.334,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 1,
+            "stw_time_ms": 0.334
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:40.540861"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk25-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_hpm75q2p thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 594,
+      "output": "1\n3\n10\n16\n17\n27\n31\n5\n2\n4\n6\n7\n8\n9\n40\n51\n50\n58\n64\n11\n14\n12\n15\n13\n18\n19\n20\n21\n22\n23\n25\n26\n28\n29\n24\n30\n32\n34\n36\n33\n35\n39\n38\n37\n41\n42\n44\n43\n45\n46\n47\n48\n49\n53\n52\n55\n56\n54\n57\n59\n61\n60\n62\n63\n65\n66\n69\n71\n80\n82\n67\n68\n70\n74\n75\n76\n77\n72\n73\n78\n81\n79\n83\n84\n87\n97\n85\n86\n88\n94\n90\n93\n91\n92\n95\n96\n89\n100\n99\n98\ncount=100thread=Thread-98\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.427,
+        "max_stw_time_ms": 0.427,
+        "max_heap_mb": 245,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 1,
+            "stw_time_ms": 0.427
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:41.139073"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk25-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_8lv1i4x1 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 603,
+      "output": "10\n4\n13\n8\n9\n6\n14\n11\n15\n16\n20\n21\n19\n17\n18\n23\n24\n22\n25\n26\n27\n28\n30\n33\n2\n3\n32\n1\n5\n31\n12\n29\n7\n34\n42\n43\n55\n68\n76\n81\n35\n36\n41\n39\n37\n38\n85\n44\n45\n47\n46\n48\n40\n50\n49\n52\n51\n54\n57\n56\n58\n60\n61\n59\n64\n62\n63\n53\n65\n67\n66\n73\n74\n71\n75\n69\n78\n70\n77\n79\n80\n72\n82\n83\n84\n86\n87\n88\n94\n99\n89\n90\n91\n92\n93\n95\n100\n97\n98\n96\ncount=100thread=Thread-98\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.588,
+        "max_stw_time_ms": 0.588,
+        "max_heap_mb": 258,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1,
+            "stw_time_ms": 0.588
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:41.745496"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk25-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_98jz0k38 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 601,
+      "output": "1\n2\n12\n20\n34\n44\n51\n63\n3\n6\n7\n5\n9\n11\n4\n8\n10\n13\n15\n16\n17\n18\n19\n22\n21\n23\n24\n25\n26\n28\n27\n29\n30\n31\n32\n33\n35\n36\n38\n39\n37\n40\n41\n42\n43\n45\n46\n47\n48\n49\n50\n52\n53\n54\n55\n56\n57\n58\n59\n60\n61\n62\n64\n65\n66\n67\n14\n69\n76\n90\n98\n68\n70\n72\n71\n74\n73\n75\n77\n78\n79\n80\n82\n83\n84\n81\n86\n88\n85\n89\n87\n93\n92\n94\n91\n95\n96\n99\n100\n97\ncount=100thread=Thread-98\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 28,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:42.349376"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC",
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:ShenandoahGCMode=generational"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk25-ShenandoahGC-Gen.log:time,uptime,level,tags -XX:+UseShenandoahGC -XX:+UnlockExperimentalVMOptions -XX:ShenandoahGCMode=generational -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_30uxz53t thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 617,
+      "output": "3\n4\n32\n33\n25\n27\n30\n7\n6\n1\n11\n9\n10\n12\n15\n28\n17\n31\n23\n26\n29\n19\n5\n2\n16\n18\n20\n21\n13\n24\n22\n8\n14\n34\n38\n42\n54\n64\n65\n35\n36\n37\n39\n40\n41\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n55\n53\n56\n57\n60\n61\n58\n59\n63\n62\n66\n72\n77\n67\n69\n70\n68\n71\n73\n74\n76\n75\n78\n80\n79\n81\n84\n85\n83\n82\n86\n87\n88\n89\n90\n91\n93\n97\n92\n94\n96\n95\n98\n99\n100\ncount=100thread=Thread-84\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 464,
+        "gc_type_breakdown": {
+          "ShenandoahGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:42.969168"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk25-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_4akt84yp thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 582,
+      "output": "1\n10\n11\n2\n14\n12\n13\n15\n16\n18\n17\n19\n20\n21\n25\n22\n26\n24\n23\n27\n29\n28\n30\n31\n33\n32\n34\n35\n36\n37\n39\n38\n40\n41\n4\n8\n5\n3\n7\n9\n6\n43\n47\n59\n82\n94\n42\n44\n45\n46\n48\n49\n50\n51\n52\n54\n53\n58\n57\n56\n60\n55\n61\n62\n63\n64\n66\n67\n65\n68\n69\n71\n70\n72\n73\n74\n76\n75\n77\n78\n80\n79\n81\n84\n83\n85\n86\n87\n88\n89\n90\n91\n92\n93\n96\n97\n95\n99\n100\n98\ncount=100thread=Thread-97\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:43.554053"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk26-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_j14uwiec thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 574,
+      "output": "1\n2\n4\n9\n7\n8\n3\n5\n6\n10\n19\n25\n41\n28\n50\n55\n60\n59\n64\n69\n75\n80\n90\n11\n12\n13\n14\n15\n16\n17\n18\n21\n20\n22\n24\n26\n27\n33\n34\n35\n37\n36\n38\n39\n40\n42\n46\n43\n31\n45\n32\n44\n30\n47\n48\n49\n29\n52\n51\n53\n23\n54\n57\n56\n58\n61\n62\n63\n66\n65\n68\n67\n71\n70\n74\n73\n95\n99\n77\n78\n72\n79\n76\n81\n82\n84\n83\n85\n86\n88\n89\n87\n91\n92\n93\n94\n96\n98\n100\n97\ncount=100thread=Thread-88\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.344,
+        "max_stw_time_ms": 0.344,
+        "max_heap_mb": 38,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 1,
+            "stw_time_ms": 0.344
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:44.179730"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk26-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_ijv3enp3 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 603,
+      "output": "4\n3\n18\n8\n7\n12\n6\n14\n19\n5\n11\n16\n10\n13\n2\n9\n20\n1\n17\n15\n21\n30\n40\n45\n47\n58\n74\n23\n86\n98\n22\n24\n26\n25\n27\n29\n31\n32\n28\n34\n33\n35\n37\n38\n39\n42\n36\n43\n41\n44\n48\n50\n51\n49\n52\n46\n54\n56\n57\n61\n60\n62\n63\n55\n64\n59\n65\n68\n69\n71\n66\n67\n72\n70\n73\n75\n76\n77\n79\n78\n80\n82\n81\n83\n84\n85\n87\n88\n89\n91\n92\n93\n94\n96\n95\n90\n99\n100\n53\n97\ncount=100thread=Thread-98\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.362,
+        "max_stw_time_ms": 0.362,
+        "max_heap_mb": 48,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 1,
+            "stw_time_ms": 0.362
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:44.785862"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk26-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_s1d7t1to thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 595,
+      "output": "2\n1\n4\n5\n7\n6\n3\n9\n12\n18\n28\n8\n10\n23\n25\n26\n16\n13\n14\n11\n15\n17\n20\n19\n22\n21\n24\n31\n30\n32\n29\n27\n35\n33\n40\n34\n37\n36\n39\n41\n42\n43\n44\n45\n38\n46\n48\n49\n62\n47\n67\n52\n55\n50\n51\n54\n53\n57\n56\n58\n59\n60\n61\n63\n64\n65\n68\n66\n71\n70\n73\n69\n72\n74\n75\n76\n77\n79\n80\n78\n84\n81\n82\n83\n85\n86\n87\n90\n91\n89\n96\n88\n92\n93\n94\n95\n97\n98\n99\n100\ncount=100thread=Thread-98\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 1,
+        "gc_stw_time_ms": 0.635,
+        "max_stw_time_ms": 0.635,
+        "max_heap_mb": 42,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1,
+            "stw_time_ms": 0.635
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:45.384670"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk26-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_dn_8f_az thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 603,
+      "output": "4\n3\n17\n12\n1\n6\n10\n13\n11\n15\n7\n18\n2\n16\n5\n14\n8\n9\n19\n33\n41\n55\n70\n84\n92\n99\n20\n21\n22\n24\n23\n25\n26\n27\n29\n28\n30\n31\n32\n34\n35\n38\n39\n36\n40\n37\n42\n43\n44\n45\n46\n47\n48\n49\n53\n54\n51\n50\n52\n57\n58\n56\n60\n59\n62\n61\n63\n64\n65\n66\n67\n69\n68\n71\n72\n73\n74\n75\n76\n77\n78\n79\n80\n81\n82\n83\n85\n86\n87\n89\n88\n90\n91\n93\n95\n94\n97\n98\n100\n96\ncount=100thread=Thread-98\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 28,
+        "gc_type_breakdown": {
+          "ZGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:45.991153"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseEpsilonGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=testwithlogs/classHistory/thread.Counter/thread.Counter-origin.gclogs/jdk26-EpsilonGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_24fnoj07 thread.Counter",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 594,
+      "output": "16\n1\n3\n10\n15\n12\n9\n14\n6\n2\n11\n13\n7\n5\n8\n4\n17\n20\n49\n53\n65\n75\n88\n98\n97\n18\n19\n21\n22\n23\n26\n24\n25\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n39\n38\n40\n37\n41\n45\n44\n46\n42\n43\n48\n47\n50\n51\n52\n54\n55\n56\n58\n57\n59\n60\n62\n61\n63\n64\n67\n66\n68\n70\n69\n72\n71\n73\n74\n76\n77\n78\n80\n79\n81\n82\n84\n85\n83\n86\n87\n89\n90\n91\n92\n94\n93\n95\n96\n99\n100\ncount=100thread=Thread-95\n500后===100",
+      "gc_analysis": {
+        "total_gc_count": 0,
+        "gc_stw_time_ms": 0.0,
+        "max_stw_time_ms": 0.0,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "EpsilonGC": {
+            "count": 0,
+            "stw_time_ms": 0.0
+          }
+        }
+      },
+      "test_timestamp": "2025-12-16T22:32:46.588592"
+    }
+  ]
+}

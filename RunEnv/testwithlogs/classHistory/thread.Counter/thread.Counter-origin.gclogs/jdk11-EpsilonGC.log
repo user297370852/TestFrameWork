@@ -1,0 +1,16 @@
+[2025-12-16T22:32:32.011+0800][0.002s][warning][gc] Consider setting -Xms equal to -Xmx to avoid resizing hiccups
+[2025-12-16T22:32:32.012+0800][0.003s][warning][gc] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups
+[2025-12-16T22:32:32.014+0800][0.005s][info   ][gc] Resizeable heap; starting at 256M, max: 4096M, step: 128M
+[2025-12-16T22:32:32.014+0800][0.005s][info   ][gc] Using TLAB allocation; max: 4096K
+[2025-12-16T22:32:32.014+0800][0.005s][info   ][gc] Elastic TLABs enabled; elasticity: 1.10x
+[2025-12-16T22:32:32.014+0800][0.005s][info   ][gc] Elastic TLABs decay enabled; decay time: 1000ms
+[2025-12-16T22:32:32.014+0800][0.005s][info   ][gc] Using Epsilon
+[2025-12-16T22:32:32.014+0800][0.005s][info   ][gc,heap,coops] Heap address: 0x00000004aaaa8000, size: 4096 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc,heap,exit ] Heap
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc,heap,exit ] Epsilon Heap
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc,heap,exit ] Allocation space:
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc,heap,exit ]  space 262144K,   0% used [0x00000004aaaa8000, 0x00000004aac6c508, 0x00000004baaa8000)
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc,heap,exit ]  Metaspace       used 4759K, capacity 4822K, committed 5120K, reserved 1056768K
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc,heap,exit ]   class space    used 402K, capacity 417K, committed 512K, reserved 1048576K
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc           ] Heap: 4096M reserved, 256M (6.25%) committed, 1809K (0.04%) used
+[2025-12-16T22:32:32.548+0800][0.539s][info   ][gc,metaspace ] Metaspace: 1032M reserved, 5120K (0.48%) committed, 4759K (0.45%) used

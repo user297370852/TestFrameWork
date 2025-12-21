@@ -1,0 +1,19 @@
+!SESSION 2022-08-12 15:20:08.673 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.9
+java.vendor=Homebrew
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=carbon, NL=zh_CN_#Hans
+
+!ENTRY org.eclipse.osgi 4 0 2025-12-05 10:13:38.030
+!MESSAGE Startup error
+!STACK 1
+java.net.MalformedURLException: no protocol: kHyH6BQ||??p}2n^=k4o{@VNYtXUQrbo;'*<!4$KvClPLz;_R~3jpw?{8W;[)CWwHqwq4JU=g|VJl.B?<XJ!^QvdG$Hb#2@5mV,A5
+	at java.base/java.net.URL.<init>(URL.java:772)
+	at java.base/java.net.URL.<init>(URL.java:654)
+	at java.base/java.net.URL.<init>(URL.java:590)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.<init>(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.updateSplash(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.setStartLevel(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)

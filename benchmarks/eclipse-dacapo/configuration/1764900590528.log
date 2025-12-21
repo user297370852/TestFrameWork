@@ -1,0 +1,33 @@
+!SESSION 2022-08-12 15:20:08.673 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.9
+java.vendor=Homebrew
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=carbon, NL=zh_CN_#Hans
+
+!ENTRY org.eclipse.osgi 4 0 2025-12-05 10:09:50.581
+!MESSAGE Startup error
+!STACK 1
+org.osgi.framework.BundleException: "$fS Dwg48(}l>s=We_|'Nz~n;}Aw@1B2xRp2`RZD_t$B|L]W7@.9/Y@r)M&2f]MxnE[uDu&Di.IS6jc|}bRJ4IsLd<$2{ ~rqz'Qg" is an invalid URL
+	at org.eclipse.osgi.baseadaptor.BaseAdaptor.mapLocationToURLConnection(BaseAdaptor.java:199)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.getArrayFromList(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.loadBasicBundles(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)
+Caused by: java.net.MalformedURLException: no protocol: $fS Dwg48(}l>s=We_|'Nz~n;}Aw@1B2xRp2`RZD_t$B|L]W7@.9/Y@r)M&2f]MxnE[uDu&Di.IS6jc|}bRJ4IsLd<$2{ ~rqz'Qg
+	at java.base/java.net.URL.<init>(URL.java:772)
+	at java.base/java.net.URL.<init>(URL.java:654)
+	at java.base/java.net.URL.<init>(URL.java:590)
+	at org.eclipse.osgi.baseadaptor.BaseAdaptor.mapLocationToURLConnection(BaseAdaptor.java:197)
+	... 5 more
+Root exception:
+java.net.MalformedURLException: no protocol: $fS Dwg48(}l>s=We_|'Nz~n;}Aw@1B2xRp2`RZD_t$B|L]W7@.9/Y@r)M&2f]MxnE[uDu&Di.IS6jc|}bRJ4IsLd<$2{ ~rqz'Qg
+	at java.base/java.net.URL.<init>(URL.java:772)
+	at java.base/java.net.URL.<init>(URL.java:654)
+	at java.base/java.net.URL.<init>(URL.java:590)
+	at org.eclipse.osgi.baseadaptor.BaseAdaptor.mapLocationToURLConnection(BaseAdaptor.java:197)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.getArrayFromList(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.loadBasicBundles(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)

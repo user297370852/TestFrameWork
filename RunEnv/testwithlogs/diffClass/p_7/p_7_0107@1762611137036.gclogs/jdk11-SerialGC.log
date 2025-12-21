@@ -1,0 +1,11 @@
+[2025-12-16T22:32:46.789+0800][0.004s][info][gc] Using Serial
+[2025-12-16T22:32:46.789+0800][0.004s][info][gc,heap,coops] Heap address: 0x0000000300800000, size: 4096 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ] Heap
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]  def new generation   total 78656K, used 5596K [0x0000000300800000, 0x0000000305d50000, 0x0000000355d50000)
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]   eden space 69952K,   8% used [0x0000000300800000, 0x0000000300d772f8, 0x0000000304c50000)
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]   from space 8704K,   0% used [0x0000000304c50000, 0x0000000304c50000, 0x00000003054d0000)
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]   to   space 8704K,   0% used [0x00000003054d0000, 0x00000003054d0000, 0x0000000305d50000)
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]  tenured generation   total 174784K, used 0K [0x0000000355d50000, 0x0000000360800000, 0x0000000400800000)
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]    the space 174784K,   0% used [0x0000000355d50000, 0x0000000355d50000, 0x0000000355d50200, 0x0000000360800000)
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]  Metaspace       used 3422K, capacity 4486K, committed 4864K, reserved 1056768K
+[2025-12-16T22:32:46.809+0800][0.024s][info][gc,heap,exit ]   class space    used 303K, capacity 386K, committed 512K, reserved 1048576K

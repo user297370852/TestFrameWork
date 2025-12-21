@@ -82,9 +82,13 @@ class ClassFileRunner:
         else:
             full_class_name = class_name
 
-        gcobj_dir = "/Users/yeliu/PycharmProjects/PythonProject/RunEnv"
-        eclipse_dir = "/Users/yeliu/IdeaProjects/GCFuzz-main/02Benchmarks/eclipse-dacapo"
-        fop_dir = "/Users/yeliu/IdeaProjects/GCFuzz-main/02Benchmarks/fop-dacapo"
+        # 获取当前文件的目录
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # 从当前文件位置构建相对路径
+        gcobj_dir = os.path.join(current_dir, "..")  # 上级目录
+        eclipse_dir = os.path.join(current_dir, "../../benchmarks/eclipse-dacapo")
+        fop_dir = os.path.join(current_dir, "../../benchmarks/fop-dacapo")  
 
         if class_name == "EclipseStarter":
             class_path = f"{gcobj_dir}:{temp_dir}:{eclipse_dir}"
@@ -121,8 +125,7 @@ class ClassFileRunner:
 
             # 如果是FOP，使用现有的测试文件
             if package_name == "org.apache.fop.cli":
-                fop_dir = "/Users/yeliu/IdeaProjects/GCFuzz-main/02Benchmarks/fop-dacapo"
-
+                
                 # 检查文件是否存在
                 xml_file = os.path.join(fop_dir, "name.xml")
                 xsl_file = os.path.join(fop_dir, "name2fo.xsl")

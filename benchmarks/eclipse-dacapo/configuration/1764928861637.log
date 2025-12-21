@@ -1,0 +1,19 @@
+!SESSION 2022-08-12 15:20:08.673 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=25.0.1
+java.vendor=Homebrew
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=carbon, NL=zh_CN_#Hans
+
+!ENTRY org.eclipse.osgi 4 0 2025-12-05 18:01:01.684
+!MESSAGE Startup error
+!STACK 1
+java.lang.ClassNotFoundException: <v6O
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at java.base/java.lang.Class.forName(Class.java:458)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.loadBasicBundles(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)

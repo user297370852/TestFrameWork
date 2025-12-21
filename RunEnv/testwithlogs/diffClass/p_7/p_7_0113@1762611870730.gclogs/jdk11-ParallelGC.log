@@ -1,0 +1,11 @@
+[2025-12-16T22:32:49.019+0800][0.004s][info][gc] Using Parallel
+[2025-12-16T22:32:49.019+0800][0.004s][info][gc,heap,coops] Heap address: 0x00000006c0000000, size: 4096 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ] Heap
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]  PSYoungGen      total 76288K, used 5243K [0x000000076ab00000, 0x0000000770000000, 0x00000007c0000000)
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]   eden space 65536K, 8% used [0x000000076ab00000,0x000000076b01edd8,0x000000076eb00000)
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]   from space 10752K, 0% used [0x000000076f580000,0x000000076f580000,0x0000000770000000)
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]   to   space 10752K, 0% used [0x000000076eb00000,0x000000076eb00000,0x000000076f580000)
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]  ParOldGen       total 175104K, used 131072K [0x00000006c0000000, 0x00000006cab00000, 0x000000076ab00000)
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]   object space 175104K, 74% used [0x00000006c0000000,0x00000006c8000010,0x00000006cab00000)
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]  Metaspace       used 3425K, capacity 4486K, committed 4864K, reserved 1056768K
+[2025-12-16T22:32:49.045+0800][0.031s][info][gc,heap,exit ]   class space    used 303K, capacity 386K, committed 512K, reserved 1048576K

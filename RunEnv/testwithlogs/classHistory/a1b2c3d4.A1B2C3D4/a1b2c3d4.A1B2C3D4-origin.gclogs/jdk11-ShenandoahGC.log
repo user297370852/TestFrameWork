@@ -1,0 +1,71 @@
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] Regions: 2048 x 2048K
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] Humongous object threshold: 2048K
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] Max TLAB size: 2048K
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] GC threads: 5 parallel, 2 concurrent
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc     ] Heuristics ergonomically sets -XX:+ExplicitGCInvokesConcurrent
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc     ] Heuristics ergonomically sets -XX:+ShenandoahImplicitGCInvokesConcurrent
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] Shenandoah GC mode: Snapshot-At-The-Beginning (SATB)
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] Shenandoah heuristics: Adaptive
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,ergo] Pacer for Idle. Initial: 83886K, Alloc Tax Rate: 1.0x
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] Initialize Shenandoah heap: 256M initial, 8192K min, 4096M max
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,init] Safepointing mechanism: global-page poll
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc     ] Using Shenandoah
+[2025-12-16T22:32:26.603+0800][0.004s][info][gc,heap,coops] Heap address: 0x00000004aaa00000, size: 4096 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+[2025-12-16T22:32:26.606+0800][0.008s][info][gc,init      ] Reference processing: parallel discovery, parallel processing
+[2025-12-16T22:32:26.630+0800][0.032s][info][gc           ] Cancelling GC: Stopping VM
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ] Heap
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ] Shenandoah Heap
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ]  4096M max, 4096M soft max, 256M committed, 20480K used
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ]  2048 x 2048K regions
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ] Status: cancelled
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ] Reserved region:
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ]  - [0x00000004aaa00000, 0x00000005aaa00000) 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ] Collection set:
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ]  - map (vanilla): 0x0000000104fc2555
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ]  - map (biased):  0x0000000104fc0000
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ]  Metaspace       used 4587K, capacity 4662K, committed 4864K, reserved 1056768K
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,heap,exit ]   class space    used 378K, capacity 398K, committed 512K, reserved 1048576K
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] GC STATISTICS:
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   "(G)" (gross) pauses include VM time: time to notify and block threads, do the pre-
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]         and post-safepoint housekeeping. Use -XX:+PrintSafepointStatistics to dissect.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   "(N)" (net) pauses are the times spent in the actual GC code.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   "a" is average time for each phase, look at levels to see if average makes sense.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   "lvls" are quantiles: 0% (minimum), 25%, 50% (median), 75%, 100% (maximum).
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   All times are wall-clock times, except per-root-class counters, that are sum over
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   all workers. Dividing the <total> over the root stage time estimates parallelism.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   Pacing delays are measured from entering the pacing code till exiting it. Therefore,
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   observed pacing delays may be higher than the threshold when paced thread spent more
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   time in the pacing code. It usually happens when thread is de-scheduled while paced,
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   OS takes longer to unblock the thread, or JVM experiences an STW pause.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   Higher delay would prevent application outpacing the GC, but it will hide the GC latencies
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   from the STW pause times. Pacing affects the individual threads, and so it would also be
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   invisible to the usual profiling tools, but would add up to end-to-end application latency.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]   Raise max pacing delay with care.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] Under allocation pressure, concurrent cycles may cancel, and either continue cycle
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] under stop-the-world pause or result in stop-the-world Full GC. Increase heap size,
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] tune GC heuristics, set more aggressive pacing delay, or lower allocation rate
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] to avoid Degenerated and Full GC cycles.
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]     0 successful concurrent GCs
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 invoked explicitly
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 invoked implicitly
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]     0 Degenerated GCs
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 caused by allocation failure
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 upgraded to Full GC
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]     0 Full GCs
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 invoked explicitly
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 invoked implicitly
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 caused by allocation failure
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ]       0 upgraded from Degenerated GC
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 
+[2025-12-16T22:32:26.631+0800][0.032s][info][gc,stats     ] 

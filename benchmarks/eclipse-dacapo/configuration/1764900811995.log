@@ -1,0 +1,17 @@
+!SESSION 2022-08-12 15:20:08.673 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.9
+java.vendor=Homebrew
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=carbon, NL=zh_CN_#Hans
+
+!ENTRY org.eclipse.osgi 4 0 2025-12-05 10:13:32.045
+!MESSAGE Startup error
+!STACK 1
+java.lang.ArrayStoreException: arraycopy: element type mismatch: can not cast one of the elements of java.lang.Object[] to the type of the destination array, org.osgi.framework.Bundle
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3515)
+	at java.base/java.util.ArrayList.toArray(ArrayList.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.loadBasicBundles(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)

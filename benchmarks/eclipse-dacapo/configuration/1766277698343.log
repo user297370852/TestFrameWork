@@ -1,0 +1,15 @@
+!SESSION 2022-08-12 15:20:08.673 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.9
+java.vendor=Homebrew
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=carbon, NL=zh_CN_#Hans
+
+!ENTRY org.eclipse.osgi 4 0 2025-12-21 08:41:38.395
+!MESSAGE Startup error
+!STACK 1
+java.lang.NullPointerException: Cannot invoke "java.lang.Class.getPackage()" because "org.eclipse.core.runtime.adaptor.EclipseStarter.class$6" is null
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.updateSplash(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.setStartLevel(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.jasm)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.main(EclipseStarter.jasm)
