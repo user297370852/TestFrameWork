@@ -9,7 +9,7 @@ import time
 import httpx
 
 # OpenAI API配置
-API_KEY = "sk-0PyJegrliXIPI8Wge4Y3stU7dY8wnNCtG49jQk8BmIfWGw4J"  # 请替换为您的API密钥
+API_KEY = "******"  # 请替换为您的API密钥
 
 
 def init_output_dir(output_root):
@@ -122,7 +122,7 @@ def call_openai_api(java_code):
 
     client = OpenAI(
         base_url="https://svip.xty.app/v1",
-        api_key="sk-0PyJegrliXIPI8Wge4Y3stU7dY8wnNCtG49jQk8BmIfWGw4J",
+        api_key="******",
         http_client=httpx.Client(
             base_url="https://svip.xty.app/v1",
             follow_redirects=True,

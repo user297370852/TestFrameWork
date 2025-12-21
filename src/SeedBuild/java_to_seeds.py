@@ -82,7 +82,7 @@ class JavaToSeedsConverter:
             
         try:
             # 设置Java版本
-            result = subprocess.run(['jenv', 'global', '1.8'], 
+            result = subprocess.run(['jenv', 'local', '1.8'],
                                   capture_output=True, text=True, timeout=30)
             if result.returncode == 0:
                 print("✅ Java版本已设置为1.8")

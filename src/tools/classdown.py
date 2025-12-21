@@ -130,7 +130,8 @@ def main():
     downgrader = ClassFileVersionDowngrader()
 
     # 扫描目录并显示版本统计
-    base_directory = "/Users/yeliu/PycharmProjects/PythonProject/RunEnv/unittest"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_directory = os.path.join(current_dir, "..", "..", "RunEnv", "unittest")
     print("扫描字节码版本...")
     stats = downgrader.get_version_statistics(base_directory)
 

@@ -6,9 +6,10 @@ import argparse
 import re
 from pathlib import Path
 
-# 配置转换工具路径（需用户自行修改为实际路径）
-FERNFLOWER_JAR = "/Users/yeliu/PycharmProjects/PythonProject/lib/fernflower.jar"  # Fernflower的JAR路径
-SOOT_JAR = "/Users/yeliu/PycharmProjects/PythonProject/lib/soot-4.1.0.jar"  # Soot的JAR路径
+# 配置转换工具路径
+current_dir = os.path.dirname(os.path.abspath(__file__))
+FERNFLOWER_JAR = os.path.join(current_dir, "..", "..", "lib", "fernflower.jar")  # Fernflower的JAR路径
+SOOT_JAR = os.path.join(current_dir, "..", "..", "lib", "soot-4.1.0.jar")  # Soot的JAR路径
 
 
 def init_output_dir(output_root):
