@@ -132,7 +132,7 @@ class JDKDifferentialTester:
             print(f"获取JDK版本失败: {e}")
             return "unknown"
 
-    def test_class_with_jdk_variants(self, class_file_path: Path, parent_directory: str, output_dir: str = None) -> List[Dict]:
+    def test_class_with_jdk_variants(self, class_file_path: Path, parent_directory: str, output_dir: str = None, log_path: str = None) -> List[Dict]:
         """
         在所有的JDK版本和JVM参数组合下测试单个类文件
 
@@ -182,11 +182,9 @@ class JDKDifferentialTester:
                     # 创建每个测试用例专属的GC日志目录，与JSON文件在同一层
                     class_filename_without_ext = class_file_path.stem
                     
-                    # JSON文件的路径是：output_dir / relative_path.with_suffix('.json')
-                    # 所以GC日志目录应该与JSON文件在同一目录下
-                    relative_path = class_file_path.relative_to(class_file_path.parents[2])
-                    json_file_path = Path(output_dir) / relative_path.with_suffix('.json')
-                    gc_logs_dir = json_file_path.parent / f"{class_filename_without_ext}.gclogs"
+                    # GC日志目录应该与JSON文件在同一目录下
+                    
+                    gc_logs_dir = log_path.parent / f"{class_filename_without_ext}.gclogs"
                     gc_logs_dir.mkdir(parents=True, exist_ok=True)
                     gc_log_file = gc_logs_dir / f"jdk{jdk_version}-{gc_name}.log"
 
@@ -351,9 +349,6 @@ class JDKDifferentialTester:
                 current_file += 1
                 print(f"\n[{current_file}/{total_files}] ", end="")
 
-                # 在所有JDK版本和JVM参数组合下测试这个类文件
-                class_results = self.test_class_with_jdk_variants(item, parent_dir, output_dir)
-
                 # 计算相对于基目录的相对路径
                 relative_path = item.relative_to(base_path)
 
@@ -362,7 +357,10 @@ class JDKDifferentialTester:
 
                 # 确保输出目录存在
                 log_file_path.parent.mkdir(parents=True, exist_ok=True)
+                # 在所有JDK版本和JVM参数组合下测试这个类文件
+                class_results = self.test_class_with_jdk_variants(item, parent_dir, output_dir,log_file_path)
 
+                
                 # 生成并写入.log文件内容
                 log_content = self.generate_log_content(class_results)
                 with open(log_file_path, 'w', encoding='utf-8') as f:

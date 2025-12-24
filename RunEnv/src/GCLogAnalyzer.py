@@ -66,8 +66,14 @@ class GCLogAnalyzer:
         if not os.path.exists(gc_log_file):
             raise FileNotFoundError(f"GC日志文件不存在: {gc_log_file}")
         
-        # 基于文件名判断GC类型
+        # 基于文件名判断GC类型和JDK版本
         gc_log_filename = Path(gc_log_file).name.lower()
+        
+        # 提取JDK版本
+        jdk_version = None
+        jdk_match = re.search(r'jdk(\d+)', gc_log_filename)
+        if jdk_match:
+            jdk_version = int(jdk_match.group(1))
         
         # 检测GC类型
         gc_type = None
@@ -81,6 +87,10 @@ class GCLogAnalyzer:
         
         # 获取对应的解析器
         parser = self.gc_parsers[gc_type]
+        
+        # 如果是ZGC解析器且有JDK版本信息，设置JDK版本
+        if gc_type == 'zgc' and jdk_version is not None:
+            parser.set_jdk_version(jdk_version)
         
         # 重置解析器状态
         parser.reset()

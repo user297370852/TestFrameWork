@@ -13,9 +13,15 @@ class ZGCParser(BaseGCParser):
         super().__init__()
         self.max_heap_capacity = 0
         self.gc_cycles = {}  # 记录每个GC周期的所有暂停事件
+        self.is_generational_zgc = False  # 是否为分代ZGC (JDK21+)
         
     def get_gc_type(self) -> str:
         return "ZGC"
+    
+    def set_jdk_version(self, jdk_version: int):
+        """设置JDK版本，用于确定ZGC格式"""
+        # JDK 22+的ZGC才支持分代模式，JDK 21及以下使用旧格式
+        self.is_generational_zgc = jdk_version > 21
     
     def parse_log_line(self, line: str) -> bool:
         """解析ZGC日志行"""
@@ -30,44 +36,118 @@ class ZGCParser(BaseGCParser):
                 # 注意：这里不更新max_heap_usage，因为ZGC的max_heap_usage应该是实际使用量
             return False
             
-        # 解析ZGC的STW暂停事件 - 实际格式：GC(id) Pause Type time ms
-        # 格式: GC(0) Pause Mark Start 0.003ms
-        zgc_pause_pattern = r'GC\((\d+)\)\s+Pause\s+(.+?)\s+([\d.]+)ms$'
-        pause_match = re.search(zgc_pause_pattern, line)
-        
-        if pause_match:
-            gc_id = pause_match.group(1)
-            pause_type = pause_match.group(2)
-            pause_time = float(pause_match.group(3))
+        # 解析GC结束后的堆使用统计 - 从Used行提取High字段（峰值使用量）
+        if self.is_generational_zgc:
+            # JDK21+分代ZGC格式
+            # 整体堆统计: GC(0) Y: Used: 376M 378M 72M 72M 378M 38M
+            # 分代堆统计: GC(0) O: Used: 376M 106M 106M 106M 378M 38M
+            generational_used_pattern = r'GC\(\d+\)\s+([yoYO]):\s+Used:\s+(\d+)M\s*\([^)]*\)\s+(\d+)M\s*\([^)]*\)\s+(\d+)M\s*\([^)]*\)\s+(\d+)M\s*\([^)]*\)\s+(\d+)M\s*\([^)]*\)\s+(\d+)M\s*\([^)]*\)'
+            gen_used_match = re.search(generational_used_pattern, line)
             
-            # 确定GC子类型 - 基于暂停类型
-            if "Mark Start" in pause_type:
-                gc_subtype = "Pause Mark Start"
-            elif "Mark End" in pause_type:
-                gc_subtype = "Pause Mark End"
-            elif "Relocate Start" in pause_type:
-                gc_subtype = "Pause Relocate Start"
-            else:
-                gc_subtype = pause_type.strip()
+            if gen_used_match:
+                generation = gen_used_match.group(1)  # Y 或 O
+                # 第6个字段是High字段（峰值使用量）
+                high_usage = int(gen_used_match.group(6))
+                self.max_heap_usage = max(self.max_heap_usage, high_usage)
+                return False
             
-            # 记录这个GC周期的暂停事件
-            if gc_id not in self.gc_cycles:
-                self.gc_cycles[gc_id] = {
-                    'pause_times': {},  # 分别记录每种暂停类型的时间
-                    'total_time': 0.0
-                }
+            # 分代ZGC的简化格式（没有百分号的版本）
+            simple_gen_pattern = r'GC\(\d+\)\s+([yoYO]):\s+Used:\s+(\d+)M\s+(\d+)M\s+(\d+)M\s+(\d+)M\s+(\d+)M\s+(\d+)M'
+            simple_gen_match = re.search(simple_gen_pattern, line)
             
-            # 累加特定暂停类型的时间
-            if gc_subtype not in self.gc_cycles[gc_id]['pause_times']:
-                self.gc_cycles[gc_id]['pause_times'][gc_subtype] = 0.0
-            self.gc_cycles[gc_id]['pause_times'][gc_subtype] += pause_time
+            if simple_gen_match:
+                generation = simple_gen_match.group(1)  # Y 或 O
+                # 第6个字段是High字段（峰值使用量）
+                high_usage = int(simple_gen_match.group(6))
+                self.max_heap_usage = max(self.max_heap_usage, high_usage)
+                return False
+        else:
+            # 旧版ZGC格式: GC(229)      Used:     4086M (100%)       4086M (100%)        108M (3%)          108M (3%)         4086M (100%)        108M (3%)
+            old_used_pattern = r'GC\(\d+\)\s+Used:\s+(\d+)M\s*\([^)]+\)\s+(\d+)M\s*\([^)]+\)\s+(\d+)M\s*\([^)]+\)\s+(\d+)M\s*\([^)]+\)\s+(\d+)M\s*\([^)]+\)\s+(\d+)M\s*\([^)]+\)'
+            old_used_match = re.search(old_used_pattern, line)
             
-            # 更新这个GC周期的总时间
-            self.gc_cycles[gc_id]['total_time'] += pause_time
+            if old_used_match:
+                # 第5个字段是High字段（峰值使用量）
+                high_usage = int(old_used_match.group(5))
+                self.max_heap_usage = max(self.max_heap_usage, high_usage)
+                return False
             
-            return True
+        # 解析ZGC的STW暂停事件
+        if self.is_generational_zgc:
+            # JDK21+分代ZGC格式: GC(0) Y: Pause Mark Start (Major) 0.005ms
+            generational_pause_pattern = r'GC\((\d+)\)\s+([yoYO]):\s+Pause\s+(.+?)\s+([\d.]+)ms$'
+            gen_pause_match = re.search(generational_pause_pattern, line)
+            
+            if gen_pause_match:
+                gc_id = gen_pause_match.group(1)
+                generation = gen_pause_match.group(2)  # Y 或 O
+                pause_type = gen_pause_match.group(3)
+                pause_time = float(gen_pause_match.group(4))
+                
+                # 确定GC子类型 - 基于暂停类型和代
+                if "Mark Start" in pause_type:
+                    gc_subtype = f"Pause Mark Start ({generation} Gen)"
+                elif "Mark End" in pause_type:
+                    gc_subtype = f"Pause Mark End ({generation} Gen)"
+                elif "Relocate Start" in pause_type:
+                    gc_subtype = f"Pause Relocate Start ({generation} Gen)"
+                else:
+                    gc_subtype = f"Pause {pause_type.strip()} ({generation} Gen)"
+                
+                # 记录这个GC周期的暂停事件
+                if gc_id not in self.gc_cycles:
+                    self.gc_cycles[gc_id] = {
+                        'pause_times': {},  # 分别记录每种暂停类型的时间
+                        'total_time': 0.0
+                    }
+                
+                # 累加特定暂停类型的时间
+                if gc_subtype not in self.gc_cycles[gc_id]['pause_times']:
+                    self.gc_cycles[gc_id]['pause_times'][gc_subtype] = 0.0
+                self.gc_cycles[gc_id]['pause_times'][gc_subtype] += pause_time
+                
+                # 更新这个GC周期的总时间
+                self.gc_cycles[gc_id]['total_time'] += pause_time
+                
+                return True
+        else:
+            # 旧版ZGC格式: GC(0) Pause Mark Start 0.003ms
+            zgc_pause_pattern = r'GC\((\d+)\)\s+Pause\s+(.+?)\s+([\d.]+)ms$'
+            pause_match = re.search(zgc_pause_pattern, line)
+            
+            if pause_match:
+                gc_id = pause_match.group(1)
+                pause_type = pause_match.group(2)
+                pause_time = float(pause_match.group(3))
+                
+                # 确定GC子类型 - 基于暂停类型
+                if "Mark Start" in pause_type:
+                    gc_subtype = "Pause Mark Start"
+                elif "Mark End" in pause_type:
+                    gc_subtype = "Pause Mark End"
+                elif "Relocate Start" in pause_type:
+                    gc_subtype = "Pause Relocate Start"
+                else:
+                    gc_subtype = pause_type.strip()
+                
+                # 记录这个GC周期的暂停事件
+                if gc_id not in self.gc_cycles:
+                    self.gc_cycles[gc_id] = {
+                        'pause_times': {},  # 分别记录每种暂停类型的时间
+                        'total_time': 0.0
+                    }
+                
+                # 累加特定暂停类型的时间
+                if gc_subtype not in self.gc_cycles[gc_id]['pause_times']:
+                    self.gc_cycles[gc_id]['pause_times'][gc_subtype] = 0.0
+                self.gc_cycles[gc_id]['pause_times'][gc_subtype] += pause_time
+                
+                # 更新这个GC周期的总时间
+                self.gc_cycles[gc_id]['total_time'] += pause_time
+                
+                return True
                     
-        # 解析Exit时的堆信息 - ZHeap信息
+        # 解析Exit时的堆信息 - ZHeap信息（作为备用方案）
         if "ZHeap" in line and "used" in line:
             # 格式: ZHeap           used 782M, capacity 1596M, max capacity 4096M
             # 注意：ZHeap和used之间可能有多个空格
@@ -77,8 +157,9 @@ class ZGCParser(BaseGCParser):
                 capacity = int(heap_match.group(2))
                 max_capacity = int(heap_match.group(3))
                 
-                # 对于ZGC，优先使用实际使用的堆大小
-                self.max_heap_usage = max(self.max_heap_usage, used)
+                # 对于ZGC，优先使用实际使用的堆大小（如果还没有从Used行获取到的话）
+                if self.max_heap_usage == 0:
+                    self.max_heap_usage = max(self.max_heap_usage, used)
                 self.max_heap_capacity = max(self.max_heap_capacity, max_capacity)
             return False
             

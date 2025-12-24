@@ -100,7 +100,7 @@ def oracle_performance_regression(log_data: Dict[str, Any], file_path: str) -> O
                 change_ratio = current_time / previous_time
 
                 # 如果当前版本比前一个版本慢超过100%，认为是性能回归
-                if change_ratio > 2:
+                if change_ratio > 3:
                     regressions_in_gc.append({
                         "gc_type": gc_type,
                         "from_version": previous_version,

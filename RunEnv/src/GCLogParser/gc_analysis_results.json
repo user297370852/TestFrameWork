@@ -1,13 +1,21 @@
 {
-  "jdk21-SerialGC.log": {
-    "total_gc_count": 99,
-    "gc_stw_time_ms": 5.712000000000001,
-    "max_stw_time_ms": 0.582,
-    "max_heap_mb": 247,
+  "jdk21-ZGC.log": {
+    "total_gc_count": 12,
+    "gc_stw_time_ms": 0.07200000000000001,
+    "max_stw_time_ms": 0.004,
+    "max_heap_mb": 1596,
     "gc_type_breakdown": {
-      "Young GC": {
-        "count": 99,
-        "stw_time_ms": 5.712000000000001
+      "Pause Mark Start": {
+        "count": 12,
+        "stw_time_ms": 0.025
+      },
+      "Pause Mark End": {
+        "count": 12,
+        "stw_time_ms": 0.032
+      },
+      "Pause Relocate Start": {
+        "count": 12,
+        "stw_time_ms": 0.015000000000000003
       }
     }
   },
@@ -35,23 +43,43 @@
       }
     }
   },
-  "jdk21-ZGC.log": {
-    "total_gc_count": 12,
-    "gc_stw_time_ms": 0.07200000000000001,
-    "max_stw_time_ms": 0.004,
-    "max_heap_mb": 782,
+  "jdk25-ZGC.log": {
+    "total_gc_count": 268,
+    "gc_stw_time_ms": 3.511999999999993,
+    "max_stw_time_ms": 0.43,
+    "max_heap_mb": 3682,
     "gc_type_breakdown": {
-      "Pause Mark Start": {
-        "count": 12,
-        "stw_time_ms": 0.025
+      "Pause Mark Start (Y Gen)": {
+        "count": 52,
+        "stw_time_ms": 0.40900000000000014
       },
-      "Pause Mark End": {
-        "count": 12,
-        "stw_time_ms": 0.032
+      "Pause Mark End (Y Gen)": {
+        "count": 52,
+        "stw_time_ms": 0.18300000000000008
       },
-      "Pause Relocate Start": {
-        "count": 12,
-        "stw_time_ms": 0.015000000000000003
+      "Pause Relocate Start (Y Gen)": {
+        "count": 52,
+        "stw_time_ms": 0.11300000000000004
+      },
+      "Pause Mark End (O Gen)": {
+        "count": 52,
+        "stw_time_ms": 0.2000000000000001
+      },
+      "Pause Relocate Start (O Gen)": {
+        "count": 52,
+        "stw_time_ms": 0.14300000000000004
+      },
+      "Pause Mark Start (y Gen)": {
+        "count": 216,
+        "stw_time_ms": 1.4569999999999976
+      },
+      "Pause Mark End (y Gen)": {
+        "count": 216,
+        "stw_time_ms": 0.7020000000000004
+      },
+      "Pause Relocate Start (y Gen)": {
+        "count": 216,
+        "stw_time_ms": 0.3050000000000002
       }
     }
   },

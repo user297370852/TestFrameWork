@@ -28,10 +28,10 @@ def analyze_gc_logs():
     
     # 选择几个代表性的日志文件进行演示
     demo_files = [
-        "jdk21-SerialGC.log",
+        "jdk21-ZGC.log",
         "jdk17-ParallelGC.log",
         "jdk25-G1GC.log",
-        "jdk21-ZGC.log",
+        "jdk25-ZGC.log",
         "jdk17-EpsilonGC.log",
         "jdk21-ShenandoahGC.log",
         "jdk25-ShenandoahGC-Gen.log"
