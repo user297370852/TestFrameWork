@@ -305,8 +305,8 @@ main() {
     echo
     
     # 3. 快速测试所有测试集
-    #quick_test_suits
-    #echo
+    quick_test_suits
+    echo
     
     # 4. 询问是否保留 GC 日志
     local keep_gc_logs=$(ask_gc_logs)
