@@ -33,7 +33,8 @@ class ParallelGCParser(BaseGCParser):
             
         # 解析GC事件 - Parallel GC格式
         # 格式: GC(0) Pause Young (Allocation Failure) 64M->0M(245M) 0.736ms
-        gc_pattern = r'GC\((\d+)\)\s+(.+?)\s+(\d+)M->(\d+)M\((\d+)M\)\s+([\d.]+)ms'
+        # 注意：必须包含Pause关键字，避免匹配到Phase等子阶段
+        gc_pattern = r'GC\((\d+)\)\s+Pause\s+(.+?)\s+(\d+)M->(\d+)M\((\d+)M\)\s+([\d.]+)ms'
         gc_match = re.search(gc_pattern, line)
         
         if gc_match:
@@ -58,28 +59,6 @@ class ParallelGCParser(BaseGCParser):
             
             # 更新最大堆容量
             self.max_heap_usage = max(self.max_heap_usage, heap_capacity)
-            return True
-            
-        # 解析另一种格式的GC事件 - 没有容量信息
-        simple_gc_pattern = r'GC\((\d+)\)\s+(.+?)\s+([\d.]+)ms'
-        simple_gc_match = re.search(simple_gc_pattern, line)
-        
-        if simple_gc_match:
-            gc_id = simple_gc_match.group(1)
-            gc_type = simple_gc_match.group(2)
-            stw_time = float(simple_gc_match.group(3))
-            
-            # 确定GC子类型
-            if "Young" in gc_type:
-                gc_subtype = "Young GC"
-            elif "Full" in gc_type:
-                gc_subtype = "Full GC"
-            elif "Old" in gc_type or "Major" in gc_type:
-                gc_subtype = "Old GC"
-            else:
-                gc_subtype = gc_type.strip()
-            
-            self.update_gc_stats(gc_subtype, stw_time)
             return True
             
         # 解析堆使用信息 - Parallel GC特有的格式

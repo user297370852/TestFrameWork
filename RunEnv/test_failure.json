@@ -1,0 +1,2099 @@
+{
+  "summary": {
+    "total_anomalies": 47,
+    "anomalies_by_type": {
+      "test_failure": 47
+    },
+    "affected_files": 47,
+    "active_oracles": 1
+  },
+  "details": {
+    "test_failure": [
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764655016883.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764655016883.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:2951)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:897)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 63853
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 64025
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764622384928.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764622384928.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 65706
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0501@1764596131850.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0501@1764596131850.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-6\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 62860
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0606@1764673696058.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0606@1764673696058.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-6\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 63423
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764701487497.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764701487497.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62613
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764602264278.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764602264278.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-6\" Exception in thread \"pool-1-thread-3\" Exception in thread \"pool-1-thread-2\" Exception in thread \"pool-1-thread-1\" Exception in thread \"pool-1-thread-4\" java.lang.OutOfMemoryError: Java heap space\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(",
+            "duration_ms": 60820
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62296
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 63186
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 3
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764612795654.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764612795654.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-3\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\nException in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(Simple",
+            "duration_ms": 62328
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-1\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1529)\n\tat java.base/java.lang.Thread.run(Thread.java:1516)\nException in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(Simple",
+            "duration_ms": 62558
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0804@1764657256604.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0804@1764657256604.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-4\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(Simple",
+            "duration_ms": 65395
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764607378495.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764607378495.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:2951)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:897)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62336
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 63664
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62686
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 3
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0504@1764640069976.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0504@1764640069976.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-3\" Exception in thread \"pool-1-thread-4\" Exception in thread \"pool-1-thread-2\" java.lang.OutOfMemoryError: Java heap space\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoo",
+            "duration_ms": 61623
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0904@1764715493411.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0904@1764715493411.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-11\" Exception in thread \"pool-1-thread-12\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4220)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1047)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\n\tat java.base/java.lang.Thread.run(Thread.java:840)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4220)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1047)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.conc",
+            "duration_ms": 69537
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-12\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4465)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1187)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1596)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\nException in thread \"pool-1-thread-14\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4465)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1187)\n\tat org.javacore.thread.SimplePrioriti",
+            "duration_ms": 70362
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-16\" java.lang.OutOfMemoryError: Java heap space\n\tat org.javacore.thread.SimplePriorities.<init>(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\njava.lang.OutOfMemoryError: Java heap space\nException in thread \"pool-1-thread-14\" java.lang.OutOfMemoryError: Java heap space\n\tat org.javacore.thread.SimplePriorities.<init>(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang",
+            "duration_ms": 79454
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-13\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1529)\n\tat java.base/java.lang.Thread.run(Thread.java:1516)\nException in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(Simpl",
+            "duration_ms": 86211
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-15\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1529)\n\tat java.base/java.lang.Thread.run(Thread.java:1516)\nException in thread \"pool-1-thread-1\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePrioritie",
+            "duration_ms": 75966
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 5
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764694847118.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764694847118.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-6\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1529)\n\tat java.base/java.lang.Thread.run(Thread.java:1516)\nException in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-5\" java.lang.OutOfMemoryError: Java heap space\n\tat org.javacore.threa",
+            "duration_ms": 66195
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764623343327.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764623343327.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-3\" Exception in thread \"pool-1-thread-2\" Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecu",
+            "duration_ms": 63216
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-3\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 62849
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764702226181.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764702226181.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-6\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 72295
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0402@1764591888284.json",
+        "class_info": {
+          "file_path": "../testcases/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0402@1764591888284.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-1\" Exception in thread \"pool-1-thread-4\" Exception in thread \"pool-1-thread-2\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadP",
+            "duration_ms": 61960
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-5\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 61891
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764655016883.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764655016883.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:2951)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:897)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 63923
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-1\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\nException in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(Simple",
+            "duration_ms": 63271
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-1\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 63271
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 3
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764622384928.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764622384928.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-3\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1529)\n\tat java.base/java.lang.Thread.run(Thread.java:1516)",
+            "duration_ms": 66560
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764602264278.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764602264278.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 61813
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764647205757.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764647205757.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 66025
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0604@1764695235794.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0604@1764695235794.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-4\" Exception in thread \"pool-1-thread-3\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\njava.lang.OutOfMemoryError: Java heap space\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(",
+            "duration_ms": 61504
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62096
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0806@1764691212222.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0806@1764691212222.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-5\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 63584
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764612795654.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764612795654.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62368
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0805@1764689352555.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0805@1764689352555.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-6\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 62746
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0503@1764603702335.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0503@1764603702335.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-1\" Exception in thread \"pool-1-thread-5\" Exception in thread \"pool-1-thread-4\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.printl",
+            "duration_ms": 61515
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-2\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 63370
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764607378495.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764607378495.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 63032
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0504@1764640069976.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0504@1764640069976.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62242
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0904@1764715493411.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0904@1764715493411.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-10\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4220)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1047)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\n\tat java.base/java.lang.Thread.run(Thread.java:840)\nException in thread \"pool-1-thread-2\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4220)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1047)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concu",
+            "duration_ms": 69749
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-7\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4465)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1187)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1596)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\nException in thread \"pool-1-thread-18\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4465)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1187)\n\tat org.javacore.thread.SimplePrioritie",
+            "duration_ms": 70631
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"pool-1-thread-21\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1529)\n\tat java.base/java.lang.Thread.run(Thread.java:1516)\nException in thread \"main\" java.lang.OutOfMemoryError: Java heap space\nException in thread \"pool-1-thread-2\" java.lang.OutOfMemoryError: Java heap space\nException in thread \"pool-1-thread-19\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat jav",
+            "duration_ms": 77552
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 3
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764694847118.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764694847118.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-5\" Exception in thread \"pool-1-thread-2\" Exception in thread \"pool-1-thread-6\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.runWith(Thread.java:1487)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\njava.lang.OutOfMemoryError: Java heap space\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>",
+            "duration_ms": 64584
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 67195
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 68365
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 3
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764674153499.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764674153499.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-5\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 64026
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)",
+            "duration_ms": 62832
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764702226181.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764702226181.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" Exception in thread \"pool-1-thread-3\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\njava.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 72723
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0402@1764591888284.json",
+        "class_info": {
+          "file_path": "../testcases/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0402@1764591888284.class",
+          "package": "org.javacore.thread",
+          "class_name": "SimplePriorities"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-3\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4530)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1023)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.",
+            "duration_ms": 62709
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat org.javacore.thread.SimplePriorities.main(SimplePriorities.java)\nException in thread \"pool-1-thread-3\" Exception in thread \"pool-1-thread-5\" java.lang.OutOfMemoryError: Java heap space\n\tat GCObj.<init>(GCObj.java:19)\n\tat org.javacore.thread.SimplePriorities.toString(SimplePriorities.java)\n\tat java.base/java.lang.String.valueOf(String.java:4662)\n\tat java.base/java.io.PrintStream.println(PrintStream.java:1003)\n\tat org.javacore.thread.SimplePriorities.run(SimplePriorities.java)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecu",
+            "duration_ms": 63433
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 2
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0_0101@1761306199391.json",
+        "class_info": {
+          "file_path": "../testcases/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0_0101@1761306199391.class",
+          "package": "Bug_triggering_input.Compiler_triggering_input.JDK_8283244",
+          "class_name": "SDD0"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010fe26a1c, pid=69932, tid=18947\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid69932.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid69932.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 159
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010d626a1c, pid=69965, tid=31491\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, g1 gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid69965.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid69965.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 159
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010ee26a1c, pid=69998, tid=22531\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, shenandoah gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid69998.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid69998.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 174
+          }
+        ],
+        "total_tests": 28,
+        "failed_count": 3
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong-origin.json",
+        "class_info": {
+          "file_path": "../testcases/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong-origin.class",
+          "package": "Bug_triggering_input.Compiler_triggering_input.JDK_8246051",
+          "class_name": "TestSwapLong"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010e2954cc, pid=187, tid=5123\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, serial gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x6b14cc]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xb8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid187.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 141
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010c2954cc, pid=220, tid=5635\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x6b14cc]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xb8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid220.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 139
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010b2954cc, pid=253, tid=5123\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x6b14cc]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xb8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid253.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 139
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x00000001102954cc, pid=319, tid=5123\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, shenandoah gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x6b14cc]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xb8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid319.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 163
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010c50b03c, pid=420, tid=5379\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (17.0.17) (build 17.0.17+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (17.0.17+0, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, serial gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x76703c]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xbc\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid420.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 129
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010b50b03c, pid=453, tid=5891\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (17.0.17) (build 17.0.17+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (17.0.17+0, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x76703c]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xbc\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid453.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 129
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010d50b03c, pid=606, tid=4355\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (17.0.17) (build 17.0.17+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (17.0.17+0, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, shenandoah gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x76703c]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xbc\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid606.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 159
+          }
+        ],
+        "total_tests": 26,
+        "failed_count": 7,
+        "environment_failures_filtered": {
+          "count": 5,
+          "samples": [
+            {
+              "jdk_version": "25",
+              "jvm_parameters": [
+                "-XX:+UseSerialGC"
+              ],
+              "exit_code": -6,
+              "error_type": "environment_error",
+              "output_preview": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::compareAndSwapLong has been called by Bug_triggering_input.Compiler_triggering_input.JDK_8246051.Te..."
+            },
+            {
+              "jdk_version": "25",
+              "jvm_parameters": [
+                "-XX:+UseParallelGC"
+              ],
+              "exit_code": -6,
+              "error_type": "environment_error",
+              "output_preview": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::compareAndSwapLong has been called by Bug_triggering_input.Compiler_triggering_input.JDK_8246051.Te..."
+            },
+            {
+              "jdk_version": "25",
+              "jvm_parameters": [
+                "-XX:+UseG1GC"
+              ],
+              "exit_code": -6,
+              "error_type": "environment_error",
+              "output_preview": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::compareAndSwapLong has been called by Bug_triggering_input.Compiler_triggering_input.JDK_8246051.Te..."
+            }
+          ]
+        }
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong_0101@1761338064621.json",
+        "class_info": {
+          "file_path": "../testcases/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong/Bug_triggering_input.Compiler_triggering_input.JDK_8246051.TestSwapLong_0101@1761338064621.class",
+          "package": "Bug_triggering_input.Compiler_triggering_input.JDK_8246051",
+          "class_name": "TestSwapLong"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010ba954cc, pid=1724, tid=4355\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, g1 gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x6b14cc]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xb8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid1724.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 140
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010d50b03c, pid=1892, tid=5891\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (17.0.17) (build 17.0.17+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (17.0.17+0, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x76703c]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xbc\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid1892.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 129
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010dd0b03c, pid=2008, tid=4099\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (17.0.17) (build 17.0.17+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (17.0.17+0, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, shenandoah gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x76703c]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xbc\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid2008.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 154
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010febca88, pid=2105, tid=4611\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (21.0.9) (build 21.0.9)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (21.0.9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, serial gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x7d0a88]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xc0\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid2105.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 127
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010febca88, pid=2139, tid=5635\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (21.0.9) (build 21.0.9)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (21.0.9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x7d0a88]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xc0\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid2139.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 125
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010f6bca88, pid=2174, tid=4611\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (21.0.9) (build 21.0.9)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (21.0.9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x7d0a88]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xc0\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid2174.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 128
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGBUS (0xa) at pc=0x000000010febca88, pid=2243, tid=5123\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (21.0.9) (build 21.0.9)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (21.0.9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, shenandoah gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x7d0a88]  Unsafe_CompareAndSetLong(JNIEnv_*, _jobject*, _jobject*, long, long, long)+0xc0\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid2243.log\n[0.023s][warning][os] Loading hsdis library failed\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 161
+          }
+        ],
+        "total_tests": 28,
+        "failed_count": 7,
+        "environment_failures_filtered": {
+          "count": 3,
+          "samples": [
+            {
+              "jdk_version": "26",
+              "jvm_parameters": [
+                "-XX:+UseSerialGC"
+              ],
+              "exit_code": -6,
+              "error_type": "environment_error",
+              "output_preview": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::compareAndSwapLong has been called by Bug_triggering_input.Compiler_triggering_input.JDK_8246051.Te..."
+            },
+            {
+              "jdk_version": "26",
+              "jvm_parameters": [
+                "-XX:+UseParallelGC"
+              ],
+              "exit_code": -6,
+              "error_type": "environment_error",
+              "output_preview": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::compareAndSwapLong has been called by Bug_triggering_input.Compiler_triggering_input.JDK_8246051.Te..."
+            },
+            {
+              "jdk_version": "26",
+              "jvm_parameters": [
+                "-XX:+UseG1GC"
+              ],
+              "exit_code": -6,
+              "error_type": "environment_error",
+              "output_preview": "WARNING: A terminally deprecated method in sun.misc.Unsafe has been called\nWARNING: sun.misc.Unsafe::compareAndSwapLong has been called by Bug_triggering_input.Compiler_triggering_input.JDK_8246051.Te..."
+            }
+          ]
+        }
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8189172.PowTest/Bug_triggering_input.Compiler_triggering_input.JDK_8189172.PowTest-origin.json",
+        "class_info": {
+          "file_path": "../testcases/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8189172.PowTest/Bug_triggering_input.Compiler_triggering_input.JDK_8189172.PowTest-origin.class",
+          "package": "Bug_triggering_input.Compiler_triggering_input.JDK_8189172",
+          "class_name": "PowTest"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300010
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300001
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300001
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300000
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300002
+          },
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC",
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:ShenandoahGCMode=generational"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300002
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 299990
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300002
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 24
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0_0101@1761306199391.json",
+        "class_info": {
+          "file_path": "../testcases/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0_0101@1761306199391.class",
+          "package": "Bug_triggering_input.Compiler_triggering_input.JDK_8283244",
+          "class_name": "SDD0"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010d626a1c, pid=8229, tid=19203\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid8229.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid8229.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 150
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010d626a1c, pid=8262, tid=19203\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid8262.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid8262.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 146
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010f626a1c, pid=8295, tid=32259\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, g1 gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid8295.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid8295.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 152
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010be26a1c, pid=8328, tid=22531\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, shenandoah gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid8328.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid8328.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 173
+          }
+        ],
+        "total_tests": 29,
+        "failed_count": 4
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0-origin.json",
+        "class_info": {
+          "file_path": "../testcases/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0/Bug_triggering_input.Compiler_triggering_input.JDK_8283244.SDD0-origin.class",
+          "package": "Bug_triggering_input.Compiler_triggering_input.JDK_8283244",
+          "class_name": "SDD0"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010ee26a1c, pid=9400, tid=19459\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid9400.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid9400.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 150
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010f626a1c, pid=9433, tid=18947\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, parallel gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid9433.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid9433.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 155
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseG1GC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010ae26a1c, pid=9473, tid=32003\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, g1 gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid9473.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid9473.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 153
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -6,
+            "output": "#\n# A fatal error has been detected by the Java Runtime Environment:\n#\n#  SIGSEGV (0xb) at pc=0x000000010ae26a1c, pid=9506, tid=22275\n#\n# JRE version: OpenJDK Runtime Environment Homebrew (11.0.28) (build 11.0.28+0)\n# Java VM: OpenJDK 64-Bit Server VM Homebrew (11.0.28+0, mixed mode, tiered, compressed oops, shenandoah gc, bsd-aarch64)\n# Problematic frame:\n# V  [libjvm.dylib+0x242a1c]  PhaseCFG::do_DFS(Tarjan*, unsigned int)+0xd8\n#\n# No core dump will be written. Core dumps have been disabled. To enable core dumping, try \"ulimit -c unlimited\" before starting Java again\n#\n# An error report file with more information is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/hs_err_pid9506.log\njava.lang.IllegalArgumentException\n#\n# Compiler replay data is saved as:\n# /Users/yeliu/PycharmProjects/PythonProject/RunEnv/RunTestHere/replay_pid9506.log\n#\n# If you would like to submit a bug report, please visit:\n#   https://github.com/Homebrew/homebrew-core/issues\n#",
+            "duration_ms": 178
+          }
+        ],
+        "total_tests": 28,
+        "failed_count": 4
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/leetcode/diffClasses/string.FindTheClosestPalindrome/string.FindTheClosestPalindrome_0203@1764960174386.json",
+        "class_info": {
+          "file_path": "../testcases/leetcode/diffClasses/string.FindTheClosestPalindrome/string.FindTheClosestPalindrome_0203@1764960174386.class",
+          "package": "string",
+          "class_name": "FindTheClosestPalindrome"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300000
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300034
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 6
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/leetcode/classHistory/string.FindTheClosestPalindrome/string.FindTheClosestPalindrome_0203@1764960174386.json",
+        "class_info": {
+          "file_path": "../testcases/leetcode/classHistory/string.FindTheClosestPalindrome/string.FindTheClosestPalindrome_0203@1764960174386.class",
+          "package": "string",
+          "class_name": "FindTheClosestPalindrome"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 299998
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 5
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/diffClasses/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0201@1760179171754.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/diffClasses/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0201@1760179171754.class",
+          "package": "vm.compiler.jbe.dead.dead11",
+          "class_name": "dead11"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300007
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300007
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 4
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/diffClasses/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0305@1760276023274.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/diffClasses/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0305@1760276023274.class",
+          "package": "vm.compiler.jbe.dead.dead11",
+          "class_name": "dead11"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300009
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 6
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/diffClasses/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0304@1760272671290.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/diffClasses/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0304@1760272671290.class",
+          "package": "vm.compiler.jbe.dead.dead11",
+          "class_name": "dead11"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.StackOverflowError\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)",
+            "duration_ms": 4538
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.StackOverflowError\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)",
+            "duration_ms": 6697
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.StackOverflowError\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)",
+            "duration_ms": 3449
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 8
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/classHistory/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0201@1760179171754.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/classHistory/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0201@1760179171754.class",
+          "package": "vm.compiler.jbe.dead.dead11",
+          "class_name": "dead11"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300019
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 5
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/classHistory/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0305@1760276023274.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/classHistory/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0305@1760276023274.class",
+          "package": "vm.compiler.jbe.dead.dead11",
+          "class_name": "dead11"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300010
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300016
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300005
+          },
+          {
+            "jdk_version": "26",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 6
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/classHistory/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0304@1760272671290.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/classHistory/vm.compiler.jbe.dead.dead11.dead11/vm.compiler.jbe.dead.dead11.dead11_0304@1760272671290.class",
+          "package": "vm.compiler.jbe.dead.dead11",
+          "class_name": "dead11"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300006
+          },
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UseParallelOldGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300003
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "17",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseSerialGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.StackOverflowError\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)",
+            "duration_ms": 6892
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseParallelGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300004
+          },
+          {
+            "jdk_version": "21",
+            "jvm_parameters": [
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": 1,
+            "output": "Exception in thread \"main\" java.lang.StackOverflowError\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)\n\tat vm.compiler.jbe.dead.dead11.dead11.main(dead11.java)",
+            "duration_ms": 3321
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 7
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/classHistory/compiler.uncommontrap.UncommonTrapStackBang/compiler.uncommontrap.UncommonTrapStackBang_0201@1760281516385.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/classHistory/compiler.uncommontrap.UncommonTrapStackBang/compiler.uncommontrap.UncommonTrapStackBang_0201@1760281516385.class",
+          "package": "compiler.uncommontrap",
+          "class_name": "UncommonTrapStackBang"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "11",
+            "jvm_parameters": [
+              "-XX:+UnlockExperimentalVMOptions",
+              "-XX:+UseShenandoahGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300007
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      },
+      {
+        "type": "test_failure",
+        "file_path": "../results/20260101/HotSpot/classHistory/compiler.loopopts.superword.TestReductionWithLoopVariantUse/compiler.loopopts.superword.TestReductionWithLoopVariantUse_0104@1760290542461.json",
+        "class_info": {
+          "file_path": "../testcases/HotSpot/classHistory/compiler.loopopts.superword.TestReductionWithLoopVariantUse/compiler.loopopts.superword.TestReductionWithLoopVariantUse_0104@1760290542461.class",
+          "package": "compiler.loopopts.superword",
+          "class_name": "TestReductionWithLoopVariantUse"
+        },
+        "failed_tests": [
+          {
+            "jdk_version": "25",
+            "jvm_parameters": [
+              "-XX:+UseZGC"
+            ],
+            "exit_code": -1,
+            "output": "Timeout after 300 seconds",
+            "duration_ms": 300007
+          }
+        ],
+        "total_tests": 24,
+        "failed_count": 1
+      }
+    ]
+  }
+}

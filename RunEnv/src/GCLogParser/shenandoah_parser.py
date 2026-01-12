@@ -46,16 +46,40 @@ class ShenandoahGCParser(BaseGCParser):
             stw_time = float(stw_match.group(3))
             
             # 确定GC子类型 - 基于暂停类型
-            if "Init Mark" in pause_type:
+            # 对于Degenerated GC和Full GC，需要移除堆变化信息（如3722M->3722M(4096M)）
+            if "Degenerated GC" in pause_type:
+                gc_subtype = "Degenerated GC"
+                # 尝试提取子类型（如Outside of Cycle）
+                outside_match = re.search(r'Degenerated GC\s*\((.*?)\)', pause_type)
+                if outside_match:
+                    subtype = outside_match.group(1).strip()
+                    if subtype:
+                        gc_subtype = f"Degenerated GC ({subtype})"
+                # 移除堆变化信息（如3722M->3722M(4096M)）
+                heap_info_match = re.search(r'\d+M->\d+M\(\d+M\)', gc_subtype)
+                if heap_info_match:
+                    # 移除堆信息前的空格和堆信息
+                    gc_subtype = re.sub(r'\s*\d+M->\d+M\(\d+M\).*$', '', gc_subtype).strip()
+            elif "Full" in pause_type:
+                gc_subtype = "Full GC"
+                # 移除堆变化信息
+                gc_subtype = re.sub(r'\s*\d+M->\d+M\(\d+M\).*$', '', gc_subtype).strip()
+            elif "Init Mark" in pause_type:
                 gc_subtype = "Init Mark (unload classes)"
             elif "Final Mark" in pause_type:
                 gc_subtype = "Final Mark (unload classes)"
             elif "Final Roots" in pause_type:
                 gc_subtype = "Final Roots"
+            elif "Init Update Refs" in pause_type:
+                gc_subtype = "Init Update Refs"
+            elif "Final Update Refs" in pause_type:
+                gc_subtype = "Final Update Refs"
             elif "Concurrent" in pause_type:
                 gc_subtype = "Concurrent GC"
             else:
-                gc_subtype = pause_type.strip()
+                # 对于其他类型，也移除堆变化信息
+                cleaned_type = re.sub(r'\s*\d+M->\d+M\(\d+M\).*$', '', pause_type).strip()
+                gc_subtype = cleaned_type if cleaned_type else pause_type.strip()
             
             # 记录这个GC周期的暂停事件
             if gc_id not in self.gc_cycles:

@@ -32,6 +32,11 @@ def oracle_test_failure(log_data: Dict[str, Any], file_path: str) -> Optional[Di
         "LinkageError",
         "java.lang.invoke",  # 方法句柄相关错误
         "java.lang.reflect",  # 反射相关错误
+        "java.security.AccessControlException",  # 访问控制异常
+        "java.lang.UnsupportedOperationException",  # 不支持的操作
+        "Unrecognized VM option",  # 未知VM选项
+        "Too many open files",  # 打开文件数过多
+        "unexpected pattern",  # 预期外的模式
         "sun.misc",  # 内部API相关
         "com.sun",  # 内部API相关
     }
@@ -71,7 +76,7 @@ def oracle_test_failure(log_data: Dict[str, Any], file_path: str) -> Optional[Di
             if is_environment_error(output):
                 environment_failures.append({
                     "jdk_version": result.get("jdk_version", "unknown"),
-                    "jvm_parameters": result.get("jvm_parameters", []),
+                    "jvm_parameters": result.get("GC_parameters", []),
                     "exit_code": result.get("exit_code", -1),
                     "error_type": "environment_error",
                     "output_preview": output[:200] + "..." if len(output) > 200 else output
@@ -81,7 +86,7 @@ def oracle_test_failure(log_data: Dict[str, Any], file_path: str) -> Optional[Di
             # 真正的程序逻辑错误
             failed_tests.append({
                 "jdk_version": result.get("jdk_version", "unknown"),
-                "jvm_parameters": result.get("jvm_parameters", []),
+                "jvm_parameters": result.get("GC_parameters", []),
                 "exit_code": result.get("exit_code", -1),
                 "output": output,
                 "duration_ms": result.get("duration_ms", 0)

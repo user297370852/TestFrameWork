@@ -12,6 +12,9 @@ def oracle_missing_required_fields(log_data: Dict[str, Any], file_path: str) -> 
     规则: JSON文件必须包含基本的测试结果结构
     """
     if "test_results" not in log_data:
+        #如果不是JSON文件, 则返回None
+        if not file_path.endswith(".json"):
+            return None
         return {
             "type": "missing_required_fields",
             "file_path": file_path,

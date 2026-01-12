@@ -48,7 +48,7 @@ def oracle_performance_regression(log_data: Dict[str, Any], file_path: str) -> O
             continue
 
         jdk_version = result.get("jdk_version", "unknown")
-        gc_type = classify_gc(result.get("jvm_parameters", []))
+        gc_type = classify_gc(result.get("GC_parameters", []))
         duration = result.get("duration_ms", 0)
 
         if gc_type not in gc_jdk_groups:

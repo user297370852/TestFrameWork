@@ -69,22 +69,22 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
 
         # 根据GC类型设置不同的阈值
         gc_thresholds = {
-            "SerialGC": 7.5,  # SerialGC相对稳定
-            "ParallelGC": 7.5,  # ParallelGC也比较稳定
-            "G1GC": 8.0,  # G1GC有一定波动性
-            "CMS": 10.0,  # CMS波动较大
-            "ZGC": 6.0,  # ZGC是低延迟GC，应该相对稳定
-            "ShenandoahGC": 6.0,  # ShenandoahGC也是低延迟GC
-            "EpsilonGC": 3.0,  # EpsilonGC不做GC，应该非常稳定
-            "Unknown": 8.0
+            "SerialGC": 15,  # SerialGC相对稳定
+            "ParallelGC": 15,  # ParallelGC也比较稳定
+            "G1GC": 15.0,  # G1GC有一定波动性
+            "CMS": 20.0,  # CMS波动较大
+            "ZGC": 5.0,  # ZGC是低延迟GC，应该相对稳定
+            "ShenandoahGC": 15.0,  # ShenandoahGC也是低延迟GC
+            "EpsilonGC": 5.0,  # EpsilonGC不做GC，应该非常稳定
+            "Unknown": 15.0
         }
 
         # 检测该JDK版本内的慢测试
         for test in successful_tests:
             duration = test.get("duration_ms", 0)
-            gc_type = classify_gc(test.get("jvm_parameters", []))
+            gc_type = classify_gc(test.get("GC_parameters", []))
 
-            threshold_ratio = gc_thresholds.get(gc_type, 8.0)
+            threshold_ratio = gc_thresholds.get(gc_type, 15.0)
             threshold = min_duration * threshold_ratio
 
             # 双重检查：既要超过阈值，也要显著高于中位数
@@ -129,7 +129,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                     for j in range(i + 1, len(gc_list)):
                         gc1, gc2 = gc_list[i], gc_list[j]
                         ratio = max(gc_medians[gc1], gc_medians[gc2]) / min(gc_medians[gc1], gc_medians[gc2])
-                        if ratio > 3.5:  # 低延迟GC之间差异不应过大
+                        if ratio > 5:  # 低延迟GC之间差异不应过大
                             performance_anomalies.append({
                                 "type": "low_latency_gc_discrepancy",
                                 "jdk_version": jdk_version,
@@ -138,7 +138,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                                 "gc1_median_ms": gc_medians[gc1],
                                 "gc2_median_ms": gc_medians[gc2],
                                 "ratio": round(ratio, 2),
-                                "threshold": 3.5
+                                "threshold": 5
                             })
 
         # 吞吐量GC对比
@@ -156,7 +156,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                     for j in range(i + 1, len(gc_list)):
                         gc1, gc2 = gc_list[i], gc_list[j]
                         ratio = max(gc_medians[gc1], gc_medians[gc2]) / min(gc_medians[gc1], gc_medians[gc2])
-                        if ratio > 6.0:  # 吞吐量GC之间允许较大差异
+                        if ratio > 10.0:  # 吞吐量GC之间允许较大差异
                             performance_anomalies.append({
                                 "type": "throughput_gc_discrepancy",
                                 "jdk_version": jdk_version,
@@ -165,7 +165,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                                 "gc1_median_ms": gc_medians[gc1],
                                 "gc2_median_ms": gc_medians[gc2],
                                 "ratio": round(ratio, 2),
-                                "threshold": 6.0
+                                "threshold": 10.0
                             })
 
     # 组合所有性能异常

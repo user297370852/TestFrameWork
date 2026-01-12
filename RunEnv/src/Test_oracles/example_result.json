@@ -1,0 +1,678 @@
+{
+  "class_file_info": {
+    "file_path": "../testcases/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.class",
+    "package": "org.javacore.collection.util",
+    "class_name": "PerBtwnEmptyMapAndHashMapT"
+  },
+  "test_summary": {
+    "total_tests": 24,
+    "successful_tests": 24,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk11-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_p6v6g3lm org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 84871,
+      "output": "Collections.EMPTY_MAP:  84752636292\nnew HashMap:  2025625",
+      "gc_analysis": {
+        "total_gc_count": 4158,
+        "gc_stw_time_ms": 143.58500000000217,
+        "max_stw_time_ms": 0.45,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 4158,
+            "stw_time_ms": 143.58500000000217
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:13:53.268597"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk11-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_l__8n2na org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 85489,
+      "output": "Collections.EMPTY_MAP:  85413351625\nnew HashMap:  2198250",
+      "gc_analysis": {
+        "total_gc_count": 7988,
+        "gc_stw_time_ms": 25000.8399999999974,
+        "max_stw_time_ms": 9.232,
+        "max_heap_mb": 486,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 7988,
+            "stw_time_ms": 842.8399999999974
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:15:18.824509"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseParallelOldGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk11-ParallelOldGC.log:time,uptime,level,tags -XX:+UseParallelOldGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_enn2qnlc org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 86013,
+      "output": "Collections.EMPTY_MAP:  85937979417\nnew HashMap:  1689041",
+      "gc_analysis": {
+        "total_gc_count": 8798,
+        "gc_stw_time_ms": 737.0539999999986,
+        "max_stw_time_ms": 4.848,
+        "max_heap_mb": 365,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 8798,
+            "stw_time_ms": 737.0539999999986
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:16:44.954667"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk11-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_lvq_luax org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 88168,
+      "output": "Collections.EMPTY_MAP:  88092610042\nnew HashMap:  2532625",
+      "gc_analysis": {
+        "total_gc_count": 1874,
+        "gc_stw_time_ms": 361.5000000000005,
+        "max_stw_time_ms": 1.416,
+        "max_heap_mb": 256,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1874,
+            "stw_time_ms": 361.5000000000005
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:18:13.253065"
+    },
+    {
+      "jdk_version": "11",
+      "GC_parameters": [
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk11-ShenandoahGC.log:time,uptime,level,tags -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_mxaj8bh2 org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 89982,
+      "output": "Collections.EMPTY_MAP:  89886425792\nnew HashMap:  1745041",
+      "gc_analysis": {
+        "total_gc_count": 85,
+        "gc_stw_time_ms": 15.027000000000001,
+        "max_stw_time_ms": 8.2,
+        "max_heap_mb": 3488,
+        "gc_type_breakdown": {
+          "Init Mark (unload classes)": {
+            "count": 85,
+            "stw_time_ms": 6.438000000000002
+          },
+          "Final Mark (unload classes)": {
+            "count": 85,
+            "stw_time_ms": 8.589000000000002
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:19:43.260316"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk17-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_lt95b8we org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 86752,
+      "output": "Collections.EMPTY_MAP:  86647607500\nnew HashMap:  1883542",
+      "gc_analysis": {
+        "total_gc_count": 4158,
+        "gc_stw_time_ms": 178.80800000000113,
+        "max_stw_time_ms": 15.2,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 4158,
+            "stw_time_ms": 178.80800000000113
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:21:11.676136"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk17-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_fyuty0yf org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 86915,
+      "output": "Collections.EMPTY_MAP:  86846812541\nnew HashMap:  1835167",
+      "gc_analysis": {
+        "total_gc_count": 8988,
+        "gc_stw_time_ms": 552.6619999999969,
+        "max_stw_time_ms": 5.096,
+        "max_heap_mb": 498,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 8988,
+            "stw_time_ms": 552.6619999999969
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:22:38.663094"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk17-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_e5bn3azd org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 89419,
+      "output": "Collections.EMPTY_MAP:  89353747792\nnew HashMap:  1631959",
+      "gc_analysis": {
+        "total_gc_count": 1895,
+        "gc_stw_time_ms": 446.9430000000011,
+        "max_stw_time_ms": 25.706,
+        "max_heap_mb": 260,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1895,
+            "stw_time_ms": 446.9430000000011
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:24:08.235032"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk17-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_545m467t org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 91109,
+      "output": "Collections.EMPTY_MAP:  91016228500\nnew HashMap:  1542875",
+      "gc_analysis": {
+        "total_gc_count": 450,
+        "gc_stw_time_ms": 1.817999999999986,
+        "max_stw_time_ms": 3.5,
+        "max_heap_mb": 1454,
+        "gc_type_breakdown": {
+          "Pause Mark Start": {
+            "count": 450,
+            "stw_time_ms": 0.6190000000000004
+          },
+          "Pause Mark End": {
+            "count": 450,
+            "stw_time_ms": 0.7060000000000005
+          },
+          "Pause Relocate Start": {
+            "count": 450,
+            "stw_time_ms": 0.4930000000000004
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:25:39.370091"
+    },
+    {
+      "jdk_version": "17",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk17-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_o_rvbvyb org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 96682,
+      "output": "Collections.EMPTY_MAP:  96587930167\nnew HashMap:  2041000",
+      "gc_analysis": {
+        "total_gc_count": 85,
+        "gc_stw_time_ms": 11.077000000000004,
+        "max_stw_time_ms": 0.115,
+        "max_heap_mb": 3488,
+        "gc_type_breakdown": {
+          "Init Mark (unload classes)": {
+            "count": 85,
+            "stw_time_ms": 3.216999999999999
+          },
+          "Final Mark (unload classes)": {
+            "count": 85,
+            "stw_time_ms": 7.403000000000003
+          },
+          "Final Roots": {
+            "count": 85,
+            "stw_time_ms": 0.45700000000000035
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:27:16.070673"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk21-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_nlmygydu org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 84048,
+      "output": "Collections.EMPTY_MAP:  83944870541\nnew HashMap:  1894500",
+      "gc_analysis": {
+        "total_gc_count": 4203,
+        "gc_stw_time_ms": 167.23400000000183,
+        "max_stw_time_ms": 3.044,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 4203,
+            "stw_time_ms": 167.23400000000183
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:28:41.813371"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk21-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_i9vro9gs org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 83879,
+      "output": "Collections.EMPTY_MAP:  83815887333\nnew HashMap:  1361959",
+      "gc_analysis": {
+        "total_gc_count": 9227,
+        "gc_stw_time_ms": 526.5350000000018,
+        "max_stw_time_ms": 3.724,
+        "max_heap_mb": 309,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 9227,
+            "stw_time_ms": 526.5350000000018
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:30:05.766343"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk21-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_tvhdbbud org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 88069,
+      "output": "Collections.EMPTY_MAP:  88005036208\nnew HashMap:  1372459",
+      "gc_analysis": {
+        "total_gc_count": 1915,
+        "gc_stw_time_ms": 424.7520000000017,
+        "max_stw_time_ms": 4.419,
+        "max_heap_mb": 258,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1915,
+            "stw_time_ms": 424.7520000000017
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:31:33.994815"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk21-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_631e_bp8 org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 88837,
+      "output": "Collections.EMPTY_MAP:  88731204875\nnew HashMap:  1383666",
+      "gc_analysis": {
+        "total_gc_count": 432,
+        "gc_stw_time_ms": 2.45199999999999,
+        "max_stw_time_ms": 0.007,
+        "max_heap_mb": 2602,
+        "gc_type_breakdown": {
+          "Pause Mark Start": {
+            "count": 432,
+            "stw_time_ms": 0.7880000000000006
+          },
+          "Pause Mark End": {
+            "count": 432,
+            "stw_time_ms": 1.1499999999999988
+          },
+          "Pause Relocate Start": {
+            "count": 432,
+            "stw_time_ms": 0.5140000000000003
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:33:02.857877"
+    },
+    {
+      "jdk_version": "21",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk21-ShenandoahGC.log:time,uptime,level,tags -XX:+UseShenandoahGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_w3t9219e org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 92755,
+      "output": "Collections.EMPTY_MAP:  92667988708\nnew HashMap:  1448791",
+      "gc_analysis": {
+        "total_gc_count": 86,
+        "gc_stw_time_ms": 9.437000000000005,
+        "max_stw_time_ms": 0.153,
+        "max_heap_mb": 3488,
+        "gc_type_breakdown": {
+          "Init Mark (unload classes)": {
+            "count": 86,
+            "stw_time_ms": 2.0959999999999988
+          },
+          "Final Mark (unload classes)": {
+            "count": 86,
+            "stw_time_ms": 6.804
+          },
+          "Final Roots": {
+            "count": 86,
+            "stw_time_ms": 0.5370000000000004
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:34:35.631196"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk25-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_swodr_67 org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 81772,
+      "output": "Collections.EMPTY_MAP:  81677411041\nnew HashMap:  1408709",
+      "gc_analysis": {
+        "total_gc_count": 4203,
+        "gc_stw_time_ms": 132.11800000000153,
+        "max_stw_time_ms": 3.403,
+        "max_heap_mb": 247,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 4203,
+            "stw_time_ms": 132.11800000000153
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:35:59.024624"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk25-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_259_d3ee org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 80373,
+      "output": "Collections.EMPTY_MAP:  80313731083\nnew HashMap:  1381625",
+      "gc_analysis": {
+        "total_gc_count": 9122,
+        "gc_stw_time_ms": 569.2789999999968,
+        "max_stw_time_ms": 2.849,
+        "max_heap_mb": 365,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 9122,
+            "stw_time_ms": 569.2789999999968
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:37:19.470917"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk25-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_74y2juvp org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 84271,
+      "output": "Collections.EMPTY_MAP:  84210149334\nnew HashMap:  1393291",
+      "gc_analysis": {
+        "total_gc_count": 1915,
+        "gc_stw_time_ms": 426.1760000000005,
+        "max_stw_time_ms": 6.214,
+        "max_heap_mb": 258,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 1915,
+            "stw_time_ms": 426.1760000000005
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:38:43.906089"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk25-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_1sy_okd_ org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 86615,
+      "output": "Collections.EMPTY_MAP:  86518957416\nnew HashMap:  1438000",
+      "gc_analysis": {
+        "total_gc_count": 892,
+        "gc_stw_time_ms": 6.7979999999999805,
+        "max_stw_time_ms": 0.006,
+        "max_heap_mb": 3118,
+        "gc_type_breakdown": {
+          "Pause Mark Start (Y Gen)": {
+            "count": 892,
+            "stw_time_ms": 2.2649999999999753
+          },
+          "Pause Mark End (Y Gen)": {
+            "count": 892,
+            "stw_time_ms": 1.5179999999999811
+          },
+          "Pause Relocate Start (Y Gen)": {
+            "count": 892,
+            "stw_time_ms": 0.9090000000000007
+          },
+          "Pause Mark End (O Gen)": {
+            "count": 892,
+            "stw_time_ms": 1.1539999999999906
+          },
+          "Pause Relocate Start (O Gen)": {
+            "count": 892,
+            "stw_time_ms": 0.9520000000000007
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:40:10.546405"
+    },
+    {
+      "jdk_version": "25",
+      "GC_parameters": [
+        "-XX:+UseShenandoahGC",
+        "-XX:+UnlockExperimentalVMOptions",
+        "-XX:ShenandoahGCMode=generational"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk25-ShenandoahGC-Gen.log:time,uptime,level,tags -XX:+UseShenandoahGC -XX:+UnlockExperimentalVMOptions -XX:ShenandoahGCMode=generational -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_gmupjcm_ org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 98570,
+      "output": "Collections.EMPTY_MAP:  98464910875\nnew HashMap:  1524250",
+      "gc_analysis": {
+        "total_gc_count": 86,
+        "gc_stw_time_ms": 12.488999999999999,
+        "max_stw_time_ms": 0.176,
+        "max_heap_mb": 3746,
+        "gc_type_breakdown": {
+          "Init Mark (unload classes)": {
+            "count": 86,
+            "stw_time_ms": 2.0289999999999995
+          },
+          "Final Mark (unload classes)": {
+            "count": 86,
+            "stw_time_ms": 10.459999999999996
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:41:49.239088"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseSerialGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk26-SerialGC.log:time,uptime,level,tags -XX:+UseSerialGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_2iituokx org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 70254,
+      "output": "Collections.EMPTY_MAP:  70155907208\nnew HashMap:  1493042",
+      "gc_analysis": {
+        "total_gc_count": 26696,
+        "gc_stw_time_ms": 645.6080000001461,
+        "max_stw_time_ms": 3.225,
+        "max_heap_mb": 38,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 26696,
+            "stw_time_ms": 645.6080000001461
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:43:01.052113"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseParallelGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk26-ParallelGC.log:time,uptime,level,tags -XX:+UseParallelGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_94nfzayg org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 69381,
+      "output": "Collections.EMPTY_MAP:  69320703917\nnew HashMap:  1481542",
+      "gc_analysis": {
+        "total_gc_count": 686,
+        "gc_stw_time_ms": 134.20900000000015,
+        "max_stw_time_ms": 15.034,
+        "max_heap_mb": 564,
+        "gc_type_breakdown": {
+          "Young GC": {
+            "count": 686,
+            "stw_time_ms": 134.20900000000015
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:44:10.891764"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseG1GC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk26-G1GC.log:time,uptime,level,tags -XX:+UseG1GC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_3q0veso0 org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 72468,
+      "output": "Collections.EMPTY_MAP:  72407286917\nnew HashMap:  1526291",
+      "gc_analysis": {
+        "total_gc_count": 4589,
+        "gc_stw_time_ms": 713.6719999999924,
+        "max_stw_time_ms": 9.817,
+        "max_heap_mb": 630,
+        "gc_type_breakdown": {
+          "Young GC (Normal)": {
+            "count": 4589,
+            "stw_time_ms": 713.6719999999924
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:45:23.373035"
+    },
+    {
+      "jdk_version": "26",
+      "GC_parameters": [
+        "-XX:+UseZGC"
+      ],
+      "full_cmd": "java -Xlog:gc*:file=../../results/20260101/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.gclogs/jdk26-ZGC.log:time,uptime,level,tags -XX:+UseZGC -cp /Users/yeliu/PycharmProjects/PythonProject/RunEnv/src/..:/var/folders/82/2syh70zj53703rkm51_5glgr0000gn/T/class_run_4dradinr org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT",
+      "success": true,
+      "exit_code": 0,
+      "duration_ms": 79584,
+      "output": "Collections.EMPTY_MAP:  79489494333\nnew HashMap:  1457250",
+      "gc_analysis": {
+        "total_gc_count": 798,
+        "gc_stw_time_ms": 6.0859999999999825,
+        "max_stw_time_ms": 0.009,
+        "max_heap_mb": 3486,
+        "gc_type_breakdown": {
+          "Pause Mark Start (Y Gen)": {
+            "count": 795,
+            "stw_time_ms": 1.9699999999999873
+          },
+          "Pause Mark End (Y Gen)": {
+            "count": 795,
+            "stw_time_ms": 1.2539999999999867
+          },
+          "Pause Relocate Start (Y Gen)": {
+            "count": 795,
+            "stw_time_ms": 0.8280000000000006
+          },
+          "Pause Mark End (O Gen)": {
+            "count": 795,
+            "stw_time_ms": 1.1099999999999948
+          },
+          "Pause Relocate Start (O Gen)": {
+            "count": 795,
+            "stw_time_ms": 0.8980000000000007
+          },
+          "Pause Mark Start (y Gen)": {
+            "count": 3,
+            "stw_time_ms": 0.012
+          },
+          "Pause Mark End (y Gen)": {
+            "count": 3,
+            "stw_time_ms": 0.01
+          },
+          "Pause Relocate Start (y Gen)": {
+            "count": 3,
+            "stw_time_ms": 0.004
+          }
+        }
+      },
+      "test_timestamp": "2026-01-02T04:46:43.017056"
+    }
+  ]
+}
