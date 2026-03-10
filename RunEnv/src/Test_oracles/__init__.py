@@ -10,6 +10,7 @@ from .performance_anomaly import oracle_performance_anomaly
 from .performance_regression import oracle_performance_regression
 from .stw_anomaly import oracle_stw_anomaly
 from .gc_overhead_anomaly import oracle_gc_overhead_anomaly
+from .gc_count_anomaly import oracle_gc_count_anomaly
 
 # 测试预言注册表
 # 在此添加新的测试预言函数
@@ -18,7 +19,8 @@ TEST_ORACLES = [
     #oracle_test_failure,
     #oracle_performance_anomaly,
     #oracle_performance_regression,
-    oracle_stw_anomaly,
+    #oracle_stw_anomaly,
+    oracle_gc_count_anomaly,
     #oracle_gc_overhead_anomaly,
 ]
 

@@ -101,6 +101,7 @@ def oracle_performance_regression(log_data: Dict[str, Any], file_path: str) -> O
 
                 # 如果当前版本比前一个版本慢超过100%，认为是性能回归
                 if change_ratio > 3:
+                    score = change_ratio  # 性能变化比例作为异常分数
                     regressions_in_gc.append({
                         "gc_type": gc_type,
                         "from_version": previous_version,
@@ -108,6 +109,7 @@ def oracle_performance_regression(log_data: Dict[str, Any], file_path: str) -> O
                         "from_time_ms": previous_time,
                         "to_time_ms": current_time,
                         "change_ratio": round(change_ratio, 2),
+                        "score": round(score, 4),  # 异常分数：性能变化比例
                         "performance_change": f"变慢 {round((change_ratio - 1) * 100, 1)}%",
                         "threshold": 2
                     })

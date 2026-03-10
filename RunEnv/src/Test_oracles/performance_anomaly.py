@@ -89,6 +89,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
 
             # 双重检查：既要超过阈值，也要显著高于中位数
             if duration > threshold and duration > median_duration * 3:
+                score = duration / threshold  # 超出阈值的倍数
                 slow_tests.append({
                     "jdk_version": jdk_version,
                     "gc_type": gc_type,
@@ -99,6 +100,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                     "median_duration_in_jdk": median_duration,
                     "ratio_to_min": round(duration / min_duration, 2),
                     "ratio_to_median": round(duration / median_duration, 2),
+                    "score": round(score, 4),  # 异常分数：超出阈值的倍数
                     "threshold_ratio": threshold_ratio
                 })
 
@@ -130,6 +132,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                         gc1, gc2 = gc_list[i], gc_list[j]
                         ratio = max(gc_medians[gc1], gc_medians[gc2]) / min(gc_medians[gc1], gc_medians[gc2])
                         if ratio > 5:  # 低延迟GC之间差异不应过大
+                            score = ratio  # 两种GC性能差异的倍数
                             performance_anomalies.append({
                                 "type": "low_latency_gc_discrepancy",
                                 "jdk_version": jdk_version,
@@ -138,6 +141,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                                 "gc1_median_ms": gc_medians[gc1],
                                 "gc2_median_ms": gc_medians[gc2],
                                 "ratio": round(ratio, 2),
+                                "score": round(score, 4),  # 异常分数：两种GC性能差异的倍数
                                 "threshold": 5
                             })
 
@@ -157,6 +161,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                         gc1, gc2 = gc_list[i], gc_list[j]
                         ratio = max(gc_medians[gc1], gc_medians[gc2]) / min(gc_medians[gc1], gc_medians[gc2])
                         if ratio > 10.0:  # 吞吐量GC之间允许较大差异
+                            score = ratio  # 两种GC性能差异的倍数
                             performance_anomalies.append({
                                 "type": "throughput_gc_discrepancy",
                                 "jdk_version": jdk_version,
@@ -165,6 +170,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                                 "gc1_median_ms": gc_medians[gc1],
                                 "gc2_median_ms": gc_medians[gc2],
                                 "ratio": round(ratio, 2),
+                                "score": round(score, 4),  # 异常分数：两种GC性能差异的倍数
                                 "threshold": 10.0
                             })
 

@@ -89,6 +89,7 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
         threshold = STW_THRESHOLDS.get(gc_type, STW_THRESHOLDS["Unknown"])
         
         if data["max_stw_time_ms"] > threshold:
+            excess_ratio = (data["max_stw_time_ms"] - threshold) / threshold
             threshold_anomalies.append({
                 "jdk_version": data["jdk_version"],
                 "gc_type": gc_type,
@@ -96,6 +97,7 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                 "max_stw_time_ms": data["max_stw_time_ms"],
                 "threshold_ms": threshold,
                 "excess_ms": data["max_stw_time_ms"] - threshold,
+                "score": round(excess_ratio, 4),  # 异常分数：超出阈值的比例
                 "total_gc_count": data["total_gc_count"],
                 "test_timestamp": data["test_timestamp"]
             })
@@ -121,13 +123,15 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
         # 检查逻辑：G1GC不应比SerialGC更长
         if "G1GC" in gc_stw_map and "SerialGC" in gc_stw_map:
             if gc_stw_map["SerialGC"]>1 and gc_stw_map["G1GC"] > gc_stw_map["SerialGC"]*20:
+                score = gc_stw_map["G1GC"] / gc_stw_map["SerialGC"]  # G1GC相对于SerialGC的倍数
                 jdk_comparison_anomalies.append({
                     "anomaly_type": "jdk_internal_gc_comparison",
                     "jdk_version": jdk_version,
                     "description": f"G1GC STW ({gc_stw_map['G1GC']:.3f}ms) 长于 SerialGC ({gc_stw_map['SerialGC']:.3f}ms)",
                     "g1gc_stw_ms": gc_stw_map["G1GC"],
                     "serialgc_stw_ms": gc_stw_map["SerialGC"],
-                    "excess_ms": gc_stw_map["G1GC"] - gc_stw_map["SerialGC"]
+                    "excess_ms": gc_stw_map["G1GC"] - gc_stw_map["SerialGC"],
+                    "score": round(score, 4)  # 异常分数：G1GC相对于SerialGC的倍数
                 })
         
         # 检查逻辑：ZGC/ShenandoahGC应比所有其他GC更低
@@ -144,6 +148,7 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
             for other_gc in other_gcs:
                 if low_latency_gc["gc_type"] == "ShenandoahGC":
                     if other_gc["max_stw_time_ms"]>0.1 and low_latency_gc["max_stw_time_ms"] > other_gc["max_stw_time_ms"]*20:
+                        score = low_latency_gc["max_stw_time_ms"] / other_gc["max_stw_time_ms"]  # 低延迟GC相对于其他GC的倍数
                         jdk_comparison_anomalies.append({
                         "anomaly_type": "jdk_internal_gc_comparison",
                         "jdk_version": jdk_version,
@@ -152,10 +157,12 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                         "low_latency_gc_stw_ms": low_latency_gc["max_stw_time_ms"],
                         "other_gc_type": other_gc["gc_type"],
                         "other_gc_stw_ms": other_gc["max_stw_time_ms"],
-                        "excess_ms": low_latency_gc["max_stw_time_ms"] - other_gc["max_stw_time_ms"]
+                        "excess_ms": low_latency_gc["max_stw_time_ms"] - other_gc["max_stw_time_ms"],
+                        "score": round(score, 4)  # 异常分数：低延迟GC相对于其他GC的倍数
                     })
                 else:
                     if other_gc["max_stw_time_ms"]>0.1 and low_latency_gc["max_stw_time_ms"] > other_gc["max_stw_time_ms"]:
+                        score = low_latency_gc["max_stw_time_ms"] / other_gc["max_stw_time_ms"]  # 低延迟GC相对于其他GC的倍数
                         jdk_comparison_anomalies.append({
                         "anomaly_type": "jdk_internal_gc_comparison",
                         "jdk_version": jdk_version,
@@ -164,7 +171,8 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                         "low_latency_gc_stw_ms": low_latency_gc["max_stw_time_ms"],
                         "other_gc_type": other_gc["gc_type"],
                         "other_gc_stw_ms": other_gc["max_stw_time_ms"],
-                        "excess_ms": low_latency_gc["max_stw_time_ms"] - other_gc["max_stw_time_ms"]
+                        "excess_ms": low_latency_gc["max_stw_time_ms"] - other_gc["max_stw_time_ms"],
+                        "score": round(score, 4)  # 异常分数：低延迟GC相对于其他GC的倍数
                     })
 
     if jdk_comparison_anomalies:
@@ -211,6 +219,7 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                     "curr_stw_ms": curr_stw,
                     "increase_ms": stw_increase,
                     "increase_ratio": stw_increase_ratio,
+                    "score": round(stw_increase_ratio, 4),  # 异常分数：STW增加的比例
                     "description": f"{gc_type} STW 从 {prev_jdk} ({prev_stw:.3f}ms) 到 {curr_jdk} ({curr_stw:.3f}ms) 增加了 {stw_increase:.3f}ms ({stw_increase_ratio:.1%})"
                 })
             elif gc_type == "ZGC":
@@ -224,6 +233,7 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                     "curr_stw_ms": curr_stw,
                     "increase_ms": stw_increase,
                     "increase_ratio": stw_increase_ratio,
+                    "score": round(stw_increase_ratio, 4),  # 异常分数：STW增加的比例
                     "description": f"{gc_type} STW 从 {prev_jdk} ({prev_stw:.3f}ms) 到 {curr_jdk} ({curr_stw:.3f}ms) 增加了 {stw_increase:.3f}ms ({stw_increase_ratio:.1%})"
                 })
             else:
@@ -237,6 +247,7 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                     "curr_stw_ms": curr_stw,
                     "increase_ms": stw_increase,
                     "increase_ratio": stw_increase_ratio,
+                    "score": round(stw_increase_ratio, 4),  # 异常分数：STW增加的比例
                     "description": f"{gc_type} STW 从 {prev_jdk} ({prev_stw:.3f}ms) 到 {curr_jdk} ({curr_stw:.3f}ms) 增加了 {stw_increase:.3f}ms ({stw_increase_ratio:.1%})"
                 })
 
