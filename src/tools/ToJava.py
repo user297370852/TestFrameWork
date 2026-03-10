@@ -469,6 +469,11 @@ def process_file(file_path, input_root, output_root, counter):
 
 def traverse_directory(current_dir, input_root, output_root, counter):
     """递归遍历目录，处理所有文件"""
+    #如果current_dir已经是.class文件，直接处理
+    if current_dir.endswith(".class"):
+        process_file(current_dir, input_root, output_root, counter)
+        return
+
     # 列出目录下的所有条目
     entries = [os.path.join(current_dir, e) for e in os.listdir(current_dir)]
 
