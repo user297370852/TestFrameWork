@@ -21,7 +21,7 @@ TEST_ORACLES = [
     #oracle_performance_regression,
     #oracle_stw_anomaly,
     oracle_gc_count_anomaly,
-    #oracle_gc_overhead_anomaly,
+    oracle_gc_overhead_anomaly,
 ]
 
 # 导出主要接口

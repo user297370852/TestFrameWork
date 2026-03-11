@@ -79,12 +79,12 @@ class ResAnalyzer:
 
     def generate_anomaly_report(self, anomalies: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
-        生成异常报告，按测试预言类型分类
+        生成异常报告，按测试预言类型分类，并添加按用例得分排序的部分
 
         Returns:
             Dict: 结构化的异常报告
         """
-        # 按异常类型分类
+        # 按异常类型分类（保持原有逻辑）
         by_type = {}
         for anomaly in anomalies:
             anomaly_type = anomaly["type"]
@@ -100,12 +100,79 @@ class ResAnalyzer:
             "active_oracles": len(TEST_ORACLES)
         }
 
+        # 创建按用例得分排序的部分
+        case_score_summary = self._generate_case_score_summary(anomalies)
+
         report = {
             "summary": stats,
-            "details": by_type
+            "details": by_type,
+            "case_score_summary": case_score_summary
         }
 
         return report
+
+    def _generate_case_score_summary(self, anomalies: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        生成按用例得分排序的摘要
+        
+        Args:
+            anomalies: 异常列表
+            
+        Returns:
+            Dict: 包含按得分排序的用例信息的摘要
+        """
+        # 按文件路径分组，计算每个用例的总得分
+        case_scores = {}
+        
+        for anomaly in anomalies:
+            # 跳过执行错误或解析错误的异常
+            if anomaly["type"] in ["oracle_execution_error", "parse_error"]:
+                continue
+                
+            file_path = anomaly["file_path"]
+            
+            # 初始化用例信息（如果不存在）
+            if file_path not in case_scores:
+                case_scores[file_path] = {
+                    "file_path": file_path,
+                    "total_score": 0.0,
+                    "triggered_oracles": []
+                }
+            
+            # 累加score（如果存在）
+            if "anomalies" in anomaly:
+                # 某些异常类型包含多个子异常（如stw_anomaly）
+                for sub_anomaly in anomaly["anomalies"]:
+                    if "score" in sub_anomaly:
+                        case_scores[file_path]["total_score"] += sub_anomaly["score"]
+            else:
+                # 单个异常的情况
+                if "score" in anomaly:
+                    case_scores[file_path]["total_score"] += anomaly["score"]
+            
+            # 记录触发的测试预言
+            oracle_type = anomaly["type"]
+            if oracle_type not in case_scores[file_path]["triggered_oracles"]:
+                case_scores[file_path]["triggered_oracles"].append(oracle_type)
+        
+        # 转换为列表并按得分从大到小排序
+        case_score_list = list(case_scores.values())
+        case_score_list.sort(key=lambda x: x["total_score"], reverse=True)
+        
+        # 生成统计信息
+        score_stats = {
+            "total_cases_with_anomalies": len(case_score_list),
+            "single_oracle_cases": len([c for c in case_score_list if len(c["triggered_oracles"]) == 1]),
+            "multi_oracle_cases": len([c for c in case_score_list if len(c["triggered_oracles"]) > 1]),
+            "max_score": case_score_list[0]["total_score"] if case_score_list else 0.0,
+            "min_score": case_score_list[-1]["total_score"] if case_score_list else 0.0,
+            "avg_score": sum(c["total_score"] for c in case_score_list) / len(case_score_list) if case_score_list else 0.0
+        }
+        
+        return {
+            "statistics": score_stats,
+            "ranked_cases": case_score_list
+        }
 
 
 def main():
