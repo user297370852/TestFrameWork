@@ -185,6 +185,8 @@ def main():
     parser.add_argument('input_dir', help='包含JSON日志文件的目录')
     parser.add_argument('-o', '--output', default='anomaly_report.json',
                         help='异常报告输出文件，默认anomaly_report.json')
+    parser.add_argument('--detail', action='store_true',
+                        help='生成详细报告，默认只生成简短的score信息')
 
     args = parser.parse_args()
 
@@ -205,24 +207,64 @@ def main():
     print("正在扫描和分析JSON日志文件...")
     anomalies = analyzer.scan_and_analyze_directory(args.input_dir)
 
-    # 生成异常报告
-    report = analyzer.generate_anomaly_report(anomalies)
+    if args.detail:
+        # 详细模式：生成完整报告
+        print("生成详细报告...")
+        report = analyzer.generate_anomaly_report(anomalies)
+        
+        # 输出详细报告到文件
+        with open(args.output, 'w', encoding='utf-8') as f:
+            json.dump(report, f, indent=2, ensure_ascii=False)
 
-    # 输出异常报告到文件
-    with open(args.output, 'w', encoding='utf-8') as f:
-        json.dump(report, f, indent=2, ensure_ascii=False)
+        print(f"详细分析完成！共检测到 {len(anomalies)} 个异常")
+        print(f"详细异常报告已保存至: {args.output}")
 
-    print(f"分析完成！共检测到 {len(anomalies)} 个异常")
-    print(f"异常报告已保存至: {args.output}")
+        # 在控制台输出简要统计信息
+        stats = report["summary"]
+        print(f"\n异常统计:")
+        print(f"  总异常数: {stats['total_anomalies']}")
+        print(f"  受影响文件: {stats['affected_files']}")
+        print(f"  按类型分布:")
+        for anomaly_type, count in stats['anomalies_by_type'].items():
+            print(f"    {anomaly_type}: {count}")
+    else:
+        # 简短模式：只生成score相关信息
+        print("生成简短score报告...")
+        
+        # 只生成case_score_summary部分
+        case_score_summary = analyzer._generate_case_score_summary(anomalies)
+        
+        # 创建简短报告
+        brief_report = {
+            "summary": {
+                "total_anomalies": len(anomalies),
+                "total_cases_with_anomalies": case_score_summary["statistics"]["total_cases_with_anomalies"],
+                "max_score": case_score_summary["statistics"]["max_score"],
+                "avg_score": case_score_summary["statistics"]["avg_score"]
+            },
+            "ranked_cases": case_score_summary["ranked_cases"]
+        }
+        
+        # 输出简短报告到文件
+        with open(args.output, 'w', encoding='utf-8') as f:
+            json.dump(brief_report, f, indent=2, ensure_ascii=False)
 
-    # 在控制台输出简要统计信息
-    stats = report["summary"]
-    print(f"\n异常统计:")
-    print(f"  总异常数: {stats['total_anomalies']}")
-    print(f"  受影响文件: {stats['affected_files']}")
-    print(f"  按类型分布:")
-    for anomaly_type, count in stats['anomalies_by_type'].items():
-        print(f"    {anomaly_type}: {count}")
+        print(f"简短分析完成！共检测到 {len(anomalies)} 个异常")
+        print(f"简短score报告已保存至: {args.output}")
+        
+        # 在控制台输出score排序信息
+        stats = case_score_summary["statistics"]
+        ranked_cases = case_score_summary["ranked_cases"]
+        print(f"\nScore统计:")
+        print(f"  异常用例总数: {stats['total_cases_with_anomalies']}")
+        print(f"  最高得分: {stats['max_score']:.4f}")
+        print(f"  平均得分: {stats['avg_score']:.4f}")
+        
+        if ranked_cases:
+            print(f"\n前10个最高得分的用例:")
+            for i, case in enumerate(ranked_cases[:10]):
+                filename = Path(case['file_path']).name
+                print(f"  {i+1:2d}. {filename}: {case['total_score']:.4f} (预言: {', '.join(case['triggered_oracles'])})")
 
 
 if __name__ == "__main__":
