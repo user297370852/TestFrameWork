@@ -1,0 +1,2509 @@
+{
+  "summary": {
+    "total_anomalies": 357,
+    "total_cases_with_anomalies": 357,
+    "max_score": 159.8083,
+    "avg_score": 24.067759663865537
+  },
+  "ranked_cases": [
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/bit_manipulation.TotalHammingDistance/bit_manipulation.TotalHammingDistance_0104@1765019516928.json",
+      "total_score": 159.8083,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/bit_manipulation.TotalHammingDistance/bit_manipulation.TotalHammingDistance_0104@1765019516928.json",
+      "total_score": 158.69760000000002,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764655518628.json",
+      "total_score": 150.5916,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764643254143.json",
+      "total_score": 121.8714,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/diffClasses/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0201@1762618620489.json",
+      "total_score": 103.14330000000001,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/diffClasses/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0204@1762644666468.json",
+      "total_score": 100.8696,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/classHistory/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0201@1762618620489.json",
+      "total_score": 98.5654,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/classHistory/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0202@1762634050786.json",
+      "total_score": 93.2296,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0303@1760383928099.json",
+      "total_score": 84.5865,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764693497861.json",
+      "total_score": 79.9136,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/diffClasses/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0113@1762611853111.json",
+      "total_score": 79.12039999999999,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1003@1764703419019.json",
+      "total_score": 78.6461,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/classHistory/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0204@1762644666468.json",
+      "total_score": 76.70009999999999,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/classHistory/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0203@1762638200115.json",
+      "total_score": 76.6417,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/diffClasses/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0203@1762638200115.json",
+      "total_score": 76.1842,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/classHistory/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0113@1762611853111.json",
+      "total_score": 74.93469999999999,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/diffClasses/leetcode.IslandAreaDeep/leetcode.IslandAreaDeep_0202@1762634050786.json",
+      "total_score": 74.5146,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764650466036.json",
+      "total_score": 72.1051,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764686313748.json",
+      "total_score": 70.9418,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764674701585.json",
+      "total_score": 69.67809999999999,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0704@1764699459066.json",
+      "total_score": 68.5565,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.StringBuffer.ToStringCache/javaT.lang.StringBuffer.ToStringCache_0101@1760320572846.json",
+      "total_score": 67.9102,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.StrictMath.ExactArithTests/javaT.lang.StrictMath.ExactArithTests_0101@1760374997313.json",
+      "total_score": 66.9642,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764619833405.json",
+      "total_score": 66.77,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.runtime.Test6892265/compiler.runtime.Test6892265_0103@1760302071087.json",
+      "total_score": 66.0888,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764627338787.json",
+      "total_score": 64.1935,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764619833405.json",
+      "total_score": 61.461400000000005,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764676602460.json",
+      "total_score": 60.4527,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1003@1764703419019.json",
+      "total_score": 58.8189,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0803@1764672306921.json",
+      "total_score": 57.9236,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1002@1764691803225.json",
+      "total_score": 57.4765,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0803@1764672306921.json",
+      "total_score": 57.1796,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764664532358.json",
+      "total_score": 57.17250000000001,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/bit_manipulation.BinaryWatch/bit_manipulation.BinaryWatch_0201@1765123752839.json",
+      "total_score": 56.803200000000004,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764676602460.json",
+      "total_score": 56.6392,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.StrictMath.ExactArithTests/javaT.lang.StrictMath.ExactArithTests_0101@1760374997313.json",
+      "total_score": 56.465,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764664532358.json",
+      "total_score": 55.474900000000005,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0401@1764598108640.json",
+      "total_score": 55.2066,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/bit_manipulation.BinaryWatch/bit_manipulation.BinaryWatch_0202@1765169034323.json",
+      "total_score": 54.8314,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0201@1760376515564.json",
+      "total_score": 53.7568,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764659012033.json",
+      "total_score": 53.6811,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764677557567.json",
+      "total_score": 53.241400000000006,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1002@1764717912591.json",
+      "total_score": 52.7911,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764686313748.json",
+      "total_score": 52.3846,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.net.URLEncoder.Decoder/javaT.net.URLEncoder.Decoder_0201@1760375479088.json",
+      "total_score": 50.4298,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0402@1764631154509.json",
+      "total_score": 50.3688,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0804@1764657256604.json",
+      "total_score": 49.7562,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0501@1764593685633.json",
+      "total_score": 48.9869,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0606@1764704134238.json",
+      "total_score": 48.8145,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/bit_manipulation.BinaryWatch/bit_manipulation.BinaryWatch_0201@1765123752839.json",
+      "total_score": 48.675,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.math.BigInteger.CompareToTests/javaT.math.BigInteger.CompareToTests_0107@1760395114152.json",
+      "total_score": 48.22280000000001,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0203@1760381076469.json",
+      "total_score": 47.8323,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764684764267.json",
+      "total_score": 47.6808,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/bit_manipulation.BinaryWatch/bit_manipulation.BinaryWatch_0202@1765169034323.json",
+      "total_score": 47.6058,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1002@1764717912591.json",
+      "total_score": 46.4418,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/bit_manipulation.BinaryWatch/bit_manipulation.BinaryWatch_0105@1765115233678.json",
+      "total_score": 46.3705,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764602264278.json",
+      "total_score": 46.277699999999996,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0402@1764631154509.json",
+      "total_score": 44.9101,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764693497861.json",
+      "total_score": 44.848499999999994,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764698634672.json",
+      "total_score": 44.1667,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764697472744.json",
+      "total_score": 43.7656,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest_0101@1761312192583.json",
+      "total_score": 43.46,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0201@1760376515564.json",
+      "total_score": 43.3336,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/classHistory/programsofjava.Intersection/programsofjava.Intersection_0107@1762611468486.json",
+      "total_score": 43.0192,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764709535618.json",
+      "total_score": 42.2243,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764678968976.json",
+      "total_score": 41.869,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764622901659.json",
+      "total_score": 41.2504,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0703@1764634681816.json",
+      "total_score": 40.8839,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest_0201@1761313294297.json",
+      "total_score": 40.1583,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0203@1760381076469.json",
+      "total_score": 40.0369,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764634438410.json",
+      "total_score": 39.0457,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0702@1764621120675.json",
+      "total_score": 38.0617,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0703@1764644414432.json",
+      "total_score": 37.899,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764609388196.json",
+      "total_score": 37.7699,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0806@1764706738580.json",
+      "total_score": 37.0917,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0702@1764614848858.json",
+      "total_score": 36.6741,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.runtime.Test6892265/compiler.runtime.Test6892265_0103@1760302071087.json",
+      "total_score": 36.6414,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764709535618.json",
+      "total_score": 36.5267,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0303@1760383928099.json",
+      "total_score": 36.3937,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/vm.compiler.share.Random/vm.compiler.share.Random_0103@1760216662459.json",
+      "total_score": 35.992599999999996,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/vm.compiler.share.Random/vm.compiler.share.Random_0103@1760216662459.json",
+      "total_score": 35.8827,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/dynamic_programming.UniqueBinarySearchTrees/dynamic_programming.UniqueBinarySearchTrees_0104@1765161547784.json",
+      "total_score": 34.0929,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.codegen.TestIntFloatVect/compiler.codegen.TestIntFloatVect_0101@1760236011607.json",
+      "total_score": 33.9476,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0503@1764642633286.json",
+      "total_score": 33.7125,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764661747309.json",
+      "total_score": 33.1137,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0604@1764657675317.json",
+      "total_score": 33.0524,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764678968976.json",
+      "total_score": 32.4099,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764617374753.json",
+      "total_score": 32.1384,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8279914.Test/Bug_triggering_input.Compiler_triggering_input.JDK_8279914.Test_0102@1761339513302.json",
+      "total_score": 32.0137,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8279914.Test/Bug_triggering_input.Compiler_triggering_input.JDK_8279914.Test_0102@1761339513302.json",
+      "total_score": 31.811799999999998,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764611986647.json",
+      "total_score": 31.3305,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764660091887.json",
+      "total_score": 31.2776,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/bit_manipulation.TotalHammingDistance/bit_manipulation.TotalHammingDistance_0109@1765179000763.json",
+      "total_score": 30.8627,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1002@1764651321240.json",
+      "total_score": 30.412100000000002,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/dynamic_programming.UniqueBinarySearchTrees/dynamic_programming.UniqueBinarySearchTrees_0104@1765161547784.json",
+      "total_score": 30.2853,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764674153499.json",
+      "total_score": 30.0911,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.loopopts.BadPredicateAfterPartialPeel/compiler.loopopts.BadPredicateAfterPartialPeel_0101@1760226245198.json",
+      "total_score": 29.869,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.loopopts.BadPredicateAfterPartialPeel/compiler.loopopts.BadPredicateAfterPartialPeel_0101@1760226245198.json",
+      "total_score": 28.960099999999997,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.codegen.TestIntFloatVect/compiler.codegen.TestIntFloatVect_0101@1760236011607.json",
+      "total_score": 28.8351,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764673003192.json",
+      "total_score": 28.6309,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/diffClasses/programsofjava.Intersection/programsofjava.Intersection_0107@1762611468486.json",
+      "total_score": 28.4759,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1002@1764691803225.json",
+      "total_score": 27.8877,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764647205757.json",
+      "total_score": 27.1572,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764682506884.json",
+      "total_score": 27.1157,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0606@1764652834920.json",
+      "total_score": 26.532999999999998,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764619668480.json",
+      "total_score": 26.2256,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764702226181.json",
+      "total_score": 26.1025,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764633207368.json",
+      "total_score": 26.0246,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0504@1764644117211.json",
+      "total_score": 25.913,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764677557567.json",
+      "total_score": 25.782600000000002,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced_0104@1761339254455.json",
+      "total_score": 25.7517,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764674153499.json",
+      "total_score": 25.72,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764674701585.json",
+      "total_score": 25.4113,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.vectorization.TestPopCountVector/compiler.vectorization.TestPopCountVector_0103@1760268868786.json",
+      "total_score": 25.2178,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764622384928.json",
+      "total_score": 25.1721,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1003@1764716766514.json",
+      "total_score": 24.867600000000003,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.vectorization.TestPopCountVector/compiler.vectorization.TestPopCountVector_0103@1760268868786.json",
+      "total_score": 24.6262,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest_0101@1761312192583.json",
+      "total_score": 24.5155,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764659012033.json",
+      "total_score": 24.0049,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0606@1764652834920.json",
+      "total_score": 23.9724,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0401@1760378081327.json",
+      "total_score": 23.7639,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0408@1764630000255.json",
+      "total_score": 23.6856,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764623928134.json",
+      "total_score": 23.3892,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.nio.GetData/org.javacore.nio.GetData_0103@1764581316974.json",
+      "total_score": 22.9312,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0501@1764611241168.json",
+      "total_score": 22.8922,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0408@1764630000255.json",
+      "total_score": 22.7277,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0301@1764585206369.json",
+      "total_score": 22.58,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0308@1764596027729.json",
+      "total_score": 22.5121,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.nio.AvailableCharSets/org.javacore.nio.AvailableCharSets_0111@1764718598267.json",
+      "total_score": 22.4207,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.nio.AvailableCharSets/org.javacore.nio.AvailableCharSets_0402@1764671448733.json",
+      "total_score": 22.3509,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764623928134.json",
+      "total_score": 22.307699999999997,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764626956463.json",
+      "total_score": 22.2273,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0202@1760378093947.json",
+      "total_score": 21.9152,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764673003192.json",
+      "total_score": 21.891599999999997,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.integerArithmetic.TestIntegerComparison/compiler.integerArithmetic.TestIntegerComparison_0104@1760297848378.json",
+      "total_score": 21.6931,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0805@1764686507990.json",
+      "total_score": 21.3791,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0702@1764635632418.json",
+      "total_score": 21.3433,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/bit_manipulation.BinaryWatch/bit_manipulation.BinaryWatch_0105@1765115233678.json",
+      "total_score": 20.8975,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/dynamic_programming.NumberOfLIS/dynamic_programming.NumberOfLIS_0104@1764950286478.json",
+      "total_score": 20.8761,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0301@1764585206369.json",
+      "total_score": 20.7041,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/TestCountedLoopBadIVRange/TestCountedLoopBadIVRange_0102@1760182701972.json",
+      "total_score": 20.5503,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764627338787.json",
+      "total_score": 20.2532,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0401@1764598108640.json",
+      "total_score": 20.1688,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.loopopts.Test7052494/compiler.loopopts.Test7052494_0102@1760193045568.json",
+      "total_score": 19.884,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.loopopts.Test7052494/compiler.loopopts.Test7052494_0201@1760221645006.json",
+      "total_score": 19.849999999999998,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.integerArithmetic.TestIntegerComparison/compiler.integerArithmetic.TestIntegerComparison_0104@1760297848378.json",
+      "total_score": 19.5606,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0205@1760391914093.json",
+      "total_score": 19.5128,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0501@1764593685633.json",
+      "total_score": 19.1023,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0604@1764695235794.json",
+      "total_score": 18.9297,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.loopopts.Test7052494/compiler.loopopts.Test7052494_0102@1760193045568.json",
+      "total_score": 18.6128,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.macronodes.TestEliminateAllocationPhi/compiler.macronodes.TestEliminateAllocationPhi_0102@1760226601033.json",
+      "total_score": 18.3243,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.loopopts.Test7052494/compiler.loopopts.Test7052494_0203@1760286287503.json",
+      "total_score": 18.2869,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0102@1760375462654.json",
+      "total_score": 17.9659,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0204@1760386056167.json",
+      "total_score": 17.9473,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.loopopts.Test7052494/compiler.loopopts.Test7052494_0201@1760221645006.json",
+      "total_score": 17.8672,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.intrinsics.sha.TestSHA/compiler.intrinsics.sha.TestSHA_0102@1760251895577.json",
+      "total_score": 17.8337,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.loopopts.Test7052494/compiler.loopopts.Test7052494_0203@1760286287503.json",
+      "total_score": 17.651600000000002,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0205@1760391914093.json",
+      "total_score": 17.5866,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.c2.Test7046096/compiler.c2.Test7046096_0101@1760179828452.json",
+      "total_score": 17.1237,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.c2.Test7046096/compiler.c2.Test7046096_0101@1760179828452.json",
+      "total_score": 17.1064,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.loopopts.TestArraysFillDeadControl/compiler.loopopts.TestArraysFillDeadControl_0104@1760230543622.json",
+      "total_score": 16.9725,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0403@1764633395401.json",
+      "total_score": 16.9496,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0301@1760387102954.json",
+      "total_score": 16.949,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0502@1760391484173.json",
+      "total_score": 16.8028,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764598269771.json",
+      "total_score": 16.7034,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0206@1760393870622.json",
+      "total_score": 16.5903,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0202@1760378093947.json",
+      "total_score": 16.3699,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0502@1760391484173.json",
+      "total_score": 16.344,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.nio.AvailableCharSets/org.javacore.nio.AvailableCharSets_0111@1764718598267.json",
+      "total_score": 16.2185,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.eliminateAutobox.TestShortBoxing/compiler.eliminateAutobox.TestShortBoxing_0102@1760179659708.json",
+      "total_score": 16.0831,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0301@1760387102954.json",
+      "total_score": 16.0136,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0302@1760285800726.json",
+      "total_score": 15.7397,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.util.Collections.FindSubList/javaT.util.Collections.FindSubList_0103@1760375630137.json",
+      "total_score": 15.7338,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0601@1764661747309.json",
+      "total_score": 15.6679,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/binary_search.KokoEatingBananas/binary_search.KokoEatingBananas_0105@1764950869525.json",
+      "total_score": 15.5176,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0802@1764622384928.json",
+      "total_score": 15.459999999999999,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.intrinsics.sha.TestSHA/compiler.intrinsics.sha.TestSHA_0202@1760297515245.json",
+      "total_score": 15.4328,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0206@1760393870622.json",
+      "total_score": 15.4139,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/binary_search.KokoEatingBananas/binary_search.KokoEatingBananas_0109@1765131652374.json",
+      "total_score": 15.3573,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/math.DecodedStringAtIndex/math.DecodedStringAtIndex_0102@1764946715687.json",
+      "total_score": 15.2878,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764647205757.json",
+      "total_score": 15.2383,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/binary_search.KokoEatingBananas/binary_search.KokoEatingBananas_0109@1765131652374.json",
+      "total_score": 15.1806,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.intrinsics.sha.TestSHA/compiler.intrinsics.sha.TestSHA_0202@1760297515245.json",
+      "total_score": 15.0968,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764611986647.json",
+      "total_score": 14.9185,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0401@1760378081327.json",
+      "total_score": 14.9045,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764650466036.json",
+      "total_score": 14.8676,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/TestCountedLoopBadIVRange/TestCountedLoopBadIVRange_0104@1760271526814.json",
+      "total_score": 14.7122,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764678102463.json",
+      "total_score": 14.6405,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0801@1764655518628.json",
+      "total_score": 14.511500000000002,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/dynamic_programming.NumberOfLIS/dynamic_programming.NumberOfLIS_0104@1764950286478.json",
+      "total_score": 14.4732,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/binary_search.KokoEatingBananas/binary_search.KokoEatingBananas_0201@1765233683368.json",
+      "total_score": 14.4436,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/binary_search.KokoEatingBananas/binary_search.KokoEatingBananas_0105@1764950869525.json",
+      "total_score": 14.3354,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764633207368.json",
+      "total_score": 13.903,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764637710863.json",
+      "total_score": 13.4776,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/math.DecodedStringAtIndex/math.DecodedStringAtIndex_0102@1764946715687.json",
+      "total_score": 13.4364,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8202123.Bug/Bug_triggering_input.Compiler_triggering_input.JDK_8202123.Bug_0101@1761319886012.json",
+      "total_score": 13.3902,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8202123.Bug/Bug_triggering_input.Compiler_triggering_input.JDK_8202123.Bug_0101@1761319886012.json",
+      "total_score": 13.372,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0702@1764614848858.json",
+      "total_score": 13.1344,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.codegen.LoadWithMask/compiler.codegen.LoadWithMask_0103@1760261826357.json",
+      "total_score": 13.107,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0703@1764634681816.json",
+      "total_score": 12.8499,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764667081442.json",
+      "total_score": 12.7991,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0401@1764968886303.json",
+      "total_score": 12.644,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/binary_search.KokoEatingBananas/binary_search.KokoEatingBananas_0201@1765233683368.json",
+      "total_score": 12.6383,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0804@1764657256604.json",
+      "total_score": 12.6019,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.util.Collections.FindSubList/javaT.util.Collections.FindSubList_0103@1760375630137.json",
+      "total_score": 12.3841,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1002@1764651321240.json",
+      "total_score": 12.2454,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.nio.LargeMappedFiles/org.javacore.nio.LargeMappedFiles_0103@1764585468980.json",
+      "total_score": 12.2338,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0304@1760292387688.json",
+      "total_score": 12.2227,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8229016.Test/Bug_triggering_input.Compiler_triggering_input.JDK_8229016.Test_0101@1761307641120.json",
+      "total_score": 12.124099999999999,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0605@1764641585681.json",
+      "total_score": 12.124,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764623343327.json",
+      "total_score": 12.102,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764634438410.json",
+      "total_score": 12.0905,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0201@1760241593761.json",
+      "total_score": 12.047,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8193130.IterationSplitPredicateInconsistency/Bug_triggering_input.Compiler_triggering_input.JDK_8193130.IterationSplitPredicateInconsistency_0101@1761307799073.json",
+      "total_score": 12.0353,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/diffClasses/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0501@1760381099749.json",
+      "total_score": 11.9217,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.c1.Test6849574/compiler.c1.Test6849574_0105@1760284215482.json",
+      "total_score": 11.757,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.intrinsics.zip.TestCRC32/compiler.intrinsics.zip.TestCRC32_0102@1760216008930.json",
+      "total_score": 11.6359,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0305@1764647563584.json",
+      "total_score": 11.6147,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0806@1764691212222.json",
+      "total_score": 11.5892,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0703@1764644414432.json",
+      "total_score": 11.583,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0901@1764698634672.json",
+      "total_score": 11.5399,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/binary_search.KokoEatingBananas/binary_search.KokoEatingBananas_0104@1764950598552.json",
+      "total_score": 11.5068,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test_0201@1761322567370.json",
+      "total_score": 11.4642,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0303@1760286050030.json",
+      "total_score": 11.328,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.macronodes.TestEliminateAllocationPhi/compiler.macronodes.TestEliminateAllocationPhi_0102@1760226601033.json",
+      "total_score": 11.279,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764623343327.json",
+      "total_score": 11.2425,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764660091887.json",
+      "total_score": 11.2285,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.arraycopy.TestLoadBypassArrayCopy/compiler.arraycopy.TestLoadBypassArrayCopy_0101@1760175985534.json",
+      "total_score": 11.1359,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764694847118.json",
+      "total_score": 11.1258,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0204@1764597770408.json",
+      "total_score": 11.055,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/TestLoadBypassACWithWrongMem/TestLoadBypassACWithWrongMem_0107@1760275512152.json",
+      "total_score": 11.0348,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0806@1764691212222.json",
+      "total_score": 11.0174,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764697841060.json",
+      "total_score": 10.955,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.vectorization.TestPopCountVector/compiler.vectorization.TestPopCountVector_0102@1760260269704.json",
+      "total_score": 10.8411,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.c2.cr8004867.TestIntAtomicCAS/compiler.c2.cr8004867.TestIntAtomicCAS_0101@1760178499971.json",
+      "total_score": 10.746400000000001,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0607@1764674334129.json",
+      "total_score": 10.6546,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0701@1764637710863.json",
+      "total_score": 10.6457,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.interpreter.TestVerifyStackAfterDeopt/compiler.interpreter.TestVerifyStackAfterDeopt_0103@1760222673411.json",
+      "total_score": 10.602,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.eliminateAutobox.TestShortBoxing/compiler.eliminateAutobox.TestShortBoxing_0102@1760179659708.json",
+      "total_score": 10.5897,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_4732721.Bug/Bug_triggering_input.Compiler_triggering_input.JDK_4732721.Bug_0102@1761343293578.json",
+      "total_score": 10.5855,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0503@1765057513922.json",
+      "total_score": 10.460799999999999,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0805@1764689352555.json",
+      "total_score": 10.4558,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.interpreter.TestVerifyStackAfterDeopt/compiler.interpreter.TestVerifyStackAfterDeopt_0103@1760222673411.json",
+      "total_score": 10.4552,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.codegen.TestShortVect/compiler.codegen.TestShortVect_0102@1760215124434.json",
+      "total_score": 10.4293,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.codegen.TestShortVect/compiler.codegen.TestShortVect_0102@1760215124434.json",
+      "total_score": 10.4178,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0403@1764633395401.json",
+      "total_score": 10.387,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.nio.channels.Selector.StackOverflowTest/javaT.nio.channels.Selector.StackOverflowTest_0101@1760372709018.json",
+      "total_score": 10.365300000000001,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.loopopts.superword.TestReductionWithLoopVariantUse/compiler.loopopts.superword.TestReductionWithLoopVariantUse_0201@1760242331015.json",
+      "total_score": 10.2633,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1003@1764716766514.json",
+      "total_score": 10.2469,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0605@1764679609384.json",
+      "total_score": 10.1578,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0903@1764675031751.json",
+      "total_score": 10.153,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.intrinsics.sha.TestSHA/compiler.intrinsics.sha.TestSHA_0102@1760251895577.json",
+      "total_score": 10.1376,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest/Bug_triggering_input.Compiler_triggering_input.JDK_4429491.BitTest_0201@1761313294297.json",
+      "total_score": 10.0299,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8217359.Test/Bug_triggering_input.Compiler_triggering_input.JDK_8217359.Test_0103@1761352380703.json",
+      "total_score": 9.6625,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0904@1764715493411.json",
+      "total_score": 9.5707,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764626956463.json",
+      "total_score": 9.3944,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.intrinsics.bigInteger.TestMultiplyToLenReturnProfile/compiler.intrinsics.bigInteger.TestMultiplyToLenReturnProfile_0102@1760227658864.json",
+      "total_score": 8.2839,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8202123.Bug/Bug_triggering_input.Compiler_triggering_input.JDK_8202123.Bug_0102@1761355470319.json",
+      "total_score": 8.1998,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/diffClasses/programsofjava.SumOfDigits/programsofjava.SumOfDigits_0108@1762611460252.json",
+      "total_score": 8.1407,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/TestCountedLoopBadIVRange/TestCountedLoopBadIVRange_0104@1760271526814.json",
+      "total_score": 8.035,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8193130.IterationSplitPredicateInconsistency/Bug_triggering_input.Compiler_triggering_input.JDK_8193130.IterationSplitPredicateInconsistency_0101@1761307799073.json",
+      "total_score": 7.8926,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test_0103@1761319462661.json",
+      "total_score": 7.6671,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.intrinsics.bigInteger.TestMultiplyToLenReturnProfile/compiler.intrinsics.bigInteger.TestMultiplyToLenReturnProfile_0102@1760227658864.json",
+      "total_score": 7.4449,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.loopopts.superword.TestReductionWithLoopVariantUse/compiler.loopopts.superword.TestReductionWithLoopVariantUse_0201@1760242331015.json",
+      "total_score": 7.3401,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0403@1765173431993.json",
+      "total_score": 7.2014,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0406@1765023800698.json",
+      "total_score": 7.1814,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0304@1760292387688.json",
+      "total_score": 7.1795,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0406@1765023800698.json",
+      "total_score": 7.0852,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.nio.AvailableCharSets/org.javacore.nio.AvailableCharSets_0401@1764653195292.json",
+      "total_score": 7.0444,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0201@1760241593761.json",
+      "total_score": 6.9432,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.c1.Test7123108/compiler.c1.Test7123108_0101@1760237994762.json",
+      "total_score": 6.9152,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0206@1764629238044.json",
+      "total_score": 6.855,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/unittests/classHistory/programsofjava.SumOfDigits/programsofjava.SumOfDigits_0108@1762611460252.json",
+      "total_score": 6.8227,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0405@1765018941031.json",
+      "total_score": 6.7787,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0501@1765023272101.json",
+      "total_score": 6.7454,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0101@1764945609011.json",
+      "total_score": 6.6802,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.c2.cr8004867.TestIntAtomicCAS/compiler.c2.cr8004867.TestIntAtomicCAS_0101@1760178499971.json",
+      "total_score": 6.621,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0303@1760286050030.json",
+      "total_score": 6.6002,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.nio.AvailableCharSets/org.javacore.nio.AvailableCharSets_0401@1764653195292.json",
+      "total_score": 6.5913,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.lang.String.ToUpperCase/javaT.lang.String.ToUpperCase_0501@1760381099749.json",
+      "total_score": 6.5394,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/fop/classHistory/org.apache.fop.cli.Main/org.apache.fop.cli.Main_0309@1760502488282.json",
+      "total_score": 6.539,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test_0201@1761322567370.json",
+      "total_score": 6.5379,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.codegen.LoadWithMask/compiler.codegen.LoadWithMask_0103@1760261826357.json",
+      "total_score": 6.468,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test_0303@1761352955386.json",
+      "total_score": 6.4155,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0208@1764658151416.json",
+      "total_score": 6.337,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/TestLoadBypassACWithWrongMem/TestLoadBypassACWithWrongMem_0107@1760275512152.json",
+      "total_score": 6.334,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0403@1765038039072.json",
+      "total_score": 6.2672,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0311@1765159098648.json",
+      "total_score": 6.1885,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0401@1764968886303.json",
+      "total_score": 6.0591,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.loopopts.TestArraysFillDeadControl/compiler.loopopts.TestArraysFillDeadControl_0104@1760230543622.json",
+      "total_score": 6.048,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.eliminateAutobox.TestFloatBoxing/compiler.eliminateAutobox.TestFloatBoxing_0302@1760285800726.json",
+      "total_score": 6.0153,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.loopopts.TestArraysFillDeadControl/compiler.loopopts.TestArraysFillDeadControl_0105@1760270812238.json",
+      "total_score": 6.0137,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.GC_triggering_input.JDK_8065402.Test/Bug_triggering_input.GC_triggering_input.JDK_8065402.Test_0101@1761323933258.json",
+      "total_score": 6.0076,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.arraycopy.TestLoadBypassArrayCopy/compiler.arraycopy.TestLoadBypassArrayCopy_0101@1760175985534.json",
+      "total_score": 6.0009,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0403@1765181650192.json",
+      "total_score": 5.9964,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test_0201@1761309749403.json",
+      "total_score": 5.949,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0404@1765168786592.json",
+      "total_score": 5.882,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0204@1765083595879.json",
+      "total_score": 5.8709,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0404@1765017252978.json",
+      "total_score": 5.8672,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test-origin.json",
+      "total_score": 5.847,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0502@1765029905204.json",
+      "total_score": 5.8,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0502@1765029905204.json",
+      "total_score": 5.7908,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0306@1765072573596.json",
+      "total_score": 5.7767,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.nio.LargeMappedFiles/org.javacore.nio.LargeMappedFiles_0103@1764585468980.json",
+      "total_score": 5.6878,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test/Bug_triggering_input.Compiler_triggering_input.JDK_8157906.test_0103@1761319462661.json",
+      "total_score": 5.64,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0403@1765173431993.json",
+      "total_score": 5.6306,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0501@1765023272101.json",
+      "total_score": 5.6286,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0403@1765006023834.json",
+      "total_score": 5.5896,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0404@1765017252978.json",
+      "total_score": 5.5561,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0203@1764584872222.json",
+      "total_score": 5.5518,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0203@1764595124607.json",
+      "total_score": 5.5255,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test_0202@1761334766156.json",
+      "total_score": 5.4515,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_4732721.Bug/Bug_triggering_input.Compiler_triggering_input.JDK_4732721.Bug_0102@1761343293578.json",
+      "total_score": 5.4484,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0503@1765057513922.json",
+      "total_score": 5.4099,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced_0104@1761339254455.json",
+      "total_score": 5.3862,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0310@1765140415506.json",
+      "total_score": 5.3793,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0303@1764604993465.json",
+      "total_score": 5.3692,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0201@1764946063084.json",
+      "total_score": 5.3579,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_4859092.Testf/Bug_triggering_input.Compiler_triggering_input.JDK_4859092.Testf-origin.json",
+      "total_score": 5.3489,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0604@1764657675317.json",
+      "total_score": 5.3363,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8263227.Test/Bug_triggering_input.Compiler_triggering_input.JDK_8263227.Test_0203@1761308566686.json",
+      "total_score": 5.3316,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.intrinsics.string.TestStringConstruction/compiler.intrinsics.string.TestStringConstruction_0104@1760287165840.json",
+      "total_score": 5.324,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.arraycopy.TestArrayCopyOverflowArguments/compiler.arraycopy.TestArrayCopyOverflowArguments_0101@1760210585009.json",
+      "total_score": 5.3064,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0303@1764950780513.json",
+      "total_score": 5.2669,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.codegen.LoadWithMask2/compiler.codegen.LoadWithMask2_0202@1760216088960.json",
+      "total_score": 5.2506,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8194914.ArrayAccess/Bug_triggering_input.Compiler_triggering_input.JDK_8194914.ArrayAccess_0102@1761329754516.json",
+      "total_score": 5.244,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0301@1764947881925.json",
+      "total_score": 5.202,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.c1.Test7123108/compiler.c1.Test7123108_0201@1760305309212.json",
+      "total_score": 5.1783,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0402@1764982747241.json",
+      "total_score": 5.1684,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/OpenJ9/classHistory/javaT.util.Collections.FindSubList/javaT.util.Collections.FindSubList_0104@1760376577668.json",
+      "total_score": 5.1408,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/diffClasses/stack.DecodeString/stack.DecodeString_0404@1765168786592.json",
+      "total_score": 5.1246,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/classHistory/compiler.intrinsics.zip.TestCRC32/compiler.intrinsics.zip.TestCRC32_0102@1760216008930.json",
+      "total_score": 5.1136,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced2/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced2_0101@1761320131273.json",
+      "total_score": 5.0943,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT/org.javacore.collection.util.PerBtwnEmptyMapAndHashMapT_0305@1764647563584.json",
+      "total_score": 5.0848,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/HotSpot/diffClasses/compiler.c1.Test7123108/compiler.c1.Test7123108_0101@1760237994762.json",
+      "total_score": 5.0768,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0402@1764982747241.json",
+      "total_score": 5.0753,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0409@1765255356711.json",
+      "total_score": 5.0532,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.DecodeString/stack.DecodeString_0306@1765072573596.json",
+      "total_score": 5.0495,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/diffClasses/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test/Bug_triggering_input.GC_triggering_input.JDK_8060463.Test_0201@1761309749403.json",
+      "total_score": 5.0247,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/jdkissues/classHistory/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced2/Bug_triggering_input.Compiler_triggering_input.JDK_8279622.Reduced2_0101@1761320131273.json",
+      "total_score": 5.0019,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0902@1764667081442.json",
+      "total_score": 1.1227,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_1001@1764684764267.json",
+      "total_score": 1.0555,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764630162966.json",
+      "total_score": 1.0493,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0502@1764602264278.json",
+      "total_score": 1.0417,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0605@1764641585681.json",
+      "total_score": 1.0397,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0705@1764701299248.json",
+      "total_score": 1.0388,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0806@1764706738580.json",
+      "total_score": 1.0385,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0704@1764699459066.json",
+      "total_score": 1.0366,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0705@1764701299248.json",
+      "total_score": 1.0333,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0402@1764591888284.json",
+      "total_score": 1.0255,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0805@1764686507990.json",
+      "total_score": 1.023,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764630162966.json",
+      "total_score": 1.0164,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/diffClasses/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0602@1764607378495.json",
+      "total_score": 1.0069,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0603@1764701487497.json",
+      "total_score": 1.0024,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0501@1764596131850.json",
+      "total_score": 1.0014,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/core/classHistory/org.javacore.thread.SimplePriorities/org.javacore.thread.SimplePriorities_0503@1764603702335.json",
+      "total_score": 1.0013,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    },
+    {
+      "file_path": "../results/20260112/leetcode/classHistory/stack.BasicCalculator/stack.BasicCalculator_0203@1765154764554.json",
+      "total_score": 1.0012,
+      "triggered_oracles": [
+        "gc_overhead_anomaly"
+      ]
+    }
+  ]
+}

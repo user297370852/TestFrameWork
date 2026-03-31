@@ -1,0 +1,248 @@
+{
+  "metric_info": {
+    "type": "total_gc_count",
+    "name": "GC次数",
+    "description": "GC总次数",
+    "unit": "次"
+  },
+  "gc_support_by_jdk": {
+    "11": [
+      "EpsilonGC",
+      "G1GC",
+      "ParallelGC",
+      "ParallelOldGC",
+      "SerialGC",
+      "ShenandoahGC"
+    ],
+    "17": [
+      "EpsilonGC",
+      "G1GC",
+      "ParallelGC",
+      "SerialGC",
+      "ShenandoahGC",
+      "ZGC"
+    ],
+    "21": [
+      "EpsilonGC",
+      "G1GC",
+      "ParallelGC",
+      "SerialGC",
+      "ShenandoahGC",
+      "ZGC"
+    ],
+    "25": [
+      "EpsilonGC",
+      "G1GC",
+      "ParallelGC",
+      "SerialGC",
+      "ShenandoahGC-Gen",
+      "ZGC"
+    ],
+    "26": [
+      "EpsilonGC",
+      "G1GC",
+      "ParallelGC",
+      "SerialGC",
+      "ZGC"
+    ]
+  },
+  "overall_rankings": {
+    "ParallelGC": {
+      "avg_rank": 3.1353089533417404,
+      "count": 15860,
+      "std_dev": 1.5084859273235742
+    },
+    "ParallelOldGC": {
+      "avg_rank": 2.537652088128905,
+      "count": 3041,
+      "std_dev": 1.3511616390980559
+    },
+    "ShenandoahGC": {
+      "avg_rank": 1.4197757170584429,
+      "count": 9274,
+      "std_dev": 0.7579204077565475
+    },
+    "EpsilonGC": {
+      "avg_rank": 1,
+      "count": 9610,
+      "std_dev": 0.0
+    },
+    "G1GC": {
+      "avg_rank": 3.724633117087611,
+      "count": 15877,
+      "std_dev": 1.3904095074407565
+    },
+    "SerialGC": {
+      "avg_rank": 4.519059920609918,
+      "count": 15871,
+      "std_dev": 1.3330178669182744
+    },
+    "ZGC": {
+      "avg_rank": 1.6776403874931085,
+      "count": 12697,
+      "std_dev": 0.9248538307342379
+    },
+    "ShenandoahGC-Gen": {
+      "avg_rank": 1.288494366678047,
+      "count": 2929,
+      "std_dev": 0.5870943141099177
+    }
+  },
+  "rankings_by_jdk": {
+    "11": {
+      "ParallelGC": {
+        "avg_rank": 2.5030655050016133,
+        "count": 3099,
+        "std_dev": 1.3129833952829448
+      },
+      "ParallelOldGC": {
+        "avg_rank": 2.537652088128905,
+        "count": 3041,
+        "std_dev": 1.3511616390980559
+      },
+      "ShenandoahGC": {
+        "avg_rank": 1.2495932313699967,
+        "count": 3073,
+        "std_dev": 0.7047000857013599
+      },
+      "EpsilonGC": {
+        "avg_rank": 1,
+        "count": 1829,
+        "std_dev": 0.0
+      },
+      "G1GC": {
+        "avg_rank": 3.8853831294269154,
+        "count": 3106,
+        "std_dev": 1.493646921232148
+      },
+      "SerialGC": {
+        "avg_rank": 4.539575289575289,
+        "count": 3108,
+        "std_dev": 1.4880850932429814
+      }
+    },
+    "17": {
+      "ParallelGC": {
+        "avg_rank": 3.0494186046511627,
+        "count": 3096,
+        "std_dev": 1.5717044608558286
+      },
+      "ZGC": {
+        "avg_rank": 1.5118237771298997,
+        "count": 3087,
+        "std_dev": 0.8368765866607565
+      },
+      "ShenandoahGC": {
+        "avg_rank": 1.5094155844155843,
+        "count": 3080,
+        "std_dev": 0.7725660998977713
+      },
+      "EpsilonGC": {
+        "avg_rank": 1,
+        "count": 1854,
+        "std_dev": 0.0
+      },
+      "G1GC": {
+        "avg_rank": 4.167796063246208,
+        "count": 3099,
+        "std_dev": 1.1724657500991553
+      },
+      "SerialGC": {
+        "avg_rank": 4.822466107165914,
+        "count": 3098,
+        "std_dev": 1.433529524165872
+      }
+    },
+    "21": {
+      "ParallelGC": {
+        "avg_rank": 3.048438495857234,
+        "count": 3138,
+        "std_dev": 1.5932033427965657
+      },
+      "ZGC": {
+        "avg_rank": 1.5549169859514687,
+        "count": 3132,
+        "std_dev": 0.864789844448415
+      },
+      "ShenandoahGC": {
+        "avg_rank": 1.4988785645626401,
+        "count": 3121,
+        "std_dev": 0.7659094801104548
+      },
+      "EpsilonGC": {
+        "avg_rank": 1,
+        "count": 1891,
+        "std_dev": 0.0
+      },
+      "G1GC": {
+        "avg_rank": 4.112348822406111,
+        "count": 3142,
+        "std_dev": 1.2197750933984564
+      },
+      "SerialGC": {
+        "avg_rank": 4.8381650207072315,
+        "count": 3139,
+        "std_dev": 1.4287617184004568
+      }
+    },
+    "25": {
+      "ZGC": {
+        "avg_rank": 2.287321063394683,
+        "count": 2934,
+        "std_dev": 1.1368645823528618
+      },
+      "G1GC": {
+        "avg_rank": 3.9969594594594593,
+        "count": 2960,
+        "std_dev": 1.3664463442590085
+      },
+      "ShenandoahGC-Gen": {
+        "avg_rank": 1.288494366678047,
+        "count": 2929,
+        "std_dev": 0.5870943141099177
+      },
+      "SerialGC": {
+        "avg_rank": 4.5652027027027025,
+        "count": 2960,
+        "std_dev": 1.2051225404098873
+      },
+      "ParallelGC": {
+        "avg_rank": 3.3008789722785665,
+        "count": 2958,
+        "std_dev": 1.659379395408827
+      },
+      "EpsilonGC": {
+        "avg_rank": 1,
+        "count": 1713,
+        "std_dev": 0.0
+      }
+    },
+    "26": {
+      "G1GC": {
+        "avg_rank": 2.6330532212885154,
+        "count": 3570,
+        "std_dev": 1.0145066750634892
+      },
+      "ZGC": {
+        "avg_rank": 1.4257900677200903,
+        "count": 3544,
+        "std_dev": 0.5618612440138623
+      },
+      "ParallelGC": {
+        "avg_rank": 3.6979546091342113,
+        "count": 3569,
+        "std_dev": 1.123085699245345
+      },
+      "SerialGC": {
+        "avg_rank": 3.9183959618620303,
+        "count": 3566,
+        "std_dev": 0.8124648185114801
+      },
+      "EpsilonGC": {
+        "avg_rank": 1,
+        "count": 2323,
+        "std_dev": 0.0
+      }
+    }
+  }
+}
