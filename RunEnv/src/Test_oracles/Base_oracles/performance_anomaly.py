@@ -176,13 +176,23 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
 
     # 组合所有性能异常
     all_performance_issues = []
+    total_score = 0.0
+    
     if slow_tests:
+        # 计算slow_tests的总分
+        slow_test_score = sum(test.get("score", 0) for test in slow_tests)
+        total_score += slow_test_score
+        
         all_performance_issues.append({
             "subtype": "slow_tests_within_jdk",
             "slow_tests": slow_tests
         })
 
     if performance_anomalies:
+        # 计算cross_gc_comparison的总分
+        cross_gc_score = sum(anomaly.get("score", 0) for anomaly in performance_anomalies)
+        total_score += cross_gc_score
+        
         all_performance_issues.append({
             "subtype": "cross_gc_comparison",
             "anomalies": performance_anomalies
@@ -192,6 +202,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
         return {
             "type": "performance_anomaly",
             "file_path": file_path,
+            "score": round(total_score, 4),
             "class_info": log_data.get("class_file_info", {}),
             "performance_issues": all_performance_issues,
             "analysis_note": "基于JDK版本分组和GC类型感知的性能分析"

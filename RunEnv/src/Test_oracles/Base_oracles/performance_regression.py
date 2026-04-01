@@ -118,9 +118,12 @@ def oracle_performance_regression(log_data: Dict[str, Any], file_path: str) -> O
             performance_regressions.extend(regressions_in_gc)
 
     if performance_regressions:
+        # 计算总分score
+        total_score = sum(regression.get("score", 0) for regression in performance_regressions)
         return {
             "type": "performance_regression",
             "file_path": file_path,
+            "score": round(total_score, 4),
             "class_info": log_data.get("class_file_info", {}),
             "regressions": performance_regressions,
         }

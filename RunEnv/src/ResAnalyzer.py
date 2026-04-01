@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
 JSON日志分析器 - 基于测试预言的差分测试异常检测
+
+支持两种预言类型:
+1. 基础预言(Base_oracles): 基于固定阈值的异常检测
+2. 高级预言(Advanced_oracles): 基于统计排名基准模型的异常检测
 """
 
 import json
@@ -111,54 +115,96 @@ class ResAnalyzer:
 
         return report
 
+    def _extract_score_from_anomaly(self, anomaly: Dict[str, Any]) -> float:
+        """
+        从异常记录中提取分数，兼容新旧两种预言格式
+
+        新预言(ranking_anomaly)格式:
+        - 顶层有score字段（所有子异常的weighted_z_score之和，使用这个即可）
+        - anomalies子列表中每个元素有weighted_z_score字段
+
+        旧预言(base_oracles)格式:
+        - 顶层可能有score字段
+        - anomalies子列表中每个元素有score字段
+
+        Args:
+            anomaly: 单个异常记录
+
+        Returns:
+            float: 提取的总分数
+        """
+        # 新预言格式：顶层score已经是总和，直接返回
+        if "score" in anomaly and anomaly["type"] == "ranking_anomaly":
+            return anomaly["score"]
+        
+        total_score = 0.0
+        
+        # 旧预言格式：需要从anomalies子列表累加
+        if "anomalies" in anomaly and isinstance(anomaly["anomalies"], list):
+            for sub_anomaly in anomaly["anomalies"]:
+                if "score" in sub_anomaly:
+                    total_score += sub_anomaly["score"]
+        elif "score" in anomaly:
+            # 如果没有anomalies子列表，但有顶层score
+            total_score = anomaly["score"]
+
+        return total_score
+
     def _generate_case_score_summary(self, anomalies: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
         生成按用例得分排序的摘要
-        
+
         Args:
             anomalies: 异常列表
-            
+
         Returns:
             Dict: 包含按得分排序的用例信息的摘要
         """
         # 按文件路径分组，计算每个用例的总得分
         case_scores = {}
-        
+
         for anomaly in anomalies:
             # 跳过执行错误或解析错误的异常
             if anomaly["type"] in ["oracle_execution_error", "parse_error"]:
                 continue
-                
+
             file_path = anomaly["file_path"]
-            
+
             # 初始化用例信息（如果不存在）
             if file_path not in case_scores:
                 case_scores[file_path] = {
                     "file_path": file_path,
                     "total_score": 0.0,
-                    "triggered_oracles": []
+                    "triggered_oracles": [],
+                    "anomaly_count": 0,
+                    "severity_breakdown": {"severe": 0, "moderate": 0, "none": 0}
                 }
-            
-            # 累加score（如果存在）
+
+            # 提取分数（兼容新旧预言格式）
+            score = self._extract_score_from_anomaly(anomaly)
+            case_scores[file_path]["total_score"] += score
+
+            # 统计异常数量
             if "anomalies" in anomaly:
-                # 某些异常类型包含多个子异常（如stw_anomaly）
+                case_scores[file_path]["anomaly_count"] += len(anomaly["anomalies"])
+                
+                # 统计严重程度分布（新预言格式）
                 for sub_anomaly in anomaly["anomalies"]:
-                    if "score" in sub_anomaly:
-                        case_scores[file_path]["total_score"] += sub_anomaly["score"]
+                    severity = sub_anomaly.get("severity", "none")
+                    if severity in case_scores[file_path]["severity_breakdown"]:
+                        case_scores[file_path]["severity_breakdown"][severity] += 1
             else:
-                # 单个异常的情况
-                if "score" in anomaly:
-                    case_scores[file_path]["total_score"] += anomaly["score"]
-            
+                case_scores[file_path]["anomaly_count"] += 1
+
             # 记录触发的测试预言
             oracle_type = anomaly["type"]
             if oracle_type not in case_scores[file_path]["triggered_oracles"]:
                 case_scores[file_path]["triggered_oracles"].append(oracle_type)
-        
+
         # 转换为列表并按得分从大到小排序
         case_score_list = list(case_scores.values())
         case_score_list.sort(key=lambda x: x["total_score"], reverse=True)
-        
+
         # 生成统计信息
         score_stats = {
             "total_cases_with_anomalies": len(case_score_list),
@@ -166,9 +212,11 @@ class ResAnalyzer:
             "multi_oracle_cases": len([c for c in case_score_list if len(c["triggered_oracles"]) > 1]),
             "max_score": case_score_list[0]["total_score"] if case_score_list else 0.0,
             "min_score": case_score_list[-1]["total_score"] if case_score_list else 0.0,
-            "avg_score": sum(c["total_score"] for c in case_score_list) / len(case_score_list) if case_score_list else 0.0
+            "avg_score": sum(c["total_score"] for c in case_score_list) / len(case_score_list) if case_score_list else 0.0,
+            "total_severe_anomalies": sum(c["severity_breakdown"]["severe"] for c in case_score_list),
+            "total_moderate_anomalies": sum(c["severity_breakdown"]["moderate"] for c in case_score_list)
         }
-        
+
         return {
             "statistics": score_stats,
             "ranked_cases": case_score_list
@@ -211,7 +259,7 @@ def main():
         # 详细模式：生成完整报告
         print("生成详细报告...")
         report = analyzer.generate_anomaly_report(anomalies)
-        
+
         # 输出详细报告到文件
         with open(args.output, 'w', encoding='utf-8') as f:
             json.dump(report, f, indent=2, ensure_ascii=False)
@@ -221,37 +269,46 @@ def main():
 
         # 在控制台输出简要统计信息
         stats = report["summary"]
+        score_stats = report["case_score_summary"]["statistics"]
         print(f"\n异常统计:")
-        print(f"  总异常数: {stats['total_anomalies']}")
-        print(f"  受影响文件: {stats['affected_files']}")
+        print(f"  总异常文件数: {stats['total_anomalies']}")
+        print(f"  受影响用例数: {stats['affected_files']}")
         print(f"  按类型分布:")
         for anomaly_type, count in stats['anomalies_by_type'].items():
             print(f"    {anomaly_type}: {count}")
+        
+        # 输出严重程度统计
+        if score_stats["total_severe_anomalies"] > 0 or score_stats["total_moderate_anomalies"] > 0:
+            print(f"\n严重程度分布:")
+            print(f"  严重异常: {score_stats['total_severe_anomalies']}")
+            print(f"  中度异常: {score_stats['total_moderate_anomalies']}")
     else:
         # 简短模式：只生成score相关信息
         print("生成简短score报告...")
-        
+
         # 只生成case_score_summary部分
         case_score_summary = analyzer._generate_case_score_summary(anomalies)
-        
+
         # 创建简短报告
         brief_report = {
             "summary": {
                 "total_anomalies": len(anomalies),
                 "total_cases_with_anomalies": case_score_summary["statistics"]["total_cases_with_anomalies"],
                 "max_score": case_score_summary["statistics"]["max_score"],
-                "avg_score": case_score_summary["statistics"]["avg_score"]
+                "avg_score": case_score_summary["statistics"]["avg_score"],
+                "total_severe_anomalies": case_score_summary["statistics"]["total_severe_anomalies"],
+                "total_moderate_anomalies": case_score_summary["statistics"]["total_moderate_anomalies"]
             },
             "ranked_cases": case_score_summary["ranked_cases"]
         }
-        
+
         # 输出简短报告到文件
         with open(args.output, 'w', encoding='utf-8') as f:
             json.dump(brief_report, f, indent=2, ensure_ascii=False)
 
         print(f"简短分析完成！共检测到 {len(anomalies)} 个异常")
         print(f"简短score报告已保存至: {args.output}")
-        
+
         # 在控制台输出score排序信息
         stats = case_score_summary["statistics"]
         ranked_cases = case_score_summary["ranked_cases"]
@@ -260,11 +317,21 @@ def main():
         print(f"  最高得分: {stats['max_score']:.4f}")
         print(f"  平均得分: {stats['avg_score']:.4f}")
         
+        # 输出严重程度统计
+        if stats["total_severe_anomalies"] > 0 or stats["total_moderate_anomalies"] > 0:
+            print(f"  严重异常数: {stats['total_severe_anomalies']}")
+            print(f"  中度异常数: {stats['total_moderate_anomalies']}")
+
         if ranked_cases:
             print(f"\n前10个最高得分的用例:")
             for i, case in enumerate(ranked_cases[:10]):
                 filename = Path(case['file_path']).name
-                print(f"  {i+1:2d}. {filename}: {case['total_score']:.4f} (预言: {', '.join(case['triggered_oracles'])})")
+                severity_info = ""
+                if case['severity_breakdown']['severe'] > 0:
+                    severity_info = f" [严重:{case['severity_breakdown']['severe']}]"
+                if case['severity_breakdown']['moderate'] > 0:
+                    severity_info += f" [中度:{case['severity_breakdown']['moderate']}]"
+                print(f"  {i+1:2d}. {filename}: {case['total_score']:.4f} (预言: {', '.join(case['triggered_oracles'])}){severity_info}")
 
 
 if __name__ == "__main__":
