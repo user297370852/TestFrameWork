@@ -52,12 +52,12 @@ TEST_ORACLES = [
     # oracle_test_failure,
     # oracle_performance_anomaly,
     # oracle_performance_regression,
-    # oracle_stw_anomaly,
-    # oracle_gc_count_anomaly,
-    # oracle_gc_overhead_anomaly,
+    #oracle_stw_anomaly,
+    #oracle_gc_count_anomaly,
+    #oracle_gc_overhead_anomaly,
     
     # --- 高级预言 (推荐) ---
-    oracle_ranking_anomaly,  # 基于统计排名基准模型的异常检测
+    oracle_ranking_anomaly,  # 基于统计基准模型的异常检测
 ]
 
 # 导出主要接口

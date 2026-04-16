@@ -23,12 +23,12 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
 
     # 不同GC类型的STW时间阈值（毫秒）
     STW_THRESHOLDS = {
-        "ZGC": 2,           # ZGC应该是极低延迟
-        "ShenandoahGC": 100,  # ShenandoahGC也是低延迟GC
-        "G1GC": 100,         # G1GC中等延迟
-        "ParallelGC": 300,   # ParallelGC可能会有较长暂停
-        "SerialGC": 500,    # SerialGC是单线程，暂停可能较长
-        "Unknown": 300       # 未知GC类型使用默认阈值
+        "ZGC": 5,           # ZGC应该是极低延迟
+        "ShenandoahGC": 1000,  # ShenandoahGC也是低延迟GC
+        "G1GC": 2000,         # G1GC中等延迟
+        "ParallelGC": 3000,   # ParallelGC可能会有较长暂停
+        "SerialGC": 5000,    # SerialGC是单线程，暂停可能较长
+        "Unknown": 3000       # 未知GC类型使用默认阈值
     }
 
     # 识别GC类型的函数

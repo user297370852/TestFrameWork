@@ -177,22 +177,30 @@ class ResAnalyzer:
                     "total_score": 0.0,
                     "triggered_oracles": [],
                     "anomaly_count": 0,
-                    "severity_breakdown": {"severe": 0, "moderate": 0, "none": 0}
+                    # 支持新旧两种severity格式
+                    "severity_breakdown": {
+                        "high": 0, "medium": 0, "low": 0,  # V2.1格式
+                        "severe": 0, "moderate": 0, "none": 0  # V1格式兼容
+                    },
+                    "descriptions": []  # 收集异常描述用于生成info
                 }
 
             # 提取分数（兼容新旧预言格式）
             score = self._extract_score_from_anomaly(anomaly)
             case_scores[file_path]["total_score"] += score
 
-            # 统计异常数量
+            # 统计异常数量并收集描述
             if "anomalies" in anomaly:
                 case_scores[file_path]["anomaly_count"] += len(anomaly["anomalies"])
                 
-                # 统计严重程度分布（新预言格式）
+                # 统计严重程度分布（支持V2.1和V1格式）
                 for sub_anomaly in anomaly["anomalies"]:
                     severity = sub_anomaly.get("severity", "none")
                     if severity in case_scores[file_path]["severity_breakdown"]:
                         case_scores[file_path]["severity_breakdown"][severity] += 1
+                    # 收集异常描述
+                    if "description" in sub_anomaly:
+                        case_scores[file_path]["descriptions"].append(sub_anomaly["description"])
             else:
                 case_scores[file_path]["anomaly_count"] += 1
 
@@ -204,8 +212,21 @@ class ResAnalyzer:
         # 转换为列表并按得分从大到小排序
         case_score_list = list(case_scores.values())
         case_score_list.sort(key=lambda x: x["total_score"], reverse=True)
+        
+        # 为每个用例生成info字段
+        for case in case_score_list:
+            case["info"] = self._generate_case_info(case["descriptions"], case["severity_breakdown"])
+            # 删除临时的descriptions字段
+            del case["descriptions"]
 
-        # 生成统计信息
+        # 生成统计信息（兼容新旧两种severity格式）
+        total_high = sum(c["severity_breakdown"].get("high", 0) for c in case_score_list)
+        total_medium = sum(c["severity_breakdown"].get("medium", 0) for c in case_score_list)
+        total_low = sum(c["severity_breakdown"].get("low", 0) for c in case_score_list)
+        # V1格式兼容
+        total_severe = sum(c["severity_breakdown"].get("severe", 0) for c in case_score_list)
+        total_moderate = sum(c["severity_breakdown"].get("moderate", 0) for c in case_score_list)
+        
         score_stats = {
             "total_cases_with_anomalies": len(case_score_list),
             "single_oracle_cases": len([c for c in case_score_list if len(c["triggered_oracles"]) == 1]),
@@ -213,14 +234,119 @@ class ResAnalyzer:
             "max_score": case_score_list[0]["total_score"] if case_score_list else 0.0,
             "min_score": case_score_list[-1]["total_score"] if case_score_list else 0.0,
             "avg_score": sum(c["total_score"] for c in case_score_list) / len(case_score_list) if case_score_list else 0.0,
-            "total_severe_anomalies": sum(c["severity_breakdown"]["severe"] for c in case_score_list),
-            "total_moderate_anomalies": sum(c["severity_breakdown"]["moderate"] for c in case_score_list)
+            # V2.1格式
+            "total_high_severity": total_high,
+            "total_medium_severity": total_medium,
+            "total_low_severity": total_low,
+            # V1格式兼容
+            "total_severe_anomalies": total_severe + total_high,
+            "total_moderate_anomalies": total_moderate + total_medium
         }
 
         return {
             "statistics": score_stats,
             "ranked_cases": case_score_list
         }
+
+    def _generate_case_info(self, descriptions: List[str], severity_breakdown: Dict[str, int]) -> str:
+        """
+        根据异常描述生成用例的info字段
+        
+        Args:
+            descriptions: 异常描述列表
+            severity_breakdown: 严重程度分布
+        
+        Returns:
+            str: 可读的异常汇总描述
+        """
+        if not descriptions:
+            # 如果没有描述，生成一个简单的统计描述
+            high = severity_breakdown.get("high", 0) + severity_breakdown.get("severe", 0)
+            medium = severity_breakdown.get("medium", 0) + severity_breakdown.get("moderate", 0)
+            low = severity_breakdown.get("low", 0)
+            
+            parts = []
+            if high > 0:
+                parts.append(f"{high}处高严重度异常")
+            if medium > 0:
+                parts.append(f"{medium}处中严重度异常")
+            if low > 0:
+                parts.append(f"{low}处低严重度异常")
+            
+            if parts:
+                return "检测到" + "、".join(parts)
+            return "异常"
+        
+        # 如果有描述，去重并合并
+        unique_descs = list(dict.fromkeys(descriptions))  # 去重保序
+        
+        # 按 (jdk, gc, metric) 分组，避免重复信息
+        groups = {}
+        for desc in unique_descs:
+            # 解析描述格式: "JDK{jdk_version}的{gc_type}在{metric_name}上{severity_word}：{comparison}"
+            if desc.startswith("JDK"):
+                try:
+                    # 提取关键部分
+                    jdk_end = desc.find("的")
+                    gc_end = desc.find("在")
+                    metric_end = desc.find("上")
+                    if jdk_end > 0 and gc_end > 0 and metric_end > 0:
+                        jdk = desc[3:jdk_end]
+                        gc = desc[jdk_end+1:gc_end]
+                        metric = desc[gc_end+1:metric_end]
+                        key = (jdk, gc)
+                        if key not in groups:
+                            groups[key] = []
+                        groups[key].append((metric, desc))
+                    else:
+                        # 无法解析，直接添加
+                        if ("_other", "_other") not in groups:
+                            groups[("_other", "_other")] = []
+                        groups[("_other", "_other")].append(("", desc))
+                except Exception:
+                    if ("_other", "_other") not in groups:
+                        groups[("_other", "_other")] = []
+                    groups[("_other", "_other")].append(("", desc))
+            else:
+                if ("_other", "_other") not in groups:
+                    groups[("_other", "_other")] = []
+                groups[("_other", "_other")].append(("", desc))
+        
+        # 生成每组的一句话描述
+        parts = []
+        for (jdk, gc), items in groups.items():
+            if jdk == "_other":
+                # 无法分组的描述，直接添加原文
+                parts.extend([desc for _, desc in items[:2]])
+                continue
+            
+            # 提取指标名称
+            metrics = list(dict.fromkeys([m for m, _ in items]))
+            metrics_str = "、".join(metrics[:3])
+            if len(metrics) > 3:
+                metrics_str += f"等{len(metrics)}个指标"
+            
+            # 统计严重程度
+            high_count = sum(1 for _, desc in items if "显著异常" in desc)
+            medium_count = sum(1 for _, desc in items if "异常" in desc and "显著异常" not in desc)
+            low_count = sum(1 for _, desc in items if "轻微异常" in desc)
+            
+            if high_count > 0:
+                sev_str = f"{high_count}处高严重度"
+            elif medium_count > 0:
+                sev_str = f"{medium_count}处中严重度"
+            else:
+                sev_str = f"{low_count}处低严重度"
+            
+            parts.append(f"JDK{jdk}的{gc}在{metrics_str}上{sev_str}")
+        
+        # 合并描述
+        if len(parts) == 1:
+            return parts[0]
+        elif len(parts) <= 3:
+            return "；".join(parts)
+        else:
+            return "；".join(parts[:3]) + f"；共{len(parts)}个组合异常"
 
 
 def main():
@@ -277,8 +403,14 @@ def main():
         for anomaly_type, count in stats['anomalies_by_type'].items():
             print(f"    {anomaly_type}: {count}")
         
-        # 输出严重程度统计
-        if score_stats["total_severe_anomalies"] > 0 or score_stats["total_moderate_anomalies"] > 0:
+        # 输出严重程度统计（支持V2.1格式）
+        if score_stats.get("total_high_severity", 0) > 0 or score_stats.get("total_medium_severity", 0) > 0:
+            print(f"\n严重程度分布:")
+            print(f"  高严重度: {score_stats.get('total_high_severity', 0)}")
+            print(f"  中严重度: {score_stats.get('total_medium_severity', 0)}")
+            print(f"  低严重度: {score_stats.get('total_low_severity', 0)}")
+        elif score_stats.get("total_severe_anomalies", 0) > 0 or score_stats.get("total_moderate_anomalies", 0) > 0:
+            # V1格式兼容
             print(f"\n严重程度分布:")
             print(f"  严重异常: {score_stats['total_severe_anomalies']}")
             print(f"  中度异常: {score_stats['total_moderate_anomalies']}")
@@ -296,6 +428,11 @@ def main():
                 "total_cases_with_anomalies": case_score_summary["statistics"]["total_cases_with_anomalies"],
                 "max_score": case_score_summary["statistics"]["max_score"],
                 "avg_score": case_score_summary["statistics"]["avg_score"],
+                # V2.1格式
+                "total_high_severity": case_score_summary["statistics"].get("total_high_severity", 0),
+                "total_medium_severity": case_score_summary["statistics"].get("total_medium_severity", 0),
+                "total_low_severity": case_score_summary["statistics"].get("total_low_severity", 0),
+                # V1格式兼容
                 "total_severe_anomalies": case_score_summary["statistics"]["total_severe_anomalies"],
                 "total_moderate_anomalies": case_score_summary["statistics"]["total_moderate_anomalies"]
             },
@@ -317,8 +454,15 @@ def main():
         print(f"  最高得分: {stats['max_score']:.4f}")
         print(f"  平均得分: {stats['avg_score']:.4f}")
         
-        # 输出严重程度统计
-        if stats["total_severe_anomalies"] > 0 or stats["total_moderate_anomalies"] > 0:
+        # 输出严重程度统计（支持V2.1格式）
+        high_count = stats.get("total_high_severity", 0)
+        medium_count = stats.get("total_medium_severity", 0)
+        if high_count > 0 or medium_count > 0:
+            print(f"  高严重度: {high_count}")
+            print(f"  中严重度: {medium_count}")
+            print(f"  低严重度: {stats.get('total_low_severity', 0)}")
+        elif stats.get("total_severe_anomalies", 0) > 0 or stats.get("total_moderate_anomalies", 0) > 0:
+            # V1格式兼容
             print(f"  严重异常数: {stats['total_severe_anomalies']}")
             print(f"  中度异常数: {stats['total_moderate_anomalies']}")
 
@@ -327,10 +471,19 @@ def main():
             for i, case in enumerate(ranked_cases[:10]):
                 filename = Path(case['file_path']).name
                 severity_info = ""
-                if case['severity_breakdown']['severe'] > 0:
-                    severity_info = f" [严重:{case['severity_breakdown']['severe']}]"
-                if case['severity_breakdown']['moderate'] > 0:
-                    severity_info += f" [中度:{case['severity_breakdown']['moderate']}]"
+                # V2.1格式
+                if case['severity_breakdown'].get('high', 0) > 0:
+                    severity_info = f" [高:{case['severity_breakdown']['high']}]"
+                if case['severity_breakdown'].get('medium', 0) > 0:
+                    severity_info += f" [中:{case['severity_breakdown']['medium']}]"
+                if case['severity_breakdown'].get('low', 0) > 0:
+                    severity_info += f" [低:{case['severity_breakdown']['low']}]"
+                # V1格式兼容
+                if not severity_info:
+                    if case['severity_breakdown'].get('severe', 0) > 0:
+                        severity_info = f" [严重:{case['severity_breakdown']['severe']}]"
+                    if case['severity_breakdown'].get('moderate', 0) > 0:
+                        severity_info += f" [中度:{case['severity_breakdown']['moderate']}]"
                 print(f"  {i+1:2d}. {filename}: {case['total_score']:.4f} (预言: {', '.join(case['triggered_oracles'])}){severity_info}")
 
 
