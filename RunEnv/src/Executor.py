@@ -59,6 +59,15 @@ class JDKDifferentialTester:
             ["-XX:+UseParallelGC"],
             ["-XX:+UseG1GC"],
             ["-XX:+UseZGC"],
+            #["-XX:+UseShenandoahGC"],
+            ["-XX:+UnlockExperimentalVMOptions", "-XX:+UseEpsilonGC"]
+        ],
+        "27": [
+            ["-XX:+UseSerialGC"],
+            ["-XX:+UseParallelGC"],
+            ["-XX:+UseG1GC"],
+            ["-XX:+UseZGC"],
+            #["-XX:+UseShenandoahGC"],
             ["-XX:+UnlockExperimentalVMOptions", "-XX:+UseEpsilonGC"]
         ]
     }
@@ -126,6 +135,8 @@ class JDKDifferentialTester:
                 return "25"
             elif "26." in result.stderr:
                 return "26"
+            elif "27." in result.stderr:
+                return "27"
             else:
                 return "unknown"
         except Exception as e:

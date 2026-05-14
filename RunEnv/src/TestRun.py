@@ -107,13 +107,10 @@ class ClassFileRunner:
             # JDK 9+ 使用新的 -Xlog 参数格式，但为了兼容性也支持旧格式
             gc_args = [f"-Xlog:gc*:file={gc_log_file}:time,uptime,level,tags"]
 
-            jvm_args = gc_args + jvm_args
+            jvm_args =gc_args + jvm_args
 
         if package_name == "org.apache.fop.cli":
-            # FOP需要更多内存
             jvm_args = [
-                           "-Xmx2g",  # 2GB堆内存
-                           "-Xms512m",  # 初始512MB
                            "-Dfop.home=" + fop_dir,
                            "-Djava.awt.headless=true",
                            "-Dorg.apache.fop.allow-external-dtd=true"
@@ -121,7 +118,7 @@ class ClassFileRunner:
 
         try:
             # 构建完整的命令：java [JVM参数] -cp class_path full_class_name
-            cmd = ["java"] + jvm_args + ["-cp", class_path, full_class_name]
+            cmd = ["java"] + ["-Xms256m","-Xmx4g"]+ jvm_args + ["-cp", class_path, full_class_name]
 
             # 如果是FOP，使用现有的测试文件
             if package_name == "org.apache.fop.cli":
