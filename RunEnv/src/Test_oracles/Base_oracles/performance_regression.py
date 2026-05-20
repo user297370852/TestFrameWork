@@ -103,15 +103,8 @@ def oracle_performance_regression(log_data: Dict[str, Any], file_path: str) -> O
                 if change_ratio > 3:
                     score = change_ratio  # 性能变化比例作为异常分数
                     regressions_in_gc.append({
-                        "gc_type": gc_type,
-                        "from_version": previous_version,
-                        "to_version": current_version,
-                        "from_time_ms": previous_time,
-                        "to_time_ms": current_time,
-                        "change_ratio": round(change_ratio, 2),
                         "score": round(score, 4),  # 异常分数：性能变化比例
-                        "performance_change": f"变慢 {round((change_ratio - 1) * 100, 1)}%",
-                        "threshold": 2
+                        "info": f"{current_version}-{gc_type}: 执行时间异常，执行时间（{current_time:.2f}ms）比JDK{previous_version}（{previous_time:.2f}ms）高{change_ratio:.1f}倍"
                     })
 
         if regressions_in_gc:
@@ -124,7 +117,6 @@ def oracle_performance_regression(log_data: Dict[str, Any], file_path: str) -> O
             "type": "performance_regression",
             "file_path": file_path,
             "score": round(total_score, 4),
-            "class_info": log_data.get("class_file_info", {}),
             "regressions": performance_regressions,
         }
 

@@ -91,17 +91,8 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
             if duration > threshold and duration > median_duration * 3:
                 score = duration / threshold  # 超出阈值的倍数
                 slow_tests.append({
-                    "jdk_version": jdk_version,
-                    "gc_type": gc_type,
-                    "jvm_parameters": test.get("jvm_parameters", []),
-                    "duration_ms": duration,
-                    "threshold": round(threshold, 2),
-                    "min_duration_in_jdk": min_duration,
-                    "median_duration_in_jdk": median_duration,
-                    "ratio_to_min": round(duration / min_duration, 2),
-                    "ratio_to_median": round(duration / median_duration, 2),
                     "score": round(score, 4),  # 异常分数：超出阈值的倍数
-                    "threshold_ratio": threshold_ratio
+                    "info": f"{jdk_version}-{gc_type}: 执行时间异常，执行时间（{duration:.2f}ms）比同版本最快执行时间（{min_duration:.2f}ms）高{duration / min_duration:.1f}倍"
                 })
 
         # 同JDK版本内，按GC类型分组进行统计分析
@@ -134,15 +125,12 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                         if ratio > 5:  # 低延迟GC之间差异不应过大
                             score = ratio  # 两种GC性能差异的倍数
                             performance_anomalies.append({
-                                "type": "low_latency_gc_discrepancy",
-                                "jdk_version": jdk_version,
-                                "gc1": gc1,
-                                "gc2": gc2,
-                                "gc1_median_ms": gc_medians[gc1],
-                                "gc2_median_ms": gc_medians[gc2],
-                                "ratio": round(ratio, 2),
                                 "score": round(score, 4),  # 异常分数：两种GC性能差异的倍数
-                                "threshold": 5
+                                "info": (
+                                    f"{jdk_version}-{gc1 if gc_medians[gc1] >= gc_medians[gc2] else gc2}: 执行时间异常，"
+                                    f"执行时间（{max(gc_medians[gc1], gc_medians[gc2]):.2f}ms）比同版本的{gc2 if gc_medians[gc1] >= gc_medians[gc2] else gc1}"
+                                    f"（{min(gc_medians[gc1], gc_medians[gc2]):.2f}ms）高{ratio:.1f}倍"
+                                )
                             })
 
         # 吞吐量GC对比
@@ -163,15 +151,12 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
                         if ratio > 10.0:  # 吞吐量GC之间允许较大差异
                             score = ratio  # 两种GC性能差异的倍数
                             performance_anomalies.append({
-                                "type": "throughput_gc_discrepancy",
-                                "jdk_version": jdk_version,
-                                "gc1": gc1,
-                                "gc2": gc2,
-                                "gc1_median_ms": gc_medians[gc1],
-                                "gc2_median_ms": gc_medians[gc2],
-                                "ratio": round(ratio, 2),
                                 "score": round(score, 4),  # 异常分数：两种GC性能差异的倍数
-                                "threshold": 10.0
+                                "info": (
+                                    f"{jdk_version}-{gc1 if gc_medians[gc1] >= gc_medians[gc2] else gc2}: 执行时间异常，"
+                                    f"执行时间（{max(gc_medians[gc1], gc_medians[gc2]):.2f}ms）比同版本的{gc2 if gc_medians[gc1] >= gc_medians[gc2] else gc1}"
+                                    f"（{min(gc_medians[gc1], gc_medians[gc2]):.2f}ms）高{ratio:.1f}倍"
+                                )
                             })
 
     # 组合所有性能异常
@@ -203,9 +188,7 @@ def oracle_performance_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
             "type": "performance_anomaly",
             "file_path": file_path,
             "score": round(total_score, 4),
-            "class_info": log_data.get("class_file_info", {}),
-            "performance_issues": all_performance_issues,
-            "analysis_note": "基于JDK版本分组和GC类型感知的性能分析"
+            "performance_issues": all_performance_issues
         }
 
     return None

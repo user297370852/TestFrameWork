@@ -67,10 +67,7 @@ def oracle_gc_count_anomaly(log_data: Dict[str, Any], file_path: str) -> Optiona
         gc_data.append({
             "jdk_version": jdk_version,
             "gc_type": gc_type,
-            "total_gc_count": gc_count,
-            "jvm_parameters": result.get("jvm_parameters", []),
-            "gc_parameters": result.get("GC_parameters", []),
-            "test_timestamp": result.get("test_timestamp", "unknown")
+            "total_gc_count": gc_count
         })
 
     if not gc_data:
@@ -120,49 +117,18 @@ def oracle_gc_count_anomaly(log_data: Dict[str, Any], file_path: str) -> Optiona
             
             if gc_count > threshold:
                 # 计算异常程度
-                excess_ratio_median = (gc_count - median_gc_count) / median_gc_count if median_gc_count > 0 else float('inf')
-                excess_ratio_mean = (gc_count - mean_gc_count) / mean_gc_count if mean_gc_count > 0 else float('inf')
                 excess_ratio_threshold = (gc_count - threshold) / threshold
                 
                 anomalies.append({
-                    "jdk_version": data["jdk_version"],
-                    "gc_type": gc_type,
-                    "total_gc_count": gc_count,
-                    "threshold": round(threshold, 2),
-                    "median_gc_count": median_gc_count,
-                    "mean_gc_count": round(mean_gc_count, 2),
-                    "excess_ratio_median": round(excess_ratio_median, 2),
-                    "excess_ratio_mean": round(excess_ratio_mean, 2),
-                    "excess_ratio_threshold": round(excess_ratio_threshold, 2),
                     "score": round(excess_ratio_threshold, 4),  # 异常分数：超出阈值的比例
-                    "stability_threshold_multiplier": stability_threshold,
-                    "jvm_parameters": data["jvm_parameters"],
-                    "gc_parameters": data["gc_parameters"],
-                    "test_timestamp": data["test_timestamp"]
+                    "info": f"{data['jdk_version']}-{gc_type}: GC次数异常，GC次数（{gc_count}次）比同GC类型基准（{base_threshold:.2f}次）高{gc_count / base_threshold:.1f}倍"
                 })
 
     # 如果发现异常，返回结果
     if anomalies:
-        # 按GC类型和JDK版本分组统计
-        gc_type_counts = {}
-        jdk_version_counts = {}
-        
-        for anomaly in anomalies:
-            gc_type = anomaly["gc_type"]
-            jdk_version = anomaly["jdk_version"]
-            
-            if gc_type not in gc_type_counts:
-                gc_type_counts[gc_type] = 0
-            gc_type_counts[gc_type] += 1
-            
-            if jdk_version not in jdk_version_counts:
-                jdk_version_counts[jdk_version] = 0
-            jdk_version_counts[jdk_version] += 1
-
         return {
             "type": "gc_count_anomaly",
             "file_path": file_path,
-            "message": f"检测到{len(anomalies)}个GC次数异常，分布在{len(gc_type_counts)}种GC类型和{len(jdk_version_counts)}个JDK版本中",
             "anomalies": anomalies
         }
 

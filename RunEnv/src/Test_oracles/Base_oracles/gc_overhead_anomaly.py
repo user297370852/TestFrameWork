@@ -69,13 +69,8 @@ def oracle_gc_overhead_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
         gc_data.append({
             "jdk_version": jdk_version,
             "gc_type": gc_type,
-            "gc_stw_time_ms": gc_stw_time,
-            "duration_ms": duration_ms,
-            "total_gc_count": total_gc_count,
             "gc_overhead_ratio": gc_overhead_ratio,
-            "gc_overhead_percentage": gc_overhead_ratio * 100,  # 转换为百分比
-            "gc_parameters": result.get("GC_parameters", []),
-            "test_timestamp": result.get("test_timestamp", "unknown")
+            "gc_overhead_percentage": gc_overhead_ratio * 100  # 转换为百分比
         })
 
     if not gc_data:
@@ -89,22 +84,8 @@ def oracle_gc_overhead_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
         if data["gc_overhead_ratio"] > 1.0:  # 超过100%
             score = data["gc_overhead_ratio"]  # GC开销比例本身作为异常分数
             debug_anomalies.append({
-                "anomaly_type": "debug_gc_overhead_over_100_percent",
-                "jdk_version": data["jdk_version"],
-                "gc_type": data["gc_type"],
-                "gc_overhead_percentage": data["gc_overhead_percentage"],
-                "gc_stw_time_ms": data["gc_stw_time_ms"],
-                "duration_ms": data["duration_ms"],
-                "total_gc_count": data["total_gc_count"],
                 "score": round(score, 4),  # 异常分数：GC开销比例
-                "description": f"DEBUG: {data['gc_type']} GC开销比例 ({data['gc_overhead_percentage']:.2f}%) 超过100%，这表明数据有误！",
-                "details": {
-                    "gc_stw_time_ms": data["gc_stw_time_ms"],
-                    "duration_ms": data["duration_ms"],
-                    "ratio": data["gc_overhead_ratio"],
-                    "gc_count": data["total_gc_count"],
-                    "note": "GC暂停时间不应超过程序总运行时间"
-                }
+                "info": f"{data['jdk_version']}-{data['gc_type']}: GC开销比例异常，GC开销比例（{data['gc_overhead_percentage']:.2f}%）超过100%，GC暂停时间大于程序总运行时间"
             })
     
     if debug_anomalies:
@@ -141,22 +122,21 @@ def oracle_gc_overhead_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
 
             if data["gc_overhead_ratio"] > median_ratio * threshold:
                 score = data["gc_overhead_ratio"] / median_ratio  # 相对于中位数的倍数
+                baseline = min(
+                    (item for item in jdk_gc_data if item is not data),
+                    key=lambda item: abs(item["gc_overhead_ratio"] - median_ratio),
+                    default=None
+                )
+                if baseline:
+                    comparison_info = (
+                        f"比同版本的{baseline['gc_type']}（{baseline['gc_overhead_percentage']:.2f}%）"
+                        f"高{data['gc_overhead_ratio'] / baseline['gc_overhead_ratio']:.1f}倍"
+                    ) if baseline["gc_overhead_ratio"] > 0 else f"是同版本中位数（{median_ratio * 100:.2f}%）的{score:.1f}倍"
+                else:
+                    comparison_info = f"是同版本中位数（{median_ratio * 100:.2f}%）的{score:.1f}倍"
                 jdk_comparison_anomalies.append({
-                    "anomaly_type": "jdk_internal_overhead_comparison",
-                    "jdk_version": jdk_version,
-                    "gc_type": data["gc_type"],
-                    "gc_overhead_percentage": data["gc_overhead_percentage"],
-                    "median_overhead_percentage": median_ratio * 100,
-                    "ratio_multiplier": data["gc_overhead_ratio"] / median_ratio,
                     "score": round(score, 4),  # 异常分数：相对于中位数的倍数
-                    "description": f"{data['gc_type']} GC开销比例 ({data['gc_overhead_percentage']:.2f}%) "
-                                  f"是中位数 ({median_ratio * 100:.2f}%) 的 "
-                                  f"{data['gc_overhead_ratio'] / median_ratio:.1f} 倍",
-                    "details": {
-                        "gc_stw_time_ms": data["gc_stw_time_ms"],
-                        "duration_ms": data["duration_ms"],
-                        "total_gc_count": data["total_gc_count"]
-                    }
+                    "info": f"{jdk_version}-{data['gc_type']}: GC开销比例异常，GC开销比例（{data['gc_overhead_percentage']:.2f}%）{comparison_info}"
                 })
 
     if jdk_comparison_anomalies:
@@ -192,28 +172,8 @@ def oracle_gc_overhead_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
             if overhead_increase > 0.05 and overhead_increase_ratio > 5:  # 绝对增加5%且相对增加500%
                 score = overhead_increase_ratio  # 开销比例增加的比例
                 cross_version_anomalies.append({
-                    "anomaly_type": "cross_version_overhead_regression",
-                    "gc_type": gc_type,
-                    "prev_jdk_version": prev_jdk,
-                    "curr_jdk_version": curr_jdk,
-                    "prev_overhead_percentage": prev_overhead * 100,
-                    "curr_overhead_percentage": curr_overhead * 100,
-                    "increase_percentage": overhead_increase * 100,
-                    "increase_ratio": overhead_increase_ratio,
                     "score": round(score, 4),  # 异常分数：开销比例增加的比例
-                    "description": f"{gc_type} GC开销比例从 {prev_jdk} ({prev_overhead * 100:.2f}%) "
-                                  f"到 {curr_jdk} ({curr_overhead * 100:.2f}%) "
-                                  f"增加了 {overhead_increase * 100:.2f}% ({overhead_increase_ratio:.1%})",
-                    "prev_details": {
-                        "gc_stw_time_ms": prev_version["gc_stw_time_ms"],
-                        "duration_ms": prev_version["duration_ms"],
-                        "total_gc_count": prev_version["total_gc_count"]
-                    },
-                    "curr_details": {
-                        "gc_stw_time_ms": curr_version["gc_stw_time_ms"],
-                        "duration_ms": curr_version["duration_ms"],
-                        "total_gc_count": curr_version["total_gc_count"]
-                    }
+                    "info": f"{curr_jdk}-{gc_type}: GC开销比例异常，GC开销比例（{curr_overhead * 100:.2f}%）比JDK{prev_jdk}（{prev_overhead * 100:.2f}%）高{curr_overhead / prev_overhead:.1f}倍"
                 })
 
     if cross_version_anomalies:
@@ -221,23 +181,10 @@ def oracle_gc_overhead_anomaly(log_data: Dict[str, Any], file_path: str) -> Opti
 
     # 如果发现任何异常，返回结果
     if anomalies:
-        # 按异常类型分组统计
-        jdk_comparison_count = len([a for a in anomalies if a.get("anomaly_type") == "jdk_internal_overhead_comparison"])
-        cross_version_count = len([a for a in anomalies if a.get("anomaly_type") == "cross_version_overhead_regression"])
-        debug_over_100_count = len([a for a in anomalies if a.get("anomaly_type") == "debug_gc_overhead_over_100_percent"])
-        
         return {
             "type": "gc_overhead_anomaly",
             "file_path": file_path,
-            "message": f"检测到{len(anomalies)}个GC开销比例异常（DEBUG超100%:{debug_over_100_count}, 同版本对比:{jdk_comparison_count}, 跨版本对比:{cross_version_count}）",
-            "anomalies": anomalies,
-            "summary": {
-                "total_anomalies": len(anomalies),
-                "debug_over_100_percent": debug_over_100_count,
-                "jdk_internal_comparisons": jdk_comparison_count,
-                "cross_version_regressions": cross_version_count,
-                "total_gc_data_points": len(gc_data)
-            }
+            "anomalies": anomalies
         }
 
     return None

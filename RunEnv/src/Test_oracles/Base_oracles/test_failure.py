@@ -18,6 +18,23 @@ def oracle_test_failure(log_data: Dict[str, Any], file_path: str) -> Optional[Di
     if not test_results:
         return None
 
+    def classify_gc_type(result: Dict[str, Any]) -> str:
+        gc_params = result.get("GC_parameters", [])
+        params_str = " ".join(gc_params).upper()
+
+        if "+USEZGC" in params_str:
+            return "ZGC"
+        elif "+USESHENANDOAHGC" in params_str:
+            return "ShenandoahGC"
+        elif "+USEG1GC" in params_str:
+            return "G1GC"
+        elif "+USEPARALLELGC" in params_str or "+USEPARALLELOLDGC" in params_str:
+            return "ParallelGC"
+        elif "+USESERIALGC" in params_str:
+            return "SerialGC"
+        else:
+            return "Unknown"
+
     # 环境相关错误的关键词列表
     ENVIRONMENT_ERRORS = {
         "NoClassDefFoundError",
@@ -66,50 +83,29 @@ def oracle_test_failure(log_data: Dict[str, Any], file_path: str) -> Optional[Di
         return False
 
     failed_tests = []
-    environment_failures = []  # 记录环境相关失败，用于调试
-
     for result in test_results:
         if not result.get("success", True) or result.get("exit_code", 0) != 0:
             output = result.get("output", "")
 
             # 过滤环境相关错误
             if is_environment_error(output):
-                environment_failures.append({
-                    "jdk_version": result.get("jdk_version", "unknown"),
-                    "jvm_parameters": result.get("GC_parameters", []),
-                    "exit_code": result.get("exit_code", -1),
-                    "error_type": "environment_error",
-                    "output_preview": output[:200] + "..." if len(output) > 200 else output
-                })
                 continue  # 跳过环境错误
 
             # 真正的程序逻辑错误
+            output_preview = output[:120].replace("\n", " ")
+            if len(output) > 120:
+                output_preview += "..."
             failed_tests.append({
-                "jdk_version": result.get("jdk_version", "unknown"),
-                "jvm_parameters": result.get("GC_parameters", []),
-                "exit_code": result.get("exit_code", -1),
-                "output": output,
-                "duration_ms": result.get("duration_ms", 0)
+                "score": 10.0,
+                "info": f"{result.get('jdk_version', 'unknown')}-{classify_gc_type(result)}: 测试执行异常，退出码为{result.get('exit_code', -1)}，错误摘要：{output_preview}"
             })
 
     # 如果有真正的程序逻辑错误，返回异常
     if failed_tests:
-        result = {
+        return {
             "type": "test_failure",
             "file_path": file_path,
-            "class_info": log_data.get("class_file_info", {}),
-            "failed_tests": failed_tests,
-            "total_tests": len(test_results),
-            "failed_count": len(failed_tests)
+            "failed_tests": failed_tests
         }
-
-        # 如果需要调试，可以添加环境失败信息
-        if environment_failures:
-            result["environment_failures_filtered"] = {
-                "count": len(environment_failures),
-                "samples": environment_failures[:3]  # 只显示前3个样本
-            }
-
-        return result
 
     return None
