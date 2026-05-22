@@ -1,0 +1,150 @@
+# ============ 系统文件 ============
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.Trashes
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+.networkdrive
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============ 编译产物 ============
+# Java编译产物
+#*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# Python编译产物
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============ IDE相关 ============
+# PyCharm / IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+*.swp
+*.swo
+*~
+.gradle/
+caches/
+.versions/
+workspace.xml
+tasks.xml
+usage.statistics.xml
+dictionaries/
+inspectionProfiles/
+shelf/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# ============ 项目特定目录 ============
+# 本地测试、分析和结果数据
+Anomaly_case/
+DataAnalysis/
+results/
+
+# 测试输出目录
+RunEnv/RunTestHere/
+RunEnv/testcases/
+RunEnv/gclogs/
+src/tools/Output/
+
+# ============ 版本管理文件 ============
+.gitignore
+.java-version
+.node-version
+.python-version
+.ruby-version
+.gem-version
+.go-version
+.rust-version
+
+# ============ 日志文件 ============
+# 只忽略特定的日志文件模式，避免误伤
+.\\log.txt
+*.log
+*.log.*
+
+# ============ 其他 ============
+# 临时文件
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*.cache
+
+# 压缩文件
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# 本地配置文件
+config.local
+*.local
