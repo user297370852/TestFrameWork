@@ -312,43 +312,31 @@ def is_all_zero_for_metric(
 # V2.1 三通道鲁棒检测工具函数
 # ============================================================
 
-def calculate_regret(value: float, best_value: float, alpha: float = 1.0) -> float:
+def calculate_regret(value: float, best_value: float) -> float:
     """
     计算相对最优值的退化量 (Self-Regret)
     
-    regret = log((x + alpha) / (x_best + alpha))
+    regret = log(x / x_best)
     
     该指标无量纲，跨测试用例可比，乘法差异变成加法差异。
     regret = 0 表示该GC是组内最优。
+    数据已剔除0值，不需要平滑常数。
     
     Args:
         value: 当前GC的指标值
         best_value: 同一testcase下该指标的最优值
-        alpha: 平滑参数，避免除零和log(0)
     
     Returns:
         regret值（非负）
     """
-    if value is None or best_value is None:
+    if value is None or best_value is None or value <= 0 or best_value <= 0:
         return 0.0
     
-    # 确保值为非负
-    value = max(0, value)
-    best_value = max(0, best_value)
-    
-    # 计算log ratio
-    numerator = value + alpha
-    denominator = best_value + alpha
-    
-    if denominator <= 0:
-        return 0.0
-    
-    regret = math.log(numerator / denominator)
-    # regret应是非负的（因为 value >= best_value，越小越好）
+    regret = math.log(value / best_value)
     return max(0.0, regret)
 
 
-def robust_z(value: float, median: float, mad: float, eps: float = 1e-9) -> float:
+def robust_z(value: float, median: float, mad: float, eps: float = 1e-3) -> float:
     """
     计算鲁棒Z分数（基于中位数和MAD）
     
@@ -356,12 +344,13 @@ def robust_z(value: float, median: float, mad: float, eps: float = 1e-9) -> floa
     
     1.4826 是正态分布下 MAD 到标准差的转换系数。
     这比基于均值和标准差的Z分数更鲁棒，不受极端值影响。
+    eps 确保当 MAD 极小时不产生极端大的 Z 值。
     
     Args:
         value: 当前值
         median: 中位数
         mad: 中位数绝对偏差 (Median Absolute Deviation)
-        eps: 防止除零的小常数
+        eps: 防止除零和极大结果的小常数
     
     Returns:
         鲁棒Z分数
@@ -369,21 +358,13 @@ def robust_z(value: float, median: float, mad: float, eps: float = 1e-9) -> floa
     if mad is None or mad < 0:
         return 0.0
     
-    # MAD为0时，检查值是否等于中位数
-    if mad < eps:
-        if abs(value - median) < eps:
-            return 0.0
-        else:
-            # MAD为0但值不等，返回一个较大值表示异常
-            return 10.0 if value > median else -10.0
-    
-    z = (value - median) / (1.4826 * mad + eps)
-    return z
+    denominator = 1.4826 * mad + eps
+    z = (value - median) / denominator
+    return max(-30.0, min(30.0, z))
 
 
 def calculate_log_tail_score(
     values_by_gc: Dict[str, float],
-    alpha: float = 1.0,
     eps: float = 1e-9
 ) -> Dict[str, Dict[str, float]]:
     """
@@ -391,12 +372,11 @@ def calculate_log_tail_score(
     
     用于通道C：极端值检测
     
-    y = log(x + alpha)
+    y = log(x)
     Z_tail = (y - median(y)) / (1.4826 * MAD(y) + eps)
     
     Args:
         values_by_gc: {gc_type: 原始值}
-        alpha: 平滑参数
         eps: 防止除零
     
     Returns:
@@ -405,13 +385,12 @@ def calculate_log_tail_score(
     if not values_by_gc:
         return {}
     
-    # 计算log值
+    # 计算log值（数据已剔除0值，为正数min_positive做保护）
+    min_positive = 1e-9
     log_values = {}
     for gc_type, value in values_by_gc.items():
-        if value is not None and value >= 0:
-            log_values[gc_type] = math.log(value + alpha)
-        else:
-            log_values[gc_type] = math.log(alpha)
+        safe_val = value if (value is not None and value > 0) else min_positive
+        log_values[gc_type] = math.log(safe_val)
     
     # 计算中位数和MAD
     log_list = list(log_values.values())
@@ -484,10 +463,10 @@ def calculate_rank_surprise_score(p_rank: float, eps: float = 1e-9) -> float:
     """
     将尾概率转换为惊奇分数
     
-    S_rank = -log10(p_rank + eps)
+    S_rank = -ln(p_rank + eps)
     
     该分数越高表示越罕见/异常。
-    例如：p=0.01 -> S=2, p=0.001 -> S=3
+    例如：p=0.01 -> S≈4.6, p=0.001 -> S≈6.9
     
     Args:
         p_rank: 尾概率
@@ -497,9 +476,8 @@ def calculate_rank_surprise_score(p_rank: float, eps: float = 1e-9) -> float:
         惊奇分数 (非负)
     """
     if p_rank is None or p_rank <= 0:
-        return 10.0  # 极端罕见的上限
-    
-    return -math.log10(p_rank + eps)
+        return 20.0  # 极端罕见的上限
+    return -math.log(p_rank + eps)
 
 
 def calculate_gate_factor(regret: float, tau: float) -> float:

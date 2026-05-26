@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 """
-综合测试预言分析器。
+极简高级预言分析器。
 
-整合基础预言与高级预言，统一输出格式：
-  {"ranked_cases": [{"file_path": ..., "triggered_oracles": [...], "info": [...]}, ...]}
-
-兼容所有在 Test_oracles.TEST_ORACLES 中注册的预言函数。
+只调用 Test_oracles.ADVANCED_ORACLES，生成面向排查人员阅读的简洁报告。
+输出格式与 BasicAnalyzer 完全一致。
 """
 
 import argparse
@@ -14,15 +12,15 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 try:
-    from Test_oracles import TEST_ORACLES
+    from Test_oracles import ADVANCED_ORACLES
 except ImportError:
-    print("错误: 无法导入 Test_oracles 模块，请确保该目录存在")
-    TEST_ORACLES = []
+    print("错误: 无法导入 Test_oracles.ADVANCED_ORACLES，请确保该模块存在")
+    ADVANCED_ORACLES = []
 
 
-class ResAnalyzer:
+class AdvancedAnalyzer:
     def __init__(self, oracles: Optional[List[Any]] = None):
-        self.oracles = oracles if oracles is not None else TEST_ORACLES
+        self.oracles = oracles if oracles is not None else ADVANCED_ORACLES
 
     def analyze_json_file(self, json_file_path: Path) -> List[Dict[str, Any]]:
         file_anomalies = []
@@ -153,10 +151,6 @@ class ResAnalyzer:
         return any(key in item for key in ("score", "anomaly_type", "jdk_version", "gc_type", "exit_code"))
 
     def _fallback_info(self, anomaly: Dict[str, Any], item: Dict[str, Any]) -> str:
-        if anomaly.get("type") == "missing_required_fields":
-            missing_field = anomaly.get("missing_field", "unknown")
-            return f"测试记录格式异常，缺失{missing_field}字段"
-
         jdk_version = item.get("jdk_version") or item.get("curr_jdk_version") or item.get("to_version") or "unknown"
         gc_type = item.get("gc_type") or item.get("low_latency_gc_type") or "Unknown"
         oracle_type = anomaly.get("type", "unknown_oracle")
@@ -164,9 +158,9 @@ class ResAnalyzer:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="综合测试预言极简报告生成器（基础+高级）")
+    parser = argparse.ArgumentParser(description="高级测试预言极简报告生成器")
     parser.add_argument("input_dir", help="包含JSON测试记录的目录")
-    parser.add_argument("-o", "--output", default="report.json", help="输出报告路径")
+    parser.add_argument("-o", "--output", default="advanced_report.json", help="输出报告路径")
     args = parser.parse_args()
 
     input_path = Path(args.input_dir)
@@ -174,13 +168,11 @@ def main() -> None:
         print(f"错误: 目录 '{args.input_dir}' 不存在")
         return
 
-    if not TEST_ORACLES:
-        print("错误: 没有可用的测试预言，请检查 Test_oracles 模块")
+    if not ADVANCED_ORACLES:
+        print("错误: 没有可用的高级测试预言，请检查 Test_oracles 模块")
         return
 
-    print(f"加载了 {len(TEST_ORACLES)} 个测试预言")
-
-    analyzer = ResAnalyzer()
+    analyzer = AdvancedAnalyzer()
     anomalies = analyzer.scan_and_analyze_directory(args.input_dir, args.output)
     report = analyzer.generate_report(anomalies)
 
@@ -189,7 +181,7 @@ def main() -> None:
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(report, f, indent=2, ensure_ascii=False)
 
-    print(f"分析完成，共发现 {len(anomalies)} 个触发结果")
+    print(f"高级预言分析完成，共发现 {len(anomalies)} 个触发结果")
     print(f"极简报告已保存至: {output_path}")
 
 

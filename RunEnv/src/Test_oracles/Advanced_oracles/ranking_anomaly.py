@@ -11,6 +11,7 @@
 - legacy_v1: 旧版排名Z-Score检测（向后兼容）
 """
 from typing import Dict, Any, Optional, List, Tuple
+import statistics
 from .baseline_loader import get_baseline_loader
 from .ranking_utils import (
     MetricType,
@@ -28,7 +29,6 @@ from .ranking_utils import (
     calculate_rank_tail_prob_from_hist,
     calculate_rank_surprise_score,
     calculate_gate_factor,
-    calculate_tail_ratio
 )
 
 
@@ -69,7 +69,7 @@ DETECT_DURATION_ANOMALY = False
 CHANNEL_WEIGHTS = {
     "w_self": 0.60,   # 通道A：自基线退化
     "w_rank": 0.15,   # 通道B：排名尾概率
-    "w_tail": 0.25,   # 通道C：极端值
+    "w_tail": 0.15,   # 通道C：极端值
 }
 
 # 触发规则阈值（见设计文档第4.2节）
@@ -134,70 +134,36 @@ def oracle_ranking_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional
             jdk_versions.add(jdk_version)
     
     all_anomalies = []
-    analysis_notes = []
     
     # 对每个JDK版本进行分析
     for jdk_version in jdk_versions:
-        jdk_anomalies, note = _analyze_jdk_version(
+        jdk_anomalies, _note = _analyze_jdk_version(
             test_results, 
             jdk_version, 
             loader,
             file_path
         )
         all_anomalies.extend(jdk_anomalies)
-        if note:
-            analysis_notes.append(note)
     
     if not all_anomalies:
         return None
     
-    # 计算综合异常分数
+    # 计算综合异常分数（从每个 anomaly 的 score 字段汇总）
     total_score = 0.0
     for a in all_anomalies:
-        s_metric = a.get("s_metric")
-        if s_metric is not None:
-            total_score += a.get("weighted_s_metric", s_metric)
-        else:
-            # V1模式
-            z_score = a.get("z_score")
-            if z_score is not None and not (isinstance(z_score, float) and (z_score != z_score)):
-                total_score += a.get("weighted_z_score", 0)
+        s = a.get("score")
+        if isinstance(s, (int, float)):
+            total_score += float(s)
     
-    # 按指标分组统计
-    metrics_affected = list(set(a["metric"] for a in all_anomalies))
-    
-    # 按严重程度分组统计
-    severity_counts = {"high": 0, "medium": 0, "low": 0}
-    for a in all_anomalies:
-        sev = a.get("severity", "low")
-        if sev in severity_counts:
-            severity_counts[sev] += 1
-    
-    # 判断检测模式
-    detection_mode_used = all_anomalies[0].get("detection_mode", "unknown") if all_anomalies else "unknown"
-    
+    # 构建顶层 info 列表（与基础预言输出格式一致）
+    info_list = [a["info"] for a in all_anomalies if "info" in a]
+
     return {
         "type": "ranking_anomaly",
         "file_path": file_path,
         "score": round(total_score, 4),
-        "class_info": log_data.get("class_file_info", {}),
+        "info": info_list,
         "anomalies": all_anomalies,
-        "summary": {
-            "total_anomalies": len(all_anomalies),
-            "high_severity": severity_counts["high"],
-            "medium_severity": severity_counts["medium"],
-            "low_severity": severity_counts["low"],
-            "metrics_affected": metrics_affected,
-            "jdk_versions_analyzed": list(jdk_versions)
-        },
-        "analysis_note": "; ".join(analysis_notes) if analysis_notes else f"基于V2.1三通道鲁棒检测（模式：{detection_mode_used}）",
-        "detection_mode": detection_mode_used,
-        "detection_params": {
-            "mode": DETECTION_MODE,
-            "channel_weights": CHANNEL_WEIGHTS if detection_mode_used == "hybrid_v2" else None,
-            "trigger_thresholds": TRIGGER_THRESHOLDS if detection_mode_used == "hybrid_v2" else None,
-            "z_threshold_v1": {"moderate": Z_SCORE_THRESHOLD_MODERATE, "severe": Z_SCORE_THRESHOLD_SEVERE} if detection_mode_used == "legacy_v1" else None
-        }
     }
 
 
@@ -352,23 +318,18 @@ def _analyze_metric_v1(
             v2_severity, [f"z_score_{direction.value}"], metric_info
         )
         
-        # 构建异常记录
+        # 构建异常记录（与基础预言输出格式对齐）
         anomaly = {
             "metric": metric_type,
-            "metric_name": metric_info.get("name", metric_type) if metric_info else metric_type,
             "jdk_version": jdk_version,
             "gc_type": gc_type,
-            "actual_rank": round(actual_rank, 2),
-            "expected_rank_mu": round(mu, 3),
-            "expected_rank_sigma": round(sigma, 3),
             "actual_value": round(actual_value, 4),
+            "actual_rank": round(actual_rank, 2),
             "z_score": round(z_score, 4),
-            "weighted_z_score": round(z_score * weight, 4),
-            "confidence": round(confidence, 4),
-            "severity": severity.value,
-            "direction": direction.value,
+            "severity": severity.value if hasattr(severity, 'value') else severity,
             "detection_mode": "legacy_v1",
-            "description": description
+            "score": round(z_score * weight, 4),
+            "info": description,
         }
         
         anomalies.append(anomaly)
@@ -402,16 +363,17 @@ def _analyze_metric_v2(
     metric_info = loader.get_metric_info(metric_type)
     
     # 获取指标参数
-    alpha = loader.get_metric_alpha(metric_type)
     tau = loader.get_metric_tau(metric_type)
     lambda_m = loader.get_metric_lambda(metric_type)
     
-    # 找出组内最优值
+    # 找出组内最优值和中位数
     values_by_gc = {gc: data["value"] for gc, data in rankings.items()}
     best_value = min(values_by_gc.values()) if values_by_gc else 0
+    values_list = sorted(list(values_by_gc.values()))
+    median_value = statistics.median(values_list) if values_list else 0
     
     # 计算通道C：log尺度尾部分数（对所有GC一起计算）
-    tail_scores = calculate_log_tail_score(values_by_gc, alpha)
+    tail_scores = calculate_log_tail_score(values_by_gc)
     
     # 对每个GC检测异常
     for gc_type, rank_data in rankings.items():
@@ -431,14 +393,13 @@ def _analyze_metric_v2(
         
         # 如果仍然没有V2字段，回退到V1
         if regret_baseline is None and rank_hist is None:
-            # 使用V1模式
             return _analyze_metric_v1_fallback(
                 test_results, jdk_version, metric_type, loader, 
                 rankings, gc_type, rank_data, baseline_params
             )
         
         # ============ 通道A：自基线退化 ============
-        regret = calculate_regret(actual_value, best_value, alpha)
+        regret = calculate_regret(actual_value, best_value)
         
         z_self = 0.0
         regret_q99 = None
@@ -470,7 +431,6 @@ def _analyze_metric_v2(
         
         # ============ 通道C：log尺度极端值 ============
         z_tail = 0.0
-        tail_ratio = calculate_tail_ratio(actual_value, best_value)
         
         if gc_type in tail_scores:
             z_tail = tail_scores[gc_type]["z_tail"]
@@ -499,9 +459,9 @@ def _analyze_metric_v2(
             trigger_rules.append("z_self_exceeds_threshold")
             is_anomaly = True
         
-        # 规则3: Z_tail > 4.5 且 x > lambda * x_best
+        # 规则3: Z_tail > 4.5 且 x > lambda * x_mid
         if (z_tail_positive > TRIGGER_THRESHOLDS["z_tail_threshold"] and 
-            tail_ratio > lambda_m):
+            actual_value > lambda_m * median_value):
             trigger_rules.append("z_tail_extreme_with_gap")
             is_anomaly = True
             severity = "high"
@@ -546,35 +506,18 @@ def _analyze_metric_v2(
             severity, trigger_rules, metric_info
         )
         
-        # 构建异常记录
+        # 构建异常记录（与基础预言输出格式对齐）
         anomaly = {
             "metric": metric_type,
-            "metric_name": metric_info.get("name", metric_type) if metric_info else metric_type,
             "jdk_version": jdk_version,
             "gc_type": gc_type,
             "actual_value": round(actual_value, 4),
             "actual_rank": round(actual_rank, 2),
-            # 通道A
-            "regret": round(regret, 4),
-            "regret_median": round(regret_median, 4) if regret_median else None,
-            "regret_mad": round(regret_mad, 4) if regret_mad else None,
-            "regret_q99": round(regret_q99, 4) if regret_q99 else None,
-            "z_self": round(z_self, 4),
-            # 通道B
-            "rank_tail_prob": round(p_rank, 4),
-            "rank_surprise_raw": round(s_rank_raw, 4),
-            "rank_gate": round(gate, 4),
-            "s_rank": round(s_rank, 4),
-            # 通道C
-            "z_tail": round(z_tail, 4),
-            "tail_ratio_to_best": round(tail_ratio, 4),
-            # 综合
             "s_metric": round(s_metric, 4),
-            "weighted_s_metric": round(s_metric * beta, 4),
             "severity": severity,
-            "trigger_rules": trigger_rules,
             "detection_mode": "hybrid_v2",
-            "description": description  # 可读描述
+            "score": round(s_metric * beta, 4),
+            "info": description,
         }
         
         anomalies.append(anomaly)
@@ -646,20 +589,15 @@ def _analyze_metric_v1_fallback(
     
     anomaly = {
         "metric": metric_type,
-        "metric_name": metric_info.get("name", metric_type) if metric_info else metric_type,
         "jdk_version": jdk_version,
         "gc_type": gc_type,
-        "actual_rank": round(actual_rank, 2),
-        "expected_rank_mu": round(mu, 3),
-        "expected_rank_sigma": round(sigma, 3),
         "actual_value": round(actual_value, 4),
+        "actual_rank": round(actual_rank, 2),
         "z_score": round(z_score, 4),
-        "weighted_z_score": round(z_score * weight, 4),
-        "confidence": round(confidence, 4),
-        "severity": severity.value,
-        "direction": direction.value,
+        "severity": severity.value if hasattr(severity, 'value') else severity,
         "detection_mode": "legacy_v1_fallback",
-        "description": description
+        "score": round(z_score * weight, 4),
+        "info": description,
     }
     
     anomalies.append(anomaly)
@@ -733,33 +671,53 @@ def _generate_anomaly_description(
     # 计算与最优值的比较
     if best_value > 0:
         ratio = actual_value / best_value
-        if ratio > 10:
-            comparison = f"是最优值的{ratio:.1f}倍"
-        elif ratio > 2:
-            comparison = f"是最优值的{ratio:.1f}倍"
-        else:
-            comparison = f"比最优值高{((ratio-1)*100):.0f}%"
     else:
-        comparison = f"值为{actual_value:.2f}"
+        ratio = 1.0
     
-    # 根据严重程度选择描述词
-    severity_words = {
-        "high": "显著异常",
-        "medium": "异常",
-        "low": "轻微异常"
-    }
-    severity_word = severity_words.get(severity, "异常")
+    # 格式化值和倍数
+    if actual_value >= 1000:
+        value_str = f"{actual_value:.0f}"
+    elif actual_value >= 1:
+        value_str = f"{actual_value:.3f}"
+    else:
+        value_str = f"{actual_value:.4f}"
     
-    # 构建描述
-    desc = f"JDK{jdk_version}的{gc_type}在{metric_name}上{severity_word}：{comparison}"
+    if best_value >= 1000:
+        best_str = f"{best_value:.0f}"
+    elif best_value >= 1:
+        best_str = f"{best_value:.3f}"
+    else:
+        best_str = f"{best_value:.4f}"
     
-    # 添加触发原因
+    # 获取指标单位
+    unit = ""
+    if metric_type in ("gc_stw_time_ms", "max_stw_time_ms", "duration_ms"):
+        unit = "ms"
+    elif metric_type == "total_gc_count":
+        unit = "次"
+    
+    # 构建描述（与基础预言格式对齐："{jdk}-{gc}: {指标}异常，..."）
+    if ratio > 1.1:
+        desc = f"{jdk_version}-{gc_type}: {metric_name}异常，{metric_name}（{value_str}{unit}）比组内最优（{best_str}{unit}）高{ratio:.1f}倍"
+    else:
+        desc = f"{jdk_version}-{gc_type}: {metric_name}异常，{metric_name}（{value_str}{unit}）接近组内最优但触发了统计检测"
+    
+    # 添加所有触发原因（用分号分隔）
+    reasons = []
     if "regret_exceeds_q99" in trigger_rules:
-        desc += "（超过历史99分位）"
-    elif "z_self_exceeds_threshold" in trigger_rules:
-        desc += "（相对自身历史退化明显）"
-    elif "z_tail_extreme_with_gap" in trigger_rules:
-        desc += "（极端离群值）"
+        reasons.append("超过历史99分位")
+    if "z_self_exceeds_threshold" in trigger_rules:
+        reasons.append("相对自身历史退化明显")
+    if "z_tail_extreme_with_gap" in trigger_rules:
+        reasons.append("极端离群值")
+    if "rank_surprise_with_self_degradation" in trigger_rules:
+        reasons.append("排名异常且幅度退化")
+    if "s_metric_high" in trigger_rules:
+        reasons.append("综合分数高")
+    if "s_metric_medium" in trigger_rules:
+        reasons.append("综合分数中")
+    if reasons:
+        desc += "（" + "；".join(reasons) + "）"
     
     return desc
 

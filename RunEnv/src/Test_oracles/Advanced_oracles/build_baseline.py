@@ -87,17 +87,11 @@ def get_metric_value(result: Dict[str, Any], metric_type: str) -> Optional[float
     return None
 
 
-def calculate_regret(value: float, best_value: float, alpha: float) -> float:
-    """计算regret"""
-    if value is None or best_value is None:
+def calculate_regret(value: float, best_value: float) -> float:
+    """计算regret: log(x / x_best)，数据已剔除0值，无需平滑常数"""
+    if value is None or best_value is None or value <= 0 or best_value <= 0:
         return 0.0
-    value = max(0, value)
-    best_value = max(0, best_value)
-    numerator = value + alpha
-    denominator = best_value + alpha
-    if denominator <= 0:
-        return 0.0
-    regret = math.log(numerator / denominator)
+    regret = math.log(value / best_value)
     return max(0.0, regret)
 
 
@@ -134,9 +128,12 @@ def collect_test_data(data_dir: str) -> Tuple[Dict, Dict]:
     testcase_data = defaultdict(lambda: defaultdict(lambda: defaultdict(dict)))
     raw_data = defaultdict(list)
     
-    # 遍历所有JSON文件
+    # 遍历所有JSON文件（排除reports目录）
     json_files = []
     for root, dirs, files in os.walk(data_dir):
+        # 跳过reports目录
+        if "reports" in root.split(os.sep):
+            continue
         for f in files:
             if f.endswith('.json'):
                 json_files.append(os.path.join(root, f))
@@ -227,7 +224,7 @@ def calculate_rankings_and_regrets(testcase_data: Dict) -> Dict:
                 alpha = METRIC_PARAMS[metric]['alpha']
                 for gc_type, value in values_by_gc.items():
                     rank = rank_map[gc_type]
-                    regret = calculate_regret(value, best_value, alpha)
+                    regret = calculate_regret(value, best_value)
                     
                     rank_data[(metric, jdk_version, gc_type)].append(rank)
                     regret_data[(metric, jdk_version, gc_type)].append(regret)
