@@ -26,8 +26,15 @@ class ShenandoahGCParser(BaseGCParser):
             match = re.search(r'Max Capacity:\s*(\d+)M', line)
             if match:
                 self.max_heap_capacity = int(match.group(1))
-                self.max_heap_usage = max(self.max_heap_usage, self.max_heap_capacity)
             return False
+
+        # Shenandoah 的汇总行可能出现在 concurrent cleanup、degenerated/full 等事件中。
+        # before/after 是 heap used，括号内是容量，不计入 max_heap_mb。
+        heap_transition_match = re.search(r'(\d+)M->(\d+)M\((\d+)M\)', line)
+        if heap_transition_match:
+            heap_before = int(heap_transition_match.group(1))
+            heap_after = int(heap_transition_match.group(2))
+            self.max_heap_usage = max(self.max_heap_usage, heap_before, heap_after)
             
         # 解析完整的GC周期 - 只统计主要的STW暂停事件，避免重复统计GC阶段
         # Shenandoah的主要STW暂停事件：
@@ -109,10 +116,21 @@ class ShenandoahGCParser(BaseGCParser):
             committed = int(heap_match.group(3))
             used = int(heap_match.group(4))
             
-            # 更新最大堆使用量 - 使用committed和used中的较大值
-            self.max_heap_usage = max(self.max_heap_usage, used, committed)
+            self.max_heap_usage = max(self.max_heap_usage, used)
             # 更新最大堆容量
             self.max_heap_capacity = max(self.max_heap_capacity, max_capacity, soft_max)
+            return False
+        
+        if "[gc,free" in line and "Used:" in line:
+            for value, unit in re.findall(r'Used:\s*(\d+)(B|K|M|G)', line):
+                used_mb = self.extract_heap_size(value + unit)
+                self.max_heap_usage = max(self.max_heap_usage, used_mb)
+            return False
+
+        if "generation used:" in line:
+            for value, unit in re.findall(r'generation used:\s*(\d+)(B|K|M|G)', line):
+                used_mb = self.extract_heap_size(value + unit)
+                self.max_heap_usage = max(self.max_heap_usage, used_mb)
             return False
             
         # 解析Exit时的堆信息
@@ -120,8 +138,7 @@ class ShenandoahGCParser(BaseGCParser):
             heap_match = re.search(r'(\d+)M\s+used,\s+(\d+)M\s+committed', line)
             if heap_match:
                 used = int(heap_match.group(1))
-                committed = int(heap_match.group(2))
-                self.max_heap_usage = max(self.max_heap_usage, used, committed)
+                self.max_heap_usage = max(self.max_heap_usage, used)
             return False
             
         return False
@@ -134,13 +151,7 @@ class ShenandoahGCParser(BaseGCParser):
         
         result = super().get_result()
         
-        # 对于ShenandoahGC，优先使用committed/used大小作为max_heap_mb（这代表实际占用的堆大小）
-        # 如果没有通过GC事件解析到堆大小，使用初始化时的最大堆容量
-        if self.max_heap_usage == 0 and self.max_heap_capacity > 0:
-            result["max_heap_mb"] = self.max_heap_capacity
-        elif self.max_heap_usage > 0:
-            # 确保max_heap_mb反映的是实际使用的堆大小
-            result["max_heap_mb"] = self.max_heap_usage
+        result["max_heap_mb"] = self.max_heap_usage
             
         return result
     

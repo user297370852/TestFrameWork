@@ -45,11 +45,9 @@ class G1GCParser(BaseGCParser):
             if heap_match:
                 heap_before = int(heap_match.group(1))
                 heap_after = int(heap_match.group(2))
-                heap_capacity = int(heap_match.group(3))
-                
-                # 更新最大堆使用量，包括实际使用量和堆容量
-                # heap_capacity是堆的总容量（如256M），这应该被计入max_heap_mb
-                self.max_heap_usage = max(self.max_heap_usage, heap_before, heap_after, heap_capacity)
+                # max_heap_mb 表示实际堆占用峰值，只使用 GC 前/后的 used 值。
+                # 括号内的值是当时堆容量，不计入最大占用。
+                self.max_heap_usage = max(self.max_heap_usage, heap_before, heap_after)
             
             # 确定GC子类型
             if "Young (Normal)" in gc_type:
@@ -68,16 +66,8 @@ class G1GCParser(BaseGCParser):
             self.update_gc_stats(gc_subtype, stw_time, heap_before if heap_match else 0, heap_after if heap_match else 0)
             return True
         
-        # 解析堆区域信息，更新最大堆使用量
+        # Eden regions 只描述 G1 分区数量，不代表完整 heap used，不能用于 max_heap_mb。
         if "Eden regions:" in line:
-            # 格式: Eden regions: 24->0(152)
-            eden_match = re.search(r'Eden regions:\s*(\d+)->\d+\((\d+)\)', line)
-            if eden_match:
-                eden_before = int(eden_match.group(1))
-                max_eden_regions = int(eden_match.group(2))
-                # G1中每个区域通常是1M
-                eden_mb = eden_before * 1
-                self.max_heap_usage = max(self.max_heap_usage, eden_mb)
             return False
         
         # 解析Exit时的堆信息 - 获取实际使用的堆大小
@@ -86,9 +76,7 @@ class G1GCParser(BaseGCParser):
             total_match = re.search(r'total\s+(\d+)K', line)
             used_match = re.search(r'used\s+(\d+)K', line)
             if total_match and used_match:
-                capacity_mb = int(total_match.group(1)) // 1024
                 used_mb = int(used_match.group(1)) // 1024
-                # 更新最大堆使用量为实际使用的内存
                 self.max_heap_usage = max(self.max_heap_usage, used_mb)
             return False
             
@@ -98,12 +86,6 @@ class G1GCParser(BaseGCParser):
         """返回解析结果，使用实际堆使用量而不是堆容量"""
         result = super().get_result()
         
-        # 对于G1 GC，max_heap_mb应该反映实际使用的最大堆大小
-        # 如果没有解析到实际使用量，且有堆容量信息，使用容量作为默认值
-        if self.max_heap_usage == 0 and self.max_heap_capacity > 0:
-            result["max_heap_mb"] = self.max_heap_capacity
-        else:
-            # 使用实际解析到的堆使用量
-            result["max_heap_mb"] = self.max_heap_usage
+        result["max_heap_mb"] = self.max_heap_usage
             
         return result

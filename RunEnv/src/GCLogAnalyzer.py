@@ -99,6 +99,7 @@ class GCLogAnalyzer:
         try:
             with open(gc_log_file, 'r', encoding='utf-8') as f:
                 for line in f:
+                    parser.record_gc_id(line)
                     parser.parse_log_line(line)
         except Exception as e:
             raise RuntimeError(f"读取GC日志文件时发生错误: {e}")

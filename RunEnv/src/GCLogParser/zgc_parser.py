@@ -173,12 +173,7 @@ class ZGCParser(BaseGCParser):
         
         result = super().get_result()
         
-        # 对于ZGC，优先使用used大小作为max_heap_mb（这代表实际占用的堆大小）
-        if self.max_heap_usage == 0 and self.max_heap_capacity > 0:
-            result["max_heap_mb"] = self.max_heap_capacity
-        elif self.max_heap_usage > 0:
-            # 确保max_heap_mb反映的是实际使用的堆大小
-            result["max_heap_mb"] = self.max_heap_usage
+        result["max_heap_mb"] = self.max_heap_usage
             
         return result
     

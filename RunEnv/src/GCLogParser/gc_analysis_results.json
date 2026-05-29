@@ -3,7 +3,7 @@
     "total_gc_count": 46,
     "gc_stw_time_ms": 12.287999999999997,
     "max_stw_time_ms": 0.573,
-    "max_heap_mb": 258,
+    "max_heap_mb": 151,
     "gc_type_breakdown": {
       "Young GC (Normal)": {
         "count": 46,

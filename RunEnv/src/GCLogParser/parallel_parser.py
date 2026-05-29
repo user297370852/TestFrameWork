@@ -42,7 +42,6 @@ class ParallelGCParser(BaseGCParser):
             gc_type = gc_match.group(2)
             heap_before = int(gc_match.group(3))
             heap_after = int(gc_match.group(4))
-            heap_capacity = int(gc_match.group(5))
             stw_time = float(gc_match.group(6))
             
             # 确定GC子类型
@@ -56,32 +55,27 @@ class ParallelGCParser(BaseGCParser):
                 gc_subtype = gc_type.strip()
             
             self.update_gc_stats(gc_subtype, stw_time, heap_before, heap_after)
-            
-            # 更新最大堆容量
-            self.max_heap_usage = max(self.max_heap_usage, heap_capacity)
             return True
             
         # 解析堆使用信息 - Parallel GC特有的格式
         # PSYoungGen: 65536K(76288K)->688K(76288K)
-        young_gen_pattern = r'PSYoungGen:\s+(\d+)K\((\d+)K\)->(\d+)K\((\d+)K\)'
+        young_gen_pattern = r'PSYoungGen:\s+(\d+)K(?:\(\d+K\))?->(\d+)K\((\d+)K\)'
         young_match = re.search(young_gen_pattern, line)
         
         if young_match:
             used_before = int(young_match.group(1)) // 1024
-            capacity_before = int(young_match.group(2)) // 1024
-            used_after = int(young_match.group(3)) // 1024
-            self.max_heap_usage = max(self.max_heap_usage, capacity_before)
+            used_after = int(young_match.group(2)) // 1024
+            self.max_heap_usage = max(self.max_heap_usage, used_before, used_after)
             return False
             
         # ParOldGen: 0K(175104K)->8K(175104K)
-        old_gen_pattern = r'ParOldGen:\s+(\d+)K\((\d+)K\)->(\d+)K\((\d+)K\)'
+        old_gen_pattern = r'ParOldGen:\s+(\d+)K(?:\(\d+K\))?->(\d+)K\((\d+)K\)'
         old_match = re.search(old_gen_pattern, line)
         
         if old_match:
             used_before = int(old_match.group(1)) // 1024
-            capacity_before = int(old_match.group(2)) // 1024
-            used_after = int(old_match.group(3)) // 1024
-            self.max_heap_usage = max(self.max_heap_usage, capacity_before)
+            used_after = int(old_match.group(2)) // 1024
+            self.max_heap_usage = max(self.max_heap_usage, used_before, used_after)
             return False
             
         # 解析exit时的堆信息
@@ -89,9 +83,8 @@ class ParallelGCParser(BaseGCParser):
             heap_exit_pattern = r'total\s+(\d+)K,\s+used\s+(\d+)K'
             heap_exit_match = re.search(heap_exit_pattern, line)
             if heap_exit_match:
-                capacity = int(heap_exit_match.group(1)) // 1024
                 used = int(heap_exit_match.group(2)) // 1024
-                self.max_heap_usage = max(self.max_heap_usage, capacity, used)
+                self.max_heap_usage = max(self.max_heap_usage, used)
                 return False
                 
         return False
@@ -100,8 +93,4 @@ class ParallelGCParser(BaseGCParser):
         """返回解析结果，包含最大堆容量信息"""
         result = super().get_result()
         
-        # 如果没有通过GC事件解析到堆大小，使用初始化时的最大堆容量
-        if self.max_heap_usage == 0 and self.max_heap_capacity > 0:
-            result["max_heap_mb"] = self.max_heap_capacity
-            
         return result

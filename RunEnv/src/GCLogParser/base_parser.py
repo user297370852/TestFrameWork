@@ -16,6 +16,7 @@ class BaseGCParser(ABC):
         self.max_stw_time = 0.0
         self.max_heap_usage = 0
         self.gc_type_breakdown = {}
+        self.gc_ids = set()
         
     @abstractmethod
     def get_gc_type(self) -> str:
@@ -119,10 +120,15 @@ class BaseGCParser(ABC):
         self.gc_type_breakdown[gc_subtype]["count"] += 1
         self.gc_type_breakdown[gc_subtype]["stw_time_ms"] += stw_time
     
+    def record_gc_id(self, line: str):
+        """记录日志范围内出现过的唯一GC ID。"""
+        for match in re.finditer(r'GC\((\d+)\)', line):
+            self.gc_ids.add(int(match.group(1)))
+    
     def get_result(self) -> Dict[str, Any]:
         """返回解析结果"""
         return {
-            "total_gc_count": self.gc_count,
+            "total_gc_count": len(self.gc_ids),
             "gc_stw_time_ms": self.total_stw_time,
             "max_stw_time_ms": self.max_stw_time,
             "max_heap_mb": self.max_heap_usage,
@@ -136,3 +142,4 @@ class BaseGCParser(ABC):
         self.max_stw_time = 0.0
         self.max_heap_usage = 0
         self.gc_type_breakdown = {}
+        self.gc_ids = set()

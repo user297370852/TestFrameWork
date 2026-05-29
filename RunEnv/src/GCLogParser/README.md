@@ -4,7 +4,7 @@
 ## 功能特性
 
 - 支持多种GC类型的日志解析
-- 提取GC性能指标（次数、暂停时间、堆使用等）
+- 提取GC性能指标（唯一GC ID数量、STW暂停时间、最大实际堆占用等）
 - 支持JDK 11、17、21、25、26版本的GC日志格式
 - 完整的单元测试覆盖
 - 易于扩展的架构设计
@@ -48,10 +48,10 @@ for gc_type, details in result['gc_type_breakdown'].items():
 
 ```json
 {
-    "total_gc_count": 5,           // 总GC次数
-    "gc_stw_time_ms": 12.5,       // 总GC暂停时长（毫秒）
-    "max_stw_time_ms": 3.2,        // 最大单次GC暂停时长（毫秒）
-    "max_heap_mb": 4096,          // 最大堆使用大小（MB）
+    "total_gc_count": 5,           // 当前日志范围内唯一GC(id)数量
+    "gc_stw_time_ms": 12.5,       // GC导致的STW暂停总时长（毫秒）
+    "max_stw_time_ms": 3.2,        // 最大单个连续GC暂停子事件时长（毫秒）
+    "max_heap_mb": 151,           // 最大实际堆占用（MB），不等于-Xmx或堆容量
     "gc_type_breakdown": {         // GC类型细分统计
         "Young GC": {
             "count": 3,           // 该类型GC的次数
@@ -64,6 +64,15 @@ for gc_type, details in result['gc_type_breakdown'].items():
     }
 }
 ```
+
+字段语义说明：
+
+- `total_gc_count` 统计当前日志文件中出现过的唯一 `GC(id)` 数量。例如日志中最大编号是 `GC(101)` 时，只有在 `GC(0)` 到 `GC(101)` 都出现在当前日志范围内时，该值才是 `102`；解析器实际使用唯一 ID 集合计数，而不是直接使用最大 ID。
+- `gc_stw_time_ms` 统计 GC 导致的 STW 暂停总时长。Serial GC 中外层 Young GC 内部触发 Full GC 时，内部嵌套暂停不会重复累加到总暂停时间。
+- `max_stw_time_ms` 表示最长的单个连续 GC 暂停子事件，不表示单个 `GC(id)` 周期内多个 pause 子事件的总和。
+- `max_heap_mb` 表示日志中可观察到的最大实际 Java heap used，占用来源包括 `before->after(capacity)` 中的 before/after used、`Used` 高水位或 `Heap: ... used`。括号中的 capacity、`committed`、`reserved`、`Max Capacity`、`Heap Max Capacity` 和 JVM `-Xmx` 都不计入该字段。
+- `EpsilonGC` 不执行垃圾回收，`total_gc_count`、`gc_stw_time_ms`、`max_stw_time_ms` 固定为 0；日志中的非 GC safepoint/pause 不计入 GC 指标。
+- `gc_type_breakdown` 是解析器识别到的 GC/暂停子类型明细。对 ZGC 和 ShenandoahGC，明细可能按 pause 子事件类型统计，因此各子项 `count` 之和不保证等于 `total_gc_count`。
 
 ## 文件命名规则
 
@@ -153,7 +162,10 @@ GC(1) Pause Full 100M->80M(500M) 2.5ms
 ```
 Heap Max Capacity: 4G
 ZHeap used 28M, capacity 256M, max capacity 4096M
+Heap: 4096M reserved, 3968M committed, 3950M used
 ```
+
+用于 `max_heap_mb` 的是实际 `used` 值，例如 `69M->1M(247M)` 中的 `69M` 和 `1M`，以及 `Heap: ... 3950M used` 中的 `3950M`。`247M`、`3968M committed`、`4096M reserved` 和 `Heap Max Capacity: 4G` 只表示容量或保留空间，不作为最大堆占用。
 
 ### 时间格式
 - 毫秒(ms): `0.498ms`
