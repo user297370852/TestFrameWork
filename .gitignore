@@ -37,11 +37,12 @@ $RECYCLE.BIN/
 
 # ============ 编译产物 ============
 # Java编译产物
-#*.class
+*.class
 *.jar
 *.war
 *.ear
 *.nar
+src/SeedBuild/random_seeds_500/out/
 hs_err_pid*
 replay_pid*
 

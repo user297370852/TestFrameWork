@@ -94,6 +94,50 @@ def oracle_gc_count_anomaly(log_data: Dict[str, Any], file_path: str) -> Optiona
         "Unknown": 4.0        # 未知类型使用中等阈值
     }
 
+    # 先做同GC跨JDK的成对比较。该规则不使用当前样本集合的中位数作基线，
+    # 避免单个极端GC次数把自身基线抬高而漏检。
+    cross_version_anomalies = []
+    for gc_type, gc_type_data in gc_type_groups.items():
+        if len(gc_type_data) < 2:
+            continue
+
+        try:
+            sorted_data = sorted(
+                gc_type_data,
+                key=lambda item: float(item["jdk_version"]) if str(item["jdk_version"]).replace('.', '').isdigit() else 0,
+            )
+        except (TypeError, ValueError):
+            continue
+
+        ratio_threshold = stability_thresholds.get(gc_type, stability_thresholds["Unknown"])
+        for i in range(1, len(sorted_data)):
+            prev = sorted_data[i - 1]
+            curr = sorted_data[i]
+            prev_count = prev["total_gc_count"]
+            curr_count = curr["total_gc_count"]
+            if prev_count <= 0 or curr_count <= 0:
+                continue
+
+            low = prev if prev_count <= curr_count else curr
+            high = curr if prev_count <= curr_count else prev
+            low_count = low["total_gc_count"]
+            high_count = high["total_gc_count"]
+            ratio = high_count / low_count
+            absolute_increase = high_count - low_count
+
+            # 同时要求倍率和绝对差，避免小用例中 1->10 这类无实际意义的波动。
+            if ratio > ratio_threshold and absolute_increase >= 50:
+                cross_version_anomalies.append({
+                    "score": round(ratio, 4),
+                    "info": (
+                        f"{high['jdk_version']}-{gc_type}: GC次数异常，GC次数（{high_count}次）"
+                        f"比JDK{low['jdk_version']}（{low_count}次）高{ratio:.1f}倍"
+                    ),
+                })
+
+    if cross_version_anomalies:
+        anomalies.extend(cross_version_anomalies)
+
     # 对每种GC类型进行分析
     for gc_type, gc_type_data in gc_type_groups.items():
         if len(gc_type_data) < 2:

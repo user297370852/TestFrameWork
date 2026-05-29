@@ -10,6 +10,7 @@ from .performance_regression import oracle_performance_regression
 from .stw_anomaly import oracle_stw_anomaly
 from .gc_overhead_anomaly import oracle_gc_overhead_anomaly
 from .gc_count_anomaly import oracle_gc_count_anomaly
+from .heap_anomaly import oracle_heap_anomaly
 
 # 基础预言列表
 BASE_ORACLES = [
@@ -20,6 +21,7 @@ BASE_ORACLES = [
     oracle_stw_anomaly,
     oracle_gc_overhead_anomaly,
     oracle_gc_count_anomaly,
+    oracle_heap_anomaly,
 ]
 
-__all__ = ['BASE_ORACLES']
+__all__ = ['BASE_ORACLES', 'oracle_heap_anomaly']

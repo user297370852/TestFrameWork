@@ -62,7 +62,8 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
             continue
             
         max_stw_time = gc_analysis.get("max_stw_time_ms")
-        if max_stw_time is None:
+        total_stw_time = gc_analysis.get("gc_stw_time_ms")
+        if max_stw_time is None or total_stw_time is None:
             continue
             
         gc_type = classify_gc_type(result)
@@ -71,7 +72,8 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
         gc_data.append({
             "jdk_version": jdk_version,
             "gc_type": gc_type,
-            "max_stw_time_ms": max_stw_time
+            "max_stw_time_ms": max_stw_time,
+            "gc_stw_time_ms": total_stw_time,
         })
 
     if not gc_data:
@@ -119,7 +121,9 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                     "score": round(score, 4)  # 异常分数：G1GC相对于SerialGC的倍数
                 })
         
-        # 检查逻辑：ZGC/ShenandoahGC应比所有其他GC更低
+        # 检查逻辑：ZGC/ShenandoahGC应比所有其他GC更低。
+        # 低延迟GC的单次暂停类型与传统GC不同，必须保留倍率缓冲，
+        # 否则ZGC只要略高于SerialGC就会误报。
         low_latency_gcs = []
         other_gcs = []
         
@@ -131,19 +135,18 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
         
         for low_latency_gc in low_latency_gcs:
             for other_gc in other_gcs:
-                if low_latency_gc["gc_type"] == "ShenandoahGC":
-                    if other_gc["max_stw_time_ms"]>0.1 and low_latency_gc["max_stw_time_ms"] > other_gc["max_stw_time_ms"]*20:
-                        score = low_latency_gc["max_stw_time_ms"] / other_gc["max_stw_time_ms"]  # 低延迟GC相对于其他GC的倍数
-                        jdk_comparison_anomalies.append({
+                if other_gc["max_stw_time_ms"] > 0.1 and low_latency_gc["max_stw_time_ms"] > other_gc["max_stw_time_ms"] * 20:
+                    score = low_latency_gc["max_stw_time_ms"] / other_gc["max_stw_time_ms"]
+                    jdk_comparison_anomalies.append({
                         "info": f"{jdk_version}-{low_latency_gc['gc_type']}: STW时间异常，STW时间（{low_latency_gc['max_stw_time_ms']:.3f}ms）比同版本的{other_gc['gc_type']}（{other_gc['max_stw_time_ms']:.3f}ms）高{score:.1f}倍",
-                        "score": round(score, 4)  # 异常分数：低延迟GC相对于其他GC的倍数
+                        "score": round(score, 4),
                     })
-                else:
-                    if other_gc["max_stw_time_ms"]>0.1 and low_latency_gc["max_stw_time_ms"] > other_gc["max_stw_time_ms"]:
-                        score = low_latency_gc["max_stw_time_ms"] / other_gc["max_stw_time_ms"]  # 低延迟GC相对于其他GC的倍数
-                        jdk_comparison_anomalies.append({
-                        "info": f"{jdk_version}-{low_latency_gc['gc_type']}: STW时间异常，STW时间（{low_latency_gc['max_stw_time_ms']:.3f}ms）比同版本的{other_gc['gc_type']}（{other_gc['max_stw_time_ms']:.3f}ms）高{score:.1f}倍",
-                        "score": round(score, 4)  # 异常分数：低延迟GC相对于其他GC的倍数
+
+                if other_gc["gc_stw_time_ms"] > 1 and low_latency_gc["gc_stw_time_ms"] > other_gc["gc_stw_time_ms"] * 50 and low_latency_gc["gc_stw_time_ms"] - other_gc["gc_stw_time_ms"] > 1000:
+                    score = low_latency_gc["gc_stw_time_ms"] / other_gc["gc_stw_time_ms"]
+                    jdk_comparison_anomalies.append({
+                        "info": f"{jdk_version}-{low_latency_gc['gc_type']}: 累计STW时间异常，累计STW时间（{low_latency_gc['gc_stw_time_ms']:.3f}ms）比同版本的{other_gc['gc_type']}（{other_gc['gc_stw_time_ms']:.3f}ms）高{score:.1f}倍",
+                        "score": round(score, 4),
                     })
 
     if jdk_comparison_anomalies:
@@ -171,6 +174,8 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
             curr_jdk = curr_version["jdk_version"]
             prev_stw = prev_version["max_stw_time_ms"]
             curr_stw = curr_version["max_stw_time_ms"]
+            prev_total_stw = prev_version["gc_stw_time_ms"]
+            curr_total_stw = curr_version["gc_stw_time_ms"]
             
             if prev_stw <0.001:
                 continue
@@ -196,6 +201,17 @@ def oracle_stw_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional[Dic
                     cross_version_anomalies.append({
                     "score": round(stw_increase_ratio, 4),  # 异常分数：STW增加的比例
                     "info": f"{curr_jdk}-{gc_type}: STW时间异常，STW时间（{curr_stw:.3f}ms）比JDK{prev_jdk}（{prev_stw:.3f}ms）高{curr_stw / prev_stw:.1f}倍"
+                })
+
+            if prev_total_stw > 1 and curr_total_stw > prev_total_stw * 10 and curr_total_stw - prev_total_stw > 100:
+                cross_version_anomalies.append({
+                    "score": round(curr_total_stw / prev_total_stw, 4),
+                    "info": f"{curr_jdk}-{gc_type}: 累计STW时间异常，累计STW时间（{curr_total_stw:.3f}ms）比JDK{prev_jdk}（{prev_total_stw:.3f}ms）高{curr_total_stw / prev_total_stw:.1f}倍"
+                })
+            elif curr_total_stw > 1 and prev_total_stw > curr_total_stw * 10 and prev_total_stw - curr_total_stw > 100:
+                cross_version_anomalies.append({
+                    "score": round(prev_total_stw / curr_total_stw, 4),
+                    "info": f"{prev_jdk}-{gc_type}: 累计STW时间异常，累计STW时间（{prev_total_stw:.3f}ms）比JDK{curr_jdk}（{curr_total_stw:.3f}ms）高{prev_total_stw / curr_total_stw:.1f}倍"
                 })
 
     if cross_version_anomalies:

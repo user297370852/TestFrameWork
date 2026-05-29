@@ -18,6 +18,7 @@ from .Base_oracles.performance_regression import oracle_performance_regression
 from .Base_oracles.stw_anomaly import oracle_stw_anomaly
 from .Base_oracles.gc_overhead_anomaly import oracle_gc_overhead_anomaly
 from .Base_oracles.gc_count_anomaly import oracle_gc_count_anomaly
+from .Base_oracles.heap_anomaly import oracle_heap_anomaly
 
 # 基础预言列表
 BASE_ORACLES = [
@@ -28,6 +29,7 @@ BASE_ORACLES = [
     oracle_stw_anomaly,
     oracle_gc_overhead_anomaly,
     oracle_gc_count_anomaly,
+    oracle_heap_anomaly,
 ]
 
 # ============================================================
@@ -54,6 +56,7 @@ TEST_ORACLES = [
     #oracle_performance_regression,
     oracle_stw_anomaly,
     oracle_gc_count_anomaly,
+    oracle_heap_anomaly,
     #oracle_gc_overhead_anomaly,
     
     # --- 高级预言 ---
@@ -72,5 +75,6 @@ __all__ = [
     'oracle_stw_anomaly',
     'oracle_gc_overhead_anomaly',
     'oracle_gc_count_anomaly',
+    'oracle_heap_anomaly',
     'oracle_ranking_anomaly',
 ]

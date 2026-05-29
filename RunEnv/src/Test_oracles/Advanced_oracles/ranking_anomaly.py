@@ -59,8 +59,9 @@ METRIC_WEIGHTS = {
     "total_gc_count": 1.0,
 }
 
-# 是否检测执行时间异常
-DETECT_DURATION_ANOMALY = False
+# 是否检测执行时间异常。duration受非GC因素影响，因此保持较低聚合权重，
+# 但全GC执行时间退化本身是真实回归的重要信号。
+DETECT_DURATION_ANOMALY = True
 
 # ============================================================
 # V2.1 配置（三通道检测）
@@ -155,14 +156,10 @@ def oracle_ranking_anomaly(log_data: Dict[str, Any], file_path: str) -> Optional
         if isinstance(s, (int, float)):
             total_score += float(s)
     
-    # 构建顶层 info 列表（与基础预言输出格式一致）
-    info_list = [a["info"] for a in all_anomalies if "info" in a]
-
     return {
         "type": "ranking_anomaly",
         "file_path": file_path,
         "score": round(total_score, 4),
-        "info": info_list,
         "anomalies": all_anomalies,
     }
 
@@ -337,6 +334,48 @@ def _analyze_metric_v1(
     return anomalies
 
 
+def _calculate_z_self_global_offset(
+    rankings: Dict[str, Dict[str, Any]],
+    metric_type: str,
+    jdk_version: str,
+    best_value: float,
+    loader
+) -> float:
+    """
+    估计同一JDK/指标内由测试用例整体难度造成的Z_self同步漂移。
+
+    只有多数GC都呈现自基线退化时才做轻量扣减；这样保留单个GC极端离群
+    的信号，同时减少重资源用例把正常GC全部标红的问题。
+    """
+    z_values = []
+
+    for gc_type, rank_data in rankings.items():
+        regret_baseline = loader.get_regret_baseline(metric_type, jdk_version, gc_type)
+        if regret_baseline is None:
+            regret_baseline = loader.get_overall_regret_baseline(metric_type, gc_type)
+        if not regret_baseline:
+            continue
+
+        regret_median = regret_baseline.get("regret_median")
+        regret_mad = regret_baseline.get("regret_mad")
+        if regret_median is None or regret_mad is None:
+            continue
+
+        regret = calculate_regret(rank_data["value"], best_value)
+        z_values.append(max(0.0, robust_z(regret, regret_median, regret_mad)))
+
+    if len(z_values) < 3:
+        return 0.0
+
+    degraded_values = [z for z in z_values if z > 2.0]
+    degraded_ratio = len(degraded_values) / len(z_values)
+    if degraded_ratio <= 0.5:
+        return 0.0
+
+    # 抵消主要的整体漂移，并设置上限，避免掩盖真正的极端GC。
+    return min(4.0, statistics.median(degraded_values))
+
+
 def _analyze_metric_v2(
     test_results: List[Dict[str, Any]],
     jdk_version: str,
@@ -374,6 +413,10 @@ def _analyze_metric_v2(
     
     # 计算通道C：log尺度尾部分数（对所有GC一起计算）
     tail_scores = calculate_log_tail_score(values_by_gc)
+
+    # 通道A漂移抑制：若同一JDK/同一指标下多数GC的Z_self都偏高，
+    # 更可能是测试用例整体资源压力高，而不是每个GC同时退化。
+    z_self_offset = _calculate_z_self_global_offset(rankings, metric_type, jdk_version, best_value, loader)
     
     # 对每个GC检测异常
     for gc_type, rank_data in rankings.items():
@@ -416,6 +459,8 @@ def _analyze_metric_v2(
         
         # 只取退化方向
         z_self_positive = max(0, z_self)
+        if z_self_offset > 0:
+            z_self_positive = max(0.0, z_self_positive - z_self_offset)
         
         # ============ 通道B：排名尾概率 ============
         p_rank = 0.5
@@ -449,8 +494,9 @@ def _analyze_metric_v2(
         is_anomaly = False
         severity = "low"
         
-        # 规则1: regret > regret_q99
-        if regret_q99 is not None and regret > regret_q99:
+        # 规则1: regret > regret_q99。若该JDK/指标存在整体漂移，要求扣减后
+        # 仍有残余自退化，避免重资源用例把所有GC都推过q99。
+        if regret_q99 is not None and regret > regret_q99 and z_self_positive > 1.0:
             trigger_rules.append("regret_exceeds_q99")
             is_anomaly = True
         
@@ -491,7 +537,19 @@ def _analyze_metric_v2(
         
         if not is_anomaly:
             continue
-        
+
+        # duration受非GC因素影响，仅报告具备实际幅度的duration离群。
+        # 小于2倍且没有极端横向离群的duration结果容易造成噪声。
+        if metric_type == "duration_ms" and actual_value < best_value * 2 and "z_tail_extreme_with_gap" not in trigger_rules:
+            continue
+
+        has_cross_channel_signal = (
+            "z_tail_extreme_with_gap" in trigger_rules or
+            "rank_surprise_with_self_degradation" in trigger_rules
+        )
+        if metric_type != "duration_ms" and not has_cross_channel_signal and best_value > 0 and actual_value < best_value * 5:
+            continue
+         
         # 绝对值阈值检查（减少误报）
         if ENABLE_ABSOLUTE_THRESHOLD_CHECK:
             if _is_within_absolute_threshold(metric_type, actual_value, rankings):
